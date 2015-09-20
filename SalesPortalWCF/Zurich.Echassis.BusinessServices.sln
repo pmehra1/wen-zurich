@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zurich.Echassis.BusinessServices", "wen files\Zurich.Echassis.BusinessServices\Zurich.Echassis.BusinessServices.csproj", "{6D83648C-9A58-4D89-BF72-4337972F0C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zurich.Echassis.BusinessService.Contracts", "wen files\Zurich.Echassis.BusinessService.Contracts\Zurich.Echassis.BusinessService.Contracts.csproj", "{09ABF14F-763E-4EC3-871F-C9A29997A6D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D83648C-9A58-4D89-BF72-4337972F0C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D83648C-9A58-4D89-BF72-4337972F0C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D83648C-9A58-4D89-BF72-4337972F0C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D83648C-9A58-4D89-BF72-4337972F0C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09ABF14F-763E-4EC3-871F-C9A29997A6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09ABF14F-763E-4EC3-871F-C9A29997A6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09ABF14F-763E-4EC3-871F-C9A29997A6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09ABF14F-763E-4EC3-871F-C9A29997A6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

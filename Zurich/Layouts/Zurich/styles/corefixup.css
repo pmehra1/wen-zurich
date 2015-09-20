@@ -1,0 +1,33 @@
+.ms-WPHeader TD{
+border-bottom:none;
+}
+.ms-searchform{
+top:0px;
+}
+.ms-searchbox{
+border:solid 1px #7f9db9;
+}
+.ms-vb-icon{
+width:0% !important;
+}
+TD.ms-titleareaframe,Div.ms-titleareaframe,.ms-pagetitleareaframe,.ms-mwspagetitleareaframe,.ms-consoletitleareaframe{
+background-image:none;
+background-repeat:none;
+background-color:transparent;
+}
+.ms-bodyareaframe,.ms-viewareaframe{
+border:none;
+padding:0px;
+}
+.ms-banner{
+vertical-align:middle;
+}
+.ms-formlabel{
+border-top:none;
+padding:0px;
+}
+.ms-formbody{
+background:transparent;
+border:none;
+padding:2px 0px;
+}

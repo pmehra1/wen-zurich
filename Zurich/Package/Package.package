@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="07610db8-47be-4c09-bac6-ab1edcf805a7" solutionId="07610db8-47be-4c09-bac6-ab1edcf805a7" resetWebServer="false" name="Zurich" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="DAO.dll" deploymentTarget="WebApplication" projectPath="..\DAO\DAO.csproj" />
+    <projectOutputAssembly location="DTO.dll" deploymentTarget="WebApplication" projectPath="..\DTO\DTO.csproj" />
+    <projectOutputAssembly location="PDFGeneration.dll" deploymentTarget="WebApplication" projectPath="..\PDFGeneration\PDFGeneration.csproj" />
+    <customAssembly location="itextsharp.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="ThirdPartyDlls\itextsharp.dll" />
+    <projectOutputAssembly location="ActivityStatusCheck.dll" deploymentTarget="WebApplication" projectPath="..\ActivityStatusCheck\ActivityStatusCheck.csproj" />
+  </assemblies>
+  <projectItems>
+    <projectItemReference itemId="1eef3132-a694-4054-8c3f-1d1b894fe903" />
+    <projectItemReference itemId="93745f57-770a-4f7b-8f90-66cc527ca2b7" />
+  </projectItems>
+</package>

@@ -1,0 +1,18 @@
+﻿.Menu
+{  
+	background:transparent url('/_layouts/Zurich/portalimages/headingBG.png') repeat-x;
+    text-align:center;
+    font-size:1em;
+    border: solid 0px #fff !important;
+    font-weight:bold;
+    color:#003399;
+    text-decoration:none;
+}
+
+
+.menuhover
+{	
+	background:transparent url('/_layouts/Zurich/images/menu_images/blueslate_backgroundOVER.gif') ;
+	color:#ffffff;
+	text-decoration:none;
+ }

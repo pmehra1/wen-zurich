@@ -1,0 +1,35 @@
+USE [FNA]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_DeletePortfolioBuilderForCP]    Script Date: 08/31/2012 18:24:15 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_DeletePortfolioBuilderForCP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_DeletePortfolioBuilderForCP]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_DeletePortfolioBuilderForCP]    Script Date: 08/31/2012 18:24:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_DeletePortfolioBuilderForCP]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[sp_DeletePortfolioBuilderForCP]  
+@CaseID nvarchar(50)
+AS
+BEGIN
+	IF NOT EXISTS (SELECT riskProfileValue from RiskProfileAnalysis a, portFolioBuilderMaster b
+			   WHERE a.caseId = @CaseID
+			   AND b.caseId = @CaseID
+			   AND isnull(a.riskProfileValue, 0) = isnull(b.riskProfileId, 0))  
+	BEGIN  
+		DELETE FROM portFolioBuilderDetail   
+		WHERE portFolioBuilderId in (SELECT DISTINCT Id FROM portFolioBuilderMaster   
+		WHERE caseId = @CaseId)  
+
+		DELETE FROM portFolioBuilderMaster  
+		WHERE caseId = @CaseID  
+	END     
+END
+
+' 
+END
+GO

@@ -1,0 +1,15 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\Zurich.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\Zurich.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\Zurich.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\ActivityStatusCheck.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\DAO.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\DTO.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\PDFGeneration.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\ActivityStatusCheck.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\DAO.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\DTO.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\PDFGeneration.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\obj\Debug\Zurich.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\obj\Debug\Zurich.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\Zurich\bin\Debug\itextsharp.dll

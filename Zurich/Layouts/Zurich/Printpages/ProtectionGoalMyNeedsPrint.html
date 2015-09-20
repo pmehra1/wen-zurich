@@ -1,0 +1,208 @@
+<table width="100%">
+    <tr>
+        <td width="10%">&nbsp;</td>
+        <td width="90%">
+		<table width="100%">
+						<tr>
+							<td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+								Critical Illness
+							</td>
+							<td align="right" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+								<b>SGD</b>
+							</td>
+						</tr>
+                     </table>
+                     
+                    <table width="100%">                                                                     
+                        <tr>
+                            <td width="100%"  valign="top"> 
+                                <table width="100%">
+                                <tr>
+                                    <td>Do you require planning for this need?&nbsp;&nbsp;&nbsp;&nbsp;[planningNeededCriticalIll]</td>
+                                    <td></td>
+                                </tr>
+                                <tr><td colspan="2">&nbsp;</td></tr>
+                                <tr class="oddRowStyle">
+                                    <td>Replacement Income Required</td>
+                                    <td align="right">$ [replacementIncomeReq]&nbsp;</td>  
+                                </tr>
+                                <tr class="evenRowStyle">
+                                    <td>Years of Support Required</td>
+                                    <td align="right">[yrsofsupportReq] years&nbsp;</td>  
+                                </tr>
+                                <tr class="oddRowStyle">
+                                    <td>Inflation Adjusted Returns</td>
+                                    <td align="right">[infladjReturns] %&nbsp;</td>  
+                                </tr>
+                                <tr class="evenRowStyle">
+                                    <td><b>Replacement Amount Required</b></td>
+                                    <td align="right"><b>$ [repamtReq]&nbsp;</b></td>  
+                                </tr>
+                                <tr class="oddRowStyle">
+                                    <td>Lump Sum Required For Treatment</td>
+									<td align="right"><table width="100%" class="tableStyle"><tr><td align="left" class="oddRowStyleNoBorder">Add:</td><td align="right"  class="oddRowStyleNoBorder">$ [lumpsumRequiredForTreatment]</td></tr></table></td>
+                                </tr>
+                                <tr class="evenRowStyle">
+                                    <td><b>Total Required</b></td>
+                                    <td align="right"><b>$ [ttlreq]&nbsp;</b></td>  
+                                </tr>
+                                <tr class="oddRowStyle">
+                                    <td>Critical illness Insurance </td>
+									<td align="right"><table width="100%" class="tableStyle"><tr><td align="left" class="oddRowStyleNoBorder">Less:</td><td align="right"  class="oddRowStyleNoBorder">$ [criticalIllnessInsurance]</td></tr></table></td>
+                                </tr>
+								<tr class="evenRowStyle">
+									<td>Existing Assets:</td>
+									<td align="right">&nbsp;</td>
+                                </tr>
+								[eamyneedscritical]
+                                <tr class="totalRowStyle">
+                                    <td><span style="color:[shortfallSurplusciColour]"><b>[totalShortfallSurplusCriticalIllness]</b></span></td>
+                                    <td align="right"><span style="color:[shortfallSurplusciColour]"><b>$[totalShortfallSurplusMyNeeds]&nbsp;</b></span></td>
+                                </tr>                                                                
+                            </table>                                                            
+                            </td>
+                        </tr>                
+                    </table>
+                    <br />
+                    
+					<table width="100%">
+						<tr>
+							<td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+								Disability Protection
+							</td>
+							<td align="right" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+								<b>SGD</b>
+							</td>
+						</tr>
+					 </table>
+                     
+                    <table width="100%">                                               
+                        <tr>
+                            <td>Do you require planning for this need?&nbsp;&nbsp;&nbsp;&nbsp;[planningNeededDisability]</td>
+                            <td></td>
+                        </tr>
+                        <tr><td colspan="2">&nbsp;</td></tr>
+                        <tr class="oddRowStyle">
+                            <td>Replacement Income Required</td>
+                            <td align="right"> $ [monthlyIncomeDisabilityIncome]&nbsp;</td>                                        
+                        </tr>
+                        <tr class="evenRowStyle">
+                            <td>Years of Support Required</td>
+                            <td align="right">[perOfIncomeCoverageRequired] years&nbsp;</td>
+                        </tr>
+                        <tr class="oddRowStyle">
+                            <td>Inflation Adjusted Returns</td>
+                            <td align=right>[monthlyCoverageRequired] %&nbsp;</td>            
+                        </tr>
+                        <tr class="evenRowStyle">
+                            <td><b>Replacement Amount Required</b></td>
+                            <td align=right><b>$ [disrepamtreq]&nbsp;</b></td>
+                        </tr>
+                        <tr class="oddRowStyle">
+                            <td>Disability Insurance </td>
+							<td align="right"><table width="100%" class="tableStyle"><tr><td align="left" class="oddRowStyleNoBorder">Less:</td><td align="right"  class="oddRowStyleNoBorder">$ [disabilityInsuranceMyNeeds]</td></tr></table></td>                                        
+                        </tr>
+						<tr class="evenRowStyle">
+							<td>Existing Assets:</td>
+							<td align="right">&nbsp;</td>
+                        </tr>
+						[eamyneedsdisable]
+                        <tr class="totalRowStyle">
+                            <td><span style="color:[shortfallSurplusdisbColour]"><b>[disabilityTotallbl]</b></span></td>
+                            <td align="right"><span style="color:[shortfallSurplusdisbColour]"><b>$ [shortfallSurplusMyNeeds]&nbsp;</b></span></td>                                        
+                        </tr>                                                           
+                    </table>
+                    <br />
+                    
+					<table width="100%">
+						<tr>
+							<td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+								Hospital And Medical Coverage
+							</td>
+						</tr>
+					 </table>
+                     
+                    <table width="100%">
+                        <tr>
+                            <td width="60%">Do you require planning for this need?</td>
+                            <td width="20%">[hospitalCoverNeeded]</td>
+                            <td width="20%">&nbsp;</td>
+                        </tr>
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <tr align="center" class="tableHeaderStyle">
+							<td width="60%">If you are hospitalized, what type of coverage are you looking at</td>
+							<td width="20%">Coverage</td>
+							<td width="20%">Any Existing Plans</td>
+						</tr>
+                        <tr class="oddRowStyle">
+                            <td width="60%">Type of Hospital</td>
+                            <td width="20%" align="center">&nbsp;
+                                [typeOfHospitalCoverage]
+                            </td>
+                            <td width="20%" rowspan="2" align="center" valign="middle">
+                            &nbsp;
+                                [anyExistingPlans]
+                            </td>
+                        </tr>
+                        <tr class="evenRowStyle">
+                            <td width="60%">Type of Room</td>
+                            <td width="20%" align = "center">
+								[typeOfRoomCoverage]
+                            </td>                            
+                        </tr>
+					</table>
+					<br />
+                    <br />
+                    <br />
+					<table width="100%">
+						<tr>
+							<td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+								Accident And Health Coverage
+							</td>
+						</tr>
+					 </table>
+                     
+					<table width="100%">
+						<tr>
+                            <td width="60%">Do you require planning for this need?&nbsp;&nbsp;&nbsp;&nbsp;[accidentalCoverNeeded]</td>
+                            <td width="20%">&nbsp;</td>
+                            <td width="20%">&nbsp;</td>
+                        </tr>
+                        <tr><td colspan="3">&nbsp;</td></tr>
+                        <tr align="center" class="tableHeaderStyle">
+							<td width="60%"></td>
+							<td width="20%">Coverage</td>
+							<td width="20%">Any Existing Plans</td>
+						</tr>                        
+                        <tr class="oddRowStyle">
+                            <td width="60%">To be covered for old age disability</td>
+                            <td width="20%" align="center">
+                                [accidentHealthCoverageRow1]
+                            </td>
+                            <td width="20%" align="center">
+                                [accidentHealthAnyExistingPlansRow1]
+                            </td>
+                        </tr>
+                        <tr class="evenRowStyle">
+                            <td width="60%">To be covered for personal accident</td>
+                            <td width="20%" align="center">
+                                [accidentHealthCoverageRow5]
+                            </td>
+                            <td width="20%" align="center">
+                                 [accidentHealthAnyExistingPlansRow5]
+                            </td>
+                        </tr>
+                    </table>
+					<br/>
+
+					<table width="100%" cellpadding = "0" cellspacing = "0">
+						<tr class="tableHeaderStyle">
+                            <td><i>If 'Yes', please provide details of your existing plans</i></td>
+                        </tr>
+                        <tr>
+							<td>[detailsOfExistingPlans]</td>
+                        </tr>
+					</table>
+</td>
+    </tr>
+</table>

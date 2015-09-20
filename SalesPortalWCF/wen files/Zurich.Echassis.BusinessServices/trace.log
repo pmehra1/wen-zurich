@@ -1,0 +1,358 @@
+----------------------------------------
+Timestamp: 07/15/2012 15:09:55.8861692
+
+Message: Girishnewfinal123{ }
+Category: INFO
+
+Priority: 2
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-5-129868185308556688
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:9432
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:10:02.3938199
+
+Message: ActivityBL:RestoreActivity. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(IDbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 517
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 1383
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 590
+   at Zurich.Echassis.BL.DataPersistence.getData(Database db, DbCommand dbcmd) in G:\LatestSolution\Zurich.Echassis.BL\DataPersistence.cs:line 36
+   at Zurich.Echassis.BL.ActivityBL.GetLists(CaseBO caseBODataContract, String activityType) in G:\LatestSolution\Zurich.Echassis.BL\Activity\ActivityBL.cs:line 664{ }
+Category: ERROR
+
+Priority: 2
+
+EventId: 2
+
+Severity: Error
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-5-129868185308556688
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:3352
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:10:03.5989404
+
+Message: CommonBL:ManageCase. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at Zurich.Echassis.BL.CommonBL.InvokeExternalMethod(String typeName, String method, Object[] parameters) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 415
+   at Zurich.Echassis.BL.CommonBL.ManageCase(CaseBO caseBO) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 340{ }
+Category: ERROR
+
+Priority: 2
+
+EventId: 2
+
+Severity: Error
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-5-129868185308556688
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:3352
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:36:50.4236068
+
+Message: finaltest|Action|Activity|AgentID|test|errorcode|INFO|resultcode|Role|System.String[]|System.String[]|Test{ }
+Category: INFO
+
+Priority: 2
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-6-129868202448370498
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:8008
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:36:52.0217666
+
+Message: ActivityBL:RestoreActivity. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(IDbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 517
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 1383
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 590
+   at Zurich.Echassis.BL.DataPersistence.getData(Database db, DbCommand dbcmd) in G:\LatestSolution\Zurich.Echassis.BL\DataPersistence.cs:line 36
+   at Zurich.Echassis.BL.ActivityBL.GetLists(CaseBO caseBODataContract, String activityType) in G:\LatestSolution\Zurich.Echassis.BL\Activity\ActivityBL.cs:line 664{ }
+Category: ERROR
+
+Priority: 2
+
+EventId: 2
+
+Severity: Error
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-6-129868202448370498
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:8008
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:36:52.0257670
+
+Message: CommonBL:ManageCase. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at Zurich.Echassis.BL.CommonBL.InvokeExternalMethod(String typeName, String method, Object[] parameters) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 415
+   at Zurich.Echassis.BL.CommonBL.ManageCase(CaseBO caseBO) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 340{ }
+Category: ERROR
+
+Priority: 2
+
+EventId: 2
+
+Severity: Error
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-6-129868202448370498
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:8008
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:53:53.9180832
+
+Message: finaltest567|Action|Activity|AgentID|test|errorcode|INFO|resultcode|Role|Test | test1 | test2 | test3 | testing1 | testing2 | testing3{ }
+Category: INFO
+
+Priority: 2
+
+EventId: 2
+
+Severity: Information
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-7-129868212997852620
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:10836
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:53:55.1923380
+
+Message: ActivityBL:RestoreActivity. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(IDbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 517
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 1383
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 590
+   at Zurich.Echassis.BL.DataPersistence.getData(Database db, DbCommand dbcmd) in G:\LatestSolution\Zurich.Echassis.BL\DataPersistence.cs:line 36
+   at Zurich.Echassis.BL.ActivityBL.GetLists(CaseBO caseBODataContract, String activityType) in G:\LatestSolution\Zurich.Echassis.BL\Activity\ActivityBL.cs:line 664{ }
+Category: ERROR
+
+Priority: 2
+
+EventId: 2
+
+Severity: Error
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-7-129868212997852620
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:10836
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 15:53:55.1963388
+
+Message: CommonBL:ManageCase. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at Zurich.Echassis.BL.CommonBL.InvokeExternalMethod(String typeName, String method, Object[] parameters) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 415
+   at Zurich.Echassis.BL.CommonBL.ManageCase(CaseBO caseBO) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 340{ }
+Category: ERROR
+
+Priority: 2
+
+EventId: 2
+
+Severity: Error
+
+Title:
+
+Machine: L-156023195
+
+App Domain: /LM/W3SVC/7/ROOT-7-129868212997852620
+
+ProcessId: 15124
+
+Process Name: c:\windows\system32\inetsrv\w3wp.exe
+
+Thread Name: 
+
+Win32 ThreadId:10836
+
+Extended Properties: 
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 16:08:24.9280289{|}
+Message: finaltest567|Action|Activity|AgentID|test|errorcode|INFO|resultcode|Role|Test | test1 | test2 | test3 | testing1 | testing2 | testing3{|}
+Category: INFO{|}
+Priority: 2
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 16:08:26.4701831{|}
+Message: ActivityBL:RestoreActivity. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(IDbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 517
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 1383
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command) in e:\Builds\EntLib\Latest\Source\Blocks\Data\Src\Data\Database.cs:line 590
+   at Zurich.Echassis.BL.DataPersistence.getData(Database db, DbCommand dbcmd) in G:\LatestSolution\Zurich.Echassis.BL\DataPersistence.cs:line 36
+   at Zurich.Echassis.BL.ActivityBL.GetLists(CaseBO caseBODataContract, String activityType) in G:\LatestSolution\Zurich.Echassis.BL\Activity\ActivityBL.cs:line 664{|}
+Category: ERROR{|}
+Priority: 2
+----------------------------------------
+----------------------------------------
+Timestamp: 07/15/2012 16:08:26.4731834{|}
+Message: CommonBL:ManageCase. Exception:System.Data.SqlClient.SqlException: Could not find stored procedure 'sp_Case_DropdownLists'.
+   at Zurich.Echassis.BL.CommonBL.InvokeExternalMethod(String typeName, String method, Object[] parameters) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 415
+   at Zurich.Echassis.BL.CommonBL.ManageCase(CaseBO caseBO) in G:\LatestSolution\Zurich.Echassis.BL\CommonBL.cs:line 340{|}
+Category: ERROR{|}
+Priority: 2
+----------------------------------------

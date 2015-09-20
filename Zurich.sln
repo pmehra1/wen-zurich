@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zurich", "Zurich\Zurich.csproj", "{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70DE94DF-7A9F-4463-B901-05220CD8195D} = {70DE94DF-7A9F-4463-B901-05220CD8195D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{F4A90A1D-8F39-422A-92A6-7CDAA3AB005E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{407FEA7B-234A-41DB-8AB8-BC574E1C4ADD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{70DE94DF-7A9F-4463-B901-05220CD8195D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFGeneration", "PDFGeneration\PDFGeneration.csproj", "{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityStatusCheck", "ActivityStatusCheck\ActivityStatusCheck.csproj", "{B5B5B18E-F77A-418D-8362-510A99D0261C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F4A90A1D-8F39-422A-92A6-7CDAA3AB005E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A90A1D-8F39-422A-92A6-7CDAA3AB005E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A90A1D-8F39-422A-92A6-7CDAA3AB005E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A90A1D-8F39-422A-92A6-7CDAA3AB005E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407FEA7B-234A-41DB-8AB8-BC574E1C4ADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407FEA7B-234A-41DB-8AB8-BC574E1C4ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407FEA7B-234A-41DB-8AB8-BC574E1C4ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407FEA7B-234A-41DB-8AB8-BC574E1C4ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DE94DF-7A9F-4463-B901-05220CD8195D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DE94DF-7A9F-4463-B901-05220CD8195D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DE94DF-7A9F-4463-B901-05220CD8195D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DE94DF-7A9F-4463-B901-05220CD8195D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B5B18E-F77A-418D-8362-510A99D0261C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B5B18E-F77A-418D-8362-510A99D0261C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B5B18E-F77A-418D-8362-510A99D0261C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B5B18E-F77A-418D-8362-510A99D0261C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FA03FD-55C5-40B1-9D47-4C473A5C62E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

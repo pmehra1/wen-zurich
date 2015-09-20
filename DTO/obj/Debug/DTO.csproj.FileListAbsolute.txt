@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DTO\bin\Debug\DTO.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DTO\bin\Debug\DTO.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DTO\obj\Debug\DTO.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DTO\obj\Debug\DTO.pdb

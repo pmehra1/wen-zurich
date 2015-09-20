@@ -1,0 +1,35 @@
+update asset_allocation_mapping set percentage=54, per=54 where asset_id=1 and risk_profile_id=1 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=23, per=23 where asset_id=2 and risk_profile_id=1 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=2, per=2 where asset_id=4 and risk_profile_id=1 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=12, per=12 where asset_id=5 and risk_profile_id=1 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=4, per=4 where asset_id=7 and risk_profile_id=1 and allocation_type_id=6;
+update asset_allocation_mapping set percentage=9, per=9 where asset_id=7 and risk_profile_id=1 and allocation_type_id=1;
+
+update asset_allocation_mapping set percentage=43, per=43 where asset_id=1 and risk_profile_id=2 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=18, per=18 where asset_id=2 and risk_profile_id=2 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=6, per=6 where asset_id=4 and risk_profile_id=2 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=19, per=19 where asset_id=5 and risk_profile_id=2 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=4, per=4 where asset_id=7 and risk_profile_id=2 and allocation_type_id=6;
+update asset_allocation_mapping set percentage=14, per=14 where asset_id=7 and risk_profile_id=2 and allocation_type_id=1;
+
+update asset_allocation_mapping set percentage=26, per=26 where asset_id=1 and risk_profile_id=3 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=16, per=16 where asset_id=2 and risk_profile_id=3 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=9, per=9 where asset_id=4 and risk_profile_id=3 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=21, per=21 where asset_id=5 and risk_profile_id=3 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=4, per=4 where asset_id=7 and risk_profile_id=3 and allocation_type_id=6;
+update asset_allocation_mapping set percentage=17, per=17 where asset_id=7 and risk_profile_id=3 and allocation_type_id=1;
+
+update asset_allocation_mapping set percentage=16, per=16 where asset_id=1 and risk_profile_id=4 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=10, per=10 where asset_id=2 and risk_profile_id=4 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=12, per=12 where asset_id=4 and risk_profile_id=4 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=31, per=31 where asset_id=5 and risk_profile_id=4 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=6, per=6 where asset_id=7 and risk_profile_id=4 and allocation_type_id=6;
+update asset_allocation_mapping set percentage=24, per=24 where asset_id=7 and risk_profile_id=4 and allocation_type_id=1;
+
+update asset_allocation_mapping set percentage=4, per=4 where asset_id=1 and risk_profile_id=5 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=3, per=3 where asset_id=2 and risk_profile_id=5 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=2, per=2 where asset_id=3 and risk_profile_id=5 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=17, per=17 where asset_id=4 and risk_profile_id=5 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=42, per=42 where asset_id=5 and risk_profile_id=5 and allocation_type_id in(1,6);
+update asset_allocation_mapping set percentage=10, per=10 where asset_id=7 and risk_profile_id=5 and allocation_type_id=6;
+update asset_allocation_mapping set percentage=32, per=32 where asset_id=7 and risk_profile_id=5 and allocation_type_id=1;

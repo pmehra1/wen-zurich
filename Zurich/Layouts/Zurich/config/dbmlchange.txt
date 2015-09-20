@@ -1,0 +1,56 @@
+    public static class DbConnectionStringClass
+    {
+        public static string dbConnString;
+        public static string checkdbconn;
+    }
+
+    static readonly object _object = new object();
+
+    public static string getZurichConnectionString()
+    {
+
+        if (DbConnectionStringClass.dbConnString == null || DbConnectionStringClass.dbConnString == "")
+        {
+            string connectionString = "";
+
+            //SPSecurity.RunWithElevatedPrivileges(delegate()
+            //{
+
+            lock (_object)
+            {
+                System.IO.FileStream fileStream = new System.IO.FileStream(@"C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\template\layouts\Zurich\config\config.xml", System.IO.FileMode.Open);
+
+                XmlTextReader reader = new XmlTextReader(fileStream);
+
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Text)
+                    {
+                        connectionString = reader.Value;
+                        break;
+                    }
+                }
+
+                reader.Close();
+                fileStream.Close();
+            }
+            //});
+
+            DbConnectionStringClass.dbConnString = connectionString;
+            DbConnectionStringClass.checkdbconn = "reading file";
+
+            return connectionString;
+        }
+        else
+        {
+            DbConnectionStringClass.checkdbconn = "from static";
+            return DbConnectionStringClass.dbConnString;
+        }
+
+    }
+
+    public dbDataContext() :
+        base(getZurichConnectionString(), mappingSource)
+    {
+        OnCreated();
+    }

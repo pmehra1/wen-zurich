@@ -1,0 +1,8 @@
+USE [FNA]
+GO
+
+alter table existingassetsg alter column percentpa nvarchar(50)
+
+alter table existingassetrg alter column percentpa nvarchar(50)
+
+alter table existingasseteg alter column percentpa nvarchar(50)

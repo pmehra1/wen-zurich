@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Zurich.Echassis.BusinessService.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Zurich.Echassis.BusinessService.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:24216/BusinessService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:24216/BusinessService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CaseDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequestDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseStatusId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryOfResidence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryofResidence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistributionChannelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDorFINorPassport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Locale" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Smoker" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistributionChannelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CaseDataContract" nillable="true" type="tns:CaseDataContract" />
+  <xs:complexType name="BaseRequestDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" type="tns:ActionEnumContracts" />
+      <xs:element minOccurs="0" name="Activity" type="tns:ActivityTypeEnum" />
+      <xs:element minOccurs="0" name="ErrorType" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="UserInfo" nillable="true" type="tns:UserInfoEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseRequestDataContract" nillable="true" type="tns:BaseRequestDataContract" />
+  <xs:simpleType name="ActionEnumContracts">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Assign" />
+      <xs:enumeration value="Clone" />
+      <xs:enumeration value="Complete" />
+      <xs:enumeration value="Create" />
+      <xs:enumeration value="Delete" />
+      <xs:enumeration value="GeneratePDF" />
+      <xs:enumeration value="Modify" />
+      <xs:enumeration value="Save" />
+      <xs:enumeration value="PrintDoc" />
+      <xs:enumeration value="PrintDoc1" />
+      <xs:enumeration value="Restore" />
+      <xs:enumeration value="SaveDoc" />
+      <xs:enumeration value="List" />
+      <xs:enumeration value="View" />
+      <xs:enumeration value="SelectCase" />
+      <xs:enumeration value="UpdateCase" />
+      <xs:enumeration value="GetQuoteLastRecord" />
+      <xs:enumeration value="ViewContent" />
+      <xs:enumeration value="ApprovalListCase" />
+      <xs:enumeration value="SaveRemarks" />
+      <xs:enumeration value="Sign" />
+      <xs:enumeration value="Search" />
+      <xs:enumeration value="MyApprovalListCase" />
+      <xs:enumeration value="SupervisorApproval" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActionEnumContracts" nillable="true" type="tns:ActionEnumContracts" />
+  <xs:simpleType name="ActivityTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Case" />
+      <xs:enumeration value="Quote" />
+      <xs:enumeration value="Recommendation" />
+      <xs:enumeration value="ZPlan" />
+      <xs:enumeration value="Party" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityTypeEnum" nillable="true" type="tns:ActivityTypeEnum" />
+  <xs:simpleType name="ErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEBUG" />
+      <xs:enumeration value="INFO" />
+      <xs:enumeration value="WARN" />
+      <xs:enumeration value="ERROR" />
+      <xs:enumeration value="FATAL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorType" nillable="true" type="tns:ErrorType" />
+  <xs:complexType name="UserInfoEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SteroeTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupervisorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userfirstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userlastname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfoEntity" nillable="true" type="tns:UserInfoEntity" />
+  <xs:complexType name="CaseResponseDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponseDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssignedSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseStatusId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryOfResidence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryofResidence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="Deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistributionChannelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EnableQuote" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnableRecommendation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnableZplan" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Firstname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDorFINorPassport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Locale" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Smoker" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistributionChannelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CaseResponseDataContract" nillable="true" type="tns:CaseResponseDataContract" />
+  <xs:complexType name="BaseResponseDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseResponseDataContract" nillable="true" type="tns:BaseResponseDataContract" />
+  <xs:complexType name="QuoteDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequestDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CloneQuoteId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Deleted" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IllustrationDoc" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="IntegrationRequestData" nillable="true" type="tns:NewBusinessInvocationRequest" />
+          <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuoteDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuoteId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuoteMetaData" nillable="true" type="tns:NewBusiness" />
+          <xs:element minOccurs="0" name="QuoteStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QuoteDataContract" nillable="true" type="tns:QuoteDataContract" />
+  <xs:complexType name="NewBusinessInvocationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applicant" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="caseId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clonedQuoteId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="distributor" nillable="true" type="tns:Distributor" />
+      <xs:element minOccurs="0" name="funds" nillable="true" type="tns:ArrayOfFund" />
+      <xs:element minOccurs="0" name="quoteId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quoteType" type="tns:NewBusinessInvocationType" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewBusinessInvocationRequest" nillable="true" type="tns:NewBusinessInvocationRequest" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="benefits" nillable="true" type="tns:ArrayOfBenefit" />
+      <xs:element minOccurs="0" name="countryOfResidence" nillable="true" type="tns:Person.Country" />
+      <xs:element minOccurs="0" name="dateOfBirth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gender" nillable="true" type="tns:Person.Gender" />
+      <xs:element minOccurs="0" name="nationality" nillable="true" type="tns:Person.Nationality" />
+      <xs:element minOccurs="0" name="occupation" nillable="true" type="tns:Person.Occupation" />
+      <xs:element minOccurs="0" name="secondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="smoker" type="xs:boolean" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfBenefit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Benefit" nillable="true" type="tns:Benefit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBenefit" nillable="true" type="tns:ArrayOfBenefit" />
+  <xs:complexType name="Benefit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="specificationIds" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Benefit" nillable="true" type="tns:Benefit" />
+  <xs:simpleType name="Person.Country">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AX" />
+      <xs:enumeration value="AF" />
+      <xs:enumeration value="AL" />
+      <xs:enumeration value="DZ" />
+      <xs:enumeration value="AS" />
+      <xs:enumeration value="AD" />
+      <xs:enumeration value="AO" />
+      <xs:enumeration value="AI" />
+      <xs:enumeration value="AQ" />
+      <xs:enumeration value="AG" />
+      <xs:enumeration value="AR" />
+      <xs:enumeration value="AM" />
+      <xs:enumeration value="AW" />
+      <xs:enumeration value="AU" />
+      <xs:enumeration value="AT" />
+      <xs:enumeration value="AZ" />
+      <xs:enumeration value="BS" />
+      <xs:enumeration value="BH" />
+      <xs:enumeration value="BD" />
+      <xs:enumeration value="BB" />
+      <xs:enumeration value="BY" />
+      <xs:enumeration value="BE" />
+      <xs:enumeration value="BZ" />
+      <xs:enumeration value="BJ" />
+      <xs:enumeration value="BM" />
+      <xs:enumeration value="BT" />
+      <xs:enumeration value="BO" />
+      <xs:enumeration value="BA" />
+      <xs:enumeration value="BW" />
+      <xs:enumeration value="BV" />
+      <xs:enumeration value="BR" />
+      <xs:enumeration value="IO" />
+      <xs:enumeration value="BN" />
+      <xs:enumeration value="BG" />
+      <xs:enumeration value="BF" />
+      <xs:enumeration value="BI" />
+      <xs:enumeration value="KH" />
+      <xs:enumeration value="CM" />
+      <xs:enumeration value="CA" />
+      <xs:enumeration value="CV" />
+      <xs:enumeration value="KY" />
+      <xs:enumeration value="CF" />
+      <xs:enumeration value="TD" />
+      <xs:enumeration value="CL" />
+      <xs:enumeration value="CN" />
+      <xs:enumeration value="CX" />
+      <xs:enumeration value="CC" />
+      <xs:enumeration value="CO" />
+      <xs:enumeration value="KM" />
+      <xs:enumeration value="CG" />
+      <xs:enumeration value="CD" />
+      <xs:enumeration value="CK" />
+      <xs:enumeration value="CR" />
+      <xs:enumeration value="HR" />
+      <xs:enumeration value="CU" />
+      <xs:enumeration value="CY" />
+      <xs:enumeration value="CZ" />
+      <xs:enumeration value="CI" />
+      <xs:enumeration value="DK" />
+      <xs:enumeration value="DJ" />
+      <xs:enumeration value="DM" />
+      <xs:enumeration value="DO" />
+      <xs:enumeration value="EC" />
+      <xs:enumeration value="EG" />
+      <xs:enumeration value="SV" />
+      <xs:enumeration value="GQ" />
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="EE" />
+      <xs:enumeration value="ET" />
+      <xs:enumeration value="FK" />
+      <xs:enumeration value="FO" />
+      <xs:enumeration value="FJ" />
+      <xs:enumeration value="FI" />
+      <xs:enumeration value="FR" />
+      <xs:enumeration value="GF" />
+      <xs:enumeration value="PF" />
+      <xs:enumeration value="TF" />
+      <xs:enumeration value="GA" />
+      <xs:enumeration value="GM" />
+      <xs:enumeration value="GE" />
+      <xs:enumeration value="DE" />
+      <xs:enumeration value="GH" />
+      <xs:enumeration value="GI" />
+      <xs:enumeration value="GR" />
+      <xs:enumeration value="GL" />
+      <xs:enumeration value="GD" />
+      <xs:enumeration value="GP" />
+      <xs:enumeration value="GU" />
+      <xs:enumeration value="GT" />
+      <xs:enumeration value="GG" />
+      <xs:enumeration value="GN" />
+      <xs:enumeration value="GW" />
+      <xs:enumeration value="GY" />
+      <xs:enumeration value="HT" />
+      <xs:enumeration value="HM" />
+      <xs:enumeration value="HN" />
+      <xs:enumeration value="HK" />
+      <xs:enumeration value="HU" />
+      <xs:enumeration value="IS" />
+      <xs:enumeration value="IN" />
+      <xs:enumeration value="ID" />
+      <xs:enumeration value="IR" />
+      <xs:enumeration value="IQ" />
+      <xs:enumeration value="IE" />
+      <xs:enumeration value="IM" />
+      <xs:enumeration value="IL" />
+      <xs:enumeration value="IT" />
+      <xs:enumeration value="JM" />
+      <xs:enumeration value="JP" />
+      <xs:enumeration value="JE" />
+      <xs:enumeration value="JO" />
+      <xs:enumeration value="KZ" />
+      <xs:enumeration value="KE" />
+      <xs:enumeration value="KI" />
+      <xs:enumeration value="KP" />
+      <xs:enumeration value="KR" />
+      <xs:enumeration value="KW" />
+      <xs:enumeration value="KG" />
+      <xs:enumeration value="LA" />
+      <xs:enumeration value="LV" />
+      <xs:enumeration value="LB" />
+      <xs:enumeration value="LS" />
+      <xs:enumeration value="LR" />
+      <xs:enumeration value="LY" />
+      <xs:enumeration value="LI" />
+      <xs:enumeration value="LT" />
+      <xs:enumeration value="LU" />
+      <xs:enumeration value="MO" />
+      <xs:enumeration value="MK" />
+      <xs:enumeration value="MG" />
+      <xs:enumeration value="MW" />
+      <xs:enumeration value="MY" />
+      <xs:enumeration value="MV" />
+      <xs:enumeration value="ML" />
+      <xs:enumeration value="MT" />
+      <xs:enumeration value="MH" />
+      <xs:enumeration value="MQ" />
+      <xs:enumeration value="MR" />
+      <xs:enumeration value="MU" />
+      <xs:enumeration value="YT" />
+      <xs:enumeration value="MX" />
+      <xs:enumeration value="FM" />
+      <xs:enumeration value="MD" />
+      <xs:enumeration value="MC" />
+      <xs:enumeration value="MN" />
+      <xs:enumeration value="ME" />
+      <xs:enumeration value="MS" />
+      <xs:enumeration value="MA" />
+      <xs:enumeration value="MZ" />
+      <xs:enumeration value="MM" />
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="NR" />
+      <xs:enumeration value="NP" />
+      <xs:enumeration value="NL" />
+      <xs:enumeration value="AN" />
+      <xs:enumeration value="NC" />
+      <xs:enumeration value="NZ" />
+      <xs:enumeration value="NI" />
+      <xs:enumeration value="NE" />
+      <xs:enumeration value="NG" />
+      <xs:enumeration value="NU" />
+      <xs:enumeration value="NF" />
+      <xs:enumeration value="MP" />
+      <xs:enumeration value="NO" />
+      <xs:enumeration value="OM" />
+      <xs:enumeration value="PK" />
+      <xs:enumeration value="PW" />
+      <xs:enumeration value="PS" />
+      <xs:enumeration value="PA" />
+      <xs:enumeration value="PG" />
+      <xs:enumeration value="PY" />
+      <xs:enumeration value="PE" />
+      <xs:enumeration value="PH" />
+      <xs:enumeration value="PN" />
+      <xs:enumeration value="PL" />
+      <xs:enumeration value="PT" />
+      <xs:enumeration value="PR" />
+      <xs:enumeration value="QA" />
+      <xs:enumeration value="RO" />
+      <xs:enumeration value="RU" />
+      <xs:enumeration value="RW" />
+      <xs:enumeration value="RE" />
+      <xs:enumeration value="BL" />
+      <xs:enumeration value="SH" />
+      <xs:enumeration value="KN" />
+      <xs:enumeration value="LC" />
+      <xs:enumeration value="MF" />
+      <xs:enumeration value="PM" />
+      <xs:enumeration value="VC" />
+      <xs:enumeration value="WS" />
+      <xs:enumeration value="SM" />
+      <xs:enumeration value="ST" />
+      <xs:enumeration value="SA" />
+      <xs:enumeration value="SN" />
+      <xs:enumeration value="RS" />
+      <xs:enumeration value="SC" />
+      <xs:enumeration value="SL" />
+      <xs:enumeration value="SG" />
+      <xs:enumeration value="SK" />
+      <xs:enumeration value="SI" />
+      <xs:enumeration value="SB" />
+      <xs:enumeration value="SO" />
+      <xs:enumeration value="ZA" />
+      <xs:enumeration value="GS" />
+      <xs:enumeration value="ES" />
+      <xs:enumeration value="LK" />
+      <xs:enumeration value="SD" />
+      <xs:enumeration value="SR" />
+      <xs:enumeration value="SJ" />
+      <xs:enumeration value="SZ" />
+      <xs:enumeration value="SE" />
+      <xs:enumeration value="CH" />
+      <xs:enumeration value="SY" />
+      <xs:enumeration value="TW" />
+      <xs:enumeration value="TJ" />
+      <xs:enumeration value="TZ" />
+      <xs:enumeration value="TH" />
+      <xs:enumeration value="TL" />
+      <xs:enumeration value="TG" />
+      <xs:enumeration value="TK" />
+      <xs:enumeration value="TO" />
+      <xs:enumeration value="TT" />
+      <xs:enumeration value="TN" />
+      <xs:enumeration value="TR" />
+      <xs:enumeration value="TM" />
+      <xs:enumeration value="TC" />
+      <xs:enumeration value="TV" />
+      <xs:enumeration value="UG" />
+      <xs:enumeration value="UA" />
+      <xs:enumeration value="AE" />
+      <xs:enumeration value="GB" />
+      <xs:enumeration value="US" />
+      <xs:enumeration value="UM" />
+      <xs:enumeration value="UY" />
+      <xs:enumeration value="UZ" />
+      <xs:enumeration value="VU" />
+      <xs:enumeration value="VA" />
+      <xs:enumeration value="VE" />
+      <xs:enumeration value="VN" />
+      <xs:enumeration value="VG" />
+      <xs:enumeration value="VI" />
+      <xs:enumeration value="WF" />
+      <xs:enumeration value="EH" />
+      <xs:enumeration value="YE" />
+      <xs:enumeration value="ZM" />
+      <xs:enumeration value="ZW" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Person.Country" nillable="true" type="tns:Person.Country" />
+  <xs:simpleType name="Person.Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Person.Gender" nillable="true" type="tns:Person.Gender" />
+  <xs:simpleType name="Person.Nationality">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AF" />
+      <xs:enumeration value="AL" />
+      <xs:enumeration value="DZ" />
+      <xs:enumeration value="US" />
+      <xs:enumeration value="AD" />
+      <xs:enumeration value="AO" />
+      <xs:enumeration value="AG" />
+      <xs:enumeration value="AR" />
+      <xs:enumeration value="AM" />
+      <xs:enumeration value="AU" />
+      <xs:enumeration value="AT" />
+      <xs:enumeration value="AZ" />
+      <xs:enumeration value="BS" />
+      <xs:enumeration value="BH" />
+      <xs:enumeration value="BD" />
+      <xs:enumeration value="BB" />
+      <xs:enumeration value="BU" />
+      <xs:enumeration value="BW" />
+      <xs:enumeration value="BY" />
+      <xs:enumeration value="BE" />
+      <xs:enumeration value="BZ" />
+      <xs:enumeration value="BJ" />
+      <xs:enumeration value="BT" />
+      <xs:enumeration value="BO" />
+      <xs:enumeration value="BA" />
+      <xs:enumeration value="BR" />
+      <xs:enumeration value="GB" />
+      <xs:enumeration value="BN" />
+      <xs:enumeration value="BG" />
+      <xs:enumeration value="BF" />
+      <xs:enumeration value="MM" />
+      <xs:enumeration value="BI" />
+      <xs:enumeration value="KH" />
+      <xs:enumeration value="CM" />
+      <xs:enumeration value="CA" />
+      <xs:enumeration value="CV" />
+      <xs:enumeration value="CF" />
+      <xs:enumeration value="TD" />
+      <xs:enumeration value="CL" />
+      <xs:enumeration value="CN" />
+      <xs:enumeration value="CO" />
+      <xs:enumeration value="KM" />
+      <xs:enumeration value="CG" />
+      <xs:enumeration value="CR" />
+      <xs:enumeration value="HR" />
+      <xs:enumeration value="CU" />
+      <xs:enumeration value="CY" />
+      <xs:enumeration value="CZ" />
+      <xs:enumeration value="DK" />
+      <xs:enumeration value="DJ" />
+      <xs:enumeration value="DO" />
+      <xs:enumeration value="NL" />
+      <xs:enumeration value="TL" />
+      <xs:enumeration value="EC" />
+      <xs:enumeration value="EG" />
+      <xs:enumeration value="AE" />
+      <xs:enumeration value="GQ" />
+      <xs:enumeration value="ER" />
+      <xs:enumeration value="EE" />
+      <xs:enumeration value="ET" />
+      <xs:enumeration value="FJ" />
+      <xs:enumeration value="PH" />
+      <xs:enumeration value="FI" />
+      <xs:enumeration value="FR" />
+      <xs:enumeration value="GA" />
+      <xs:enumeration value="GM" />
+      <xs:enumeration value="GE" />
+      <xs:enumeration value="DE" />
+      <xs:enumeration value="GH" />
+      <xs:enumeration value="GR" />
+      <xs:enumeration value="GD" />
+      <xs:enumeration value="GT" />
+      <xs:enumeration value="GW" />
+      <xs:enumeration value="GN" />
+      <xs:enumeration value="GY" />
+      <xs:enumeration value="HT" />
+      <xs:enumeration value="HZ" />
+      <xs:enumeration value="HN" />
+      <xs:enumeration value="HU" />
+      <xs:enumeration value="IS" />
+      <xs:enumeration value="IN" />
+      <xs:enumeration value="ID" />
+      <xs:enumeration value="IR" />
+      <xs:enumeration value="IQ" />
+      <xs:enumeration value="IE" />
+      <xs:enumeration value="IL" />
+      <xs:enumeration value="IT" />
+      <xs:enumeration value="CI" />
+      <xs:enumeration value="JM" />
+      <xs:enumeration value="JP" />
+      <xs:enumeration value="JO" />
+      <xs:enumeration value="KZ" />
+      <xs:enumeration value="KE" />
+      <xs:enumeration value="KN" />
+      <xs:enumeration value="KW" />
+      <xs:enumeration value="KG" />
+      <xs:enumeration value="LA" />
+      <xs:enumeration value="LV" />
+      <xs:enumeration value="LB" />
+      <xs:enumeration value="LR" />
+      <xs:enumeration value="LY" />
+      <xs:enumeration value="LI" />
+      <xs:enumeration value="LT" />
+      <xs:enumeration value="LU" />
+      <xs:enumeration value="MK" />
+      <xs:enumeration value="MG" />
+      <xs:enumeration value="MW" />
+      <xs:enumeration value="MY" />
+      <xs:enumeration value="MV" />
+      <xs:enumeration value="ML" />
+      <xs:enumeration value="MT" />
+      <xs:enumeration value="MH" />
+      <xs:enumeration value="MR" />
+      <xs:enumeration value="MU" />
+      <xs:enumeration value="MX" />
+      <xs:enumeration value="FM" />
+      <xs:enumeration value="MD" />
+      <xs:enumeration value="MC" />
+      <xs:enumeration value="MN" />
+      <xs:enumeration value="MA" />
+      <xs:enumeration value="LS" />
+      <xs:enumeration value="MO" />
+      <xs:enumeration value="MZ" />
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="NR" />
+      <xs:enumeration value="NP" />
+      <xs:enumeration value="HO" />
+      <xs:enumeration value="NZ" />
+      <xs:enumeration value="VU" />
+      <xs:enumeration value="NI" />
+      <xs:enumeration value="NG" />
+      <xs:enumeration value="NE" />
+      <xs:enumeration value="KP" />
+      <xs:enumeration value="NS" />
+      <xs:enumeration value="NO" />
+      <xs:enumeration value="OM" />
+      <xs:enumeration value="PK" />
+      <xs:enumeration value="PW" />
+      <xs:enumeration value="PA" />
+      <xs:enumeration value="PG" />
+      <xs:enumeration value="PY" />
+      <xs:enumeration value="PE" />
+      <xs:enumeration value="PL" />
+      <xs:enumeration value="PT" />
+      <xs:enumeration value="QA" />
+      <xs:enumeration value="RO" />
+      <xs:enumeration value="RU" />
+      <xs:enumeration value="RW" />
+      <xs:enumeration value="LC" />
+      <xs:enumeration value="SV" />
+      <xs:enumeration value="WS" />
+      <xs:enumeration value="SM" />
+      <xs:enumeration value="ST" />
+      <xs:enumeration value="SA" />
+      <xs:enumeration value="SP" />
+      <xs:enumeration value="SN" />
+      <xs:enumeration value="RS" />
+      <xs:enumeration value="SC" />
+      <xs:enumeration value="SL" />
+      <xs:enumeration value="SG" />
+      <xs:enumeration value="SK" />
+      <xs:enumeration value="SI" />
+      <xs:enumeration value="SB" />
+      <xs:enumeration value="SO" />
+      <xs:enumeration value="ZA" />
+      <xs:enumeration value="KR" />
+      <xs:enumeration value="ES" />
+      <xs:enumeration value="LK" />
+      <xs:enumeration value="SD" />
+      <xs:enumeration value="SR" />
+      <xs:enumeration value="SZ" />
+      <xs:enumeration value="SE" />
+      <xs:enumeration value="CH" />
+      <xs:enumeration value="SY" />
+      <xs:enumeration value="TW" />
+      <xs:enumeration value="TJ" />
+      <xs:enumeration value="TZ" />
+      <xs:enumeration value="TH" />
+      <xs:enumeration value="TG" />
+      <xs:enumeration value="TO" />
+      <xs:enumeration value="TT" />
+      <xs:enumeration value="TN" />
+      <xs:enumeration value="TR" />
+      <xs:enumeration value="TV" />
+      <xs:enumeration value="UG" />
+      <xs:enumeration value="UA" />
+      <xs:enumeration value="UY" />
+      <xs:enumeration value="UZ" />
+      <xs:enumeration value="VE" />
+      <xs:enumeration value="VN" />
+      <xs:enumeration value="WF" />
+      <xs:enumeration value="YE" />
+      <xs:enumeration value="ZM" />
+      <xs:enumeration value="ZW" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Person.Nationality" nillable="true" type="tns:Person.Nationality" />
+  <xs:simpleType name="Person.Occupation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="Accountant" />
+      <xs:enumeration value="Accounts_Assistant" />
+      <xs:enumeration value="ActorActress_no_stunt" />
+      <xs:enumeration value="Actuary" />
+      <xs:enumeration value="Admin_Assistant" />
+      <xs:enumeration value="Administrator_Officebased" />
+      <xs:enumeration value="Advertiser_Advertising_Agent" />
+      <xs:enumeration value="Agent_estatetravelinsurance" />
+      <xs:enumeration value="Aircraft_Engineer" />
+      <xs:enumeration value="Airport_Security_unarmed" />
+      <xs:enumeration value="Architect" />
+      <xs:enumeration value="Artist" />
+      <xs:enumeration value="Athlete_track_field_only" />
+      <xs:enumeration value="Auctioneer" />
+      <xs:enumeration value="Auditor" />
+      <xs:enumeration value="Author" />
+      <xs:enumeration value="Baggage_Porter" />
+      <xs:enumeration value="Baker" />
+      <xs:enumeration value="Bank_Teller" />
+      <xs:enumeration value="BankerBank_Officer" />
+      <xs:enumeration value="Barber" />
+      <xs:enumeration value="Bartender" />
+      <xs:enumeration value="Beautician" />
+      <xs:enumeration value="Blacksmith" />
+      <xs:enumeration value="Boat_Man_Ferryman" />
+      <xs:enumeration value="Bomb_Disposal_Specialist" />
+      <xs:enumeration value="Book_Keeper" />
+      <xs:enumeration value="Broker_InsuranceMoneyStock" />
+      <xs:enumeration value="Bus_Inspector" />
+      <xs:enumeration value="Butcher" />
+      <xs:enumeration value="Cable_splicer_Lineman" />
+      <xs:enumeration value="Cabin_Crew_Airlines" />
+      <xs:enumeration value="Canteen_Assistant_Operator" />
+      <xs:enumeration value="Car_Park_Attendant" />
+      <xs:enumeration value="Carpenter" />
+      <xs:enumeration value="Cashier" />
+      <xs:enumeration value="Chambermaid" />
+      <xs:enumeration value="Chauffeur" />
+      <xs:enumeration value="Chef_Cook" />
+      <xs:enumeration value="Chemist" />
+      <xs:enumeration value="Chief_Executive_Officer" />
+      <xs:enumeration value="Civil_Engineer" />
+      <xs:enumeration value="Cleaner" />
+      <xs:enumeration value="Clerk_Clerical_Officer" />
+      <xs:enumeration value="Clinic_Assistant_non_nursing_staff" />
+      <xs:enumeration value="Coach_Sports" />
+      <xs:enumeration value="Computer_Analyst_Programmer" />
+      <xs:enumeration value="Construction_Foreman" />
+      <xs:enumeration value="Construction_Site_Worker" />
+      <xs:enumeration value="Consultant" />
+      <xs:enumeration value="Craftsman" />
+      <xs:enumeration value="Crane_DriverTower_Crane_Operator" />
+      <xs:enumeration value="Cruise_Crew_all_crew_members_working_onboard_of_cruise_ship_in_customer_services_only" />
+      <xs:enumeration value="Curator_museum" />
+      <xs:enumeration value="Customer_Service_Officer" />
+      <xs:enumeration value="Dancer_Professional" />
+      <xs:enumeration value="Dental_Assistant_Nurse" />
+      <xs:enumeration value="Dentist" />
+      <xs:enumeration value="Designer_Interior" />
+      <xs:enumeration value="Despatch_Delivery_Man" />
+      <xs:enumeration value="Detective" />
+      <xs:enumeration value="Diplomat" />
+      <xs:enumeration value="Disc_Jockey" />
+      <xs:enumeration value="Diving_Instructor" />
+      <xs:enumeration value="Diver" />
+      <xs:enumeration value="Dock_Worker" />
+      <xs:enumeration value="Doctor" />
+      <xs:enumeration value="Dog_Trainer" />
+      <xs:enumeration value="Demolition_Worker" />
+      <xs:enumeration value="Draughtsman" />
+      <xs:enumeration value="Driver_Bus_Taxi_van_coach_private_car_ambulance" />
+      <xs:enumeration value="Driver_Heavy_Vehicle_Truck_Lorry_Container" />
+      <xs:enumeration value="Driving_Instructor" />
+      <xs:enumeration value="Economist" />
+      <xs:enumeration value="Editor" />
+      <xs:enumeration value="Electrician_without_Height_involvement" />
+      <xs:enumeration value="Electrician_with_Height_involvement" />
+      <xs:enumeration value="Engineer" />
+      <xs:enumeration value="Engineer_Admin_Office_Based" />
+      <xs:enumeration value="Entertainer" />
+      <xs:enumeration value="Executive_Office_Based" />
+      <xs:enumeration value="Factor_Worker" />
+      <xs:enumeration value="Fashion_Designer" />
+      <xs:enumeration value="Fashion_Model" />
+      <xs:enumeration value="Financial_Controller" />
+      <xs:enumeration value="Financial_Planner_Adviser" />
+      <xs:enumeration value="Fireman" />
+      <xs:enumeration value="Fisherman_River_Lake_Coastal" />
+      <xs:enumeration value="Fisherman_Offshore" />
+      <xs:enumeration value="Fishmonger" />
+      <xs:enumeration value="Fitness_Instructor" />
+      <xs:enumeration value="Florist" />
+      <xs:enumeration value="Forklift_Driver" />
+      <xs:enumeration value="Garage_Worker" />
+      <xs:enumeration value="Gardener" />
+      <xs:enumeration value="General_Manager" />
+      <xs:enumeration value="General_Worker" />
+      <xs:enumeration value="Goldsmith" />
+      <xs:enumeration value="Hairstylist" />
+      <xs:enumeration value="Hawker" />
+      <xs:enumeration value="Hotel_Public_Relations_Officer" />
+      <xs:enumeration value="Housewife" />
+      <xs:enumeration value="Jeweller" />
+      <xs:enumeration value="Jockey_Flat_Racing" />
+      <xs:enumeration value="Journalist_local_no_war_zone" />
+      <xs:enumeration value="Judge" />
+      <xs:enumeration value="Juvenile" />
+      <xs:enumeration value="Labourer" />
+      <xs:enumeration value="Landscape_Artist" />
+      <xs:enumeration value="Lawyer" />
+      <xs:enumeration value="Lecturer" />
+      <xs:enumeration value="Legal_AdviserOfficerConsultant" />
+      <xs:enumeration value="Librarian" />
+      <xs:enumeration value="Life_Guard" />
+      <xs:enumeration value="Locksmith" />
+      <xs:enumeration value="Loss_Adjustor" />
+      <xs:enumeration value="Machine_Operator" />
+      <xs:enumeration value="Machinist" />
+      <xs:enumeration value="Manager_Office_Based" />
+      <xs:enumeration value="Managing_Director" />
+      <xs:enumeration value="Marketing_Staff_Office_Based" />
+      <xs:enumeration value="Masseur_Masseuse_International_Hotel_Health_Spa" />
+      <xs:enumeration value="Mechanic_without_Height_Involvement" />
+      <xs:enumeration value="Mechanic_with_Height_Involvement" />
+      <xs:enumeration value="Military_AdministrativeClerical_Functions_Not_Combat" />
+      <xs:enumeration value="Military_Air_Force" />
+      <xs:enumeration value="Military_Commando" />
+      <xs:enumeration value="Military_Naval_Diver_Frogman_no_bomb_disposaldemolition" />
+      <xs:enumeration value="Military_Naval_Diver_with_disposal" />
+      <xs:enumeration value="Minister_of_Religion" />
+      <xs:enumeration value="Motor_Cycle_Delivery_Rider" />
+      <xs:enumeration value="Motor_Vehicle_Dealer" />
+      <xs:enumeration value="Musician_Entertainer" />
+      <xs:enumeration value="National_Serviceman" />
+      <xs:enumeration value="News_Broadcaster" />
+      <xs:enumeration value="Nurse" />
+      <xs:enumeration value="Odd_Job_Labourer" />
+      <xs:enumeration value="Oil_Refinery_Admin_Personnel" />
+      <xs:enumeration value="Oil_Refinery_Worker_Offshore" />
+      <xs:enumeration value="Oil_Refinery_Worker_Inland" />
+      <xs:enumeration value="Optician" />
+      <xs:enumeration value="Optometrist" />
+      <xs:enumeration value="Packer" />
+      <xs:enumeration value="Painter_Indoor" />
+      <xs:enumeration value="Painter_External_use_scaffold_above_20_ft" />
+      <xs:enumeration value="Pastor" />
+      <xs:enumeration value="Pharmacist" />
+      <xs:enumeration value="Photographer_StudioIndoor" />
+      <xs:enumeration value="Photographer_Outdoor" />
+      <xs:enumeration value="Pilot_Commercial_Passenger" />
+      <xs:enumeration value="Pilot_Private_other_form_of_flying" />
+      <xs:enumeration value="Plumber" />
+      <xs:enumeration value="Policeman_Officer_Gurkha_Officer_excl_Traffic_Police_and_Mobile_Squad" />
+      <xs:enumeration value="Police_Mobile_Squad" />
+      <xs:enumeration value="Politician" />
+      <xs:enumeration value="Postman" />
+      <xs:enumeration value="President_Company" />
+      <xs:enumeration value="Principal_School" />
+      <xs:enumeration value="Prison_Officer_Warden" />
+      <xs:enumeration value="Promoter_Sales" />
+      <xs:enumeration value="Receptionist" />
+      <xs:enumeration value="Remisier" />
+      <xs:enumeration value="Renovation_Contractor" />
+      <xs:enumeration value="Reporter_local_no_flying_no_war_zone" />
+      <xs:enumeration value="Research_Development_Engineer" />
+      <xs:enumeration value="Retiree" />
+      <xs:enumeration value="Sales_Personnel_Outdoor" />
+      <xs:enumeration value="Seaman_Sailor" />
+      <xs:enumeration value="Seamstress" />
+      <xs:enumeration value="Secretary" />
+      <xs:enumeration value="Security_Guard_Armed" />
+      <xs:enumeration value="Security_Guard_Unarmed" />
+      <xs:enumeration value="Selfemployed_nonmanual_intensive" />
+      <xs:enumeration value="Shipping_Admin_Personnel" />
+      <xs:enumeration value="Shop_Assistant_Manager_Administrative" />
+      <xs:enumeration value="Singer_in_reputable_hotels_lounge" />
+      <xs:enumeration value="Social_Worker" />
+      <xs:enumeration value="Sole_Proprietor" />
+      <xs:enumeration value="Statistician" />
+      <xs:enumeration value="Store_Keeper" />
+      <xs:enumeration value="Student" />
+      <xs:enumeration value="Supervisor" />
+      <xs:enumeration value="Surgeon" />
+      <xs:enumeration value="Surveyor" />
+      <xs:enumeration value="Tailor" />
+      <xs:enumeration value="Teacher_Academic" />
+      <xs:enumeration value="Teacher_PE_full_time" />
+      <xs:enumeration value="Technical_Officer_Admin" />
+      <xs:enumeration value="Technician_Qualified" />
+      <xs:enumeration value="Telephone_Operator" />
+      <xs:enumeration value="Telemarketeer" />
+      <xs:enumeration value="Tour_Guide" />
+      <xs:enumeration value="Traffic_Police" />
+      <xs:enumeration value="Tutor_Private" />
+      <xs:enumeration value="Typist" />
+      <xs:enumeration value="Underwriter" />
+      <xs:enumeration value="Unemployed" />
+      <xs:enumeration value="Veterinary_Surgeon" />
+      <xs:enumeration value="Waiter_Waitress" />
+      <xs:enumeration value="Welder_Not_underwateroilgas_no_height_involvement" />
+      <xs:enumeration value="Window_Cleaner_above_20_ft" />
+      <xs:enumeration value="Zoo_Keeper" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Person.Occupation" nillable="true" type="tns:Person.Occupation" />
+  <xs:complexType name="Distributor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="repNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stereotypeId" type="tns:DistributorStereotype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Distributor" nillable="true" type="tns:Distributor" />
+  <xs:simpleType name="DistributorStereotype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Agency">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bank">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExpatFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LocalFA">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DistributorStereotype" nillable="true" type="tns:DistributorStereotype" />
+  <xs:complexType name="ArrayOfFund">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Fund" nillable="true" type="tns:Fund" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFund" nillable="true" type="tns:ArrayOfFund" />
+  <xs:complexType name="Fund">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="allocation" type="xs:float" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="specificationIds" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fund" nillable="true" type="tns:Fund" />
+  <xs:simpleType name="NewBusinessInvocationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewQuote" />
+      <xs:enumeration value="ExistingQuote" />
+      <xs:enumeration value="CloneQuote" />
+      <xs:enumeration value="DeleteQuote" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NewBusinessInvocationType" nillable="true" type="tns:NewBusinessInvocationType" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="locale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="privileges" nillable="true" type="tns:ArrayOfUserPrivilege" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roles" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfUserPrivilege">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserPrivilege" type="tns:UserPrivilege" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserPrivilege" nillable="true" type="tns:ArrayOfUserPrivilege" />
+  <xs:simpleType name="UserPrivilege">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="addExtraMortality" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserPrivilege" nillable="true" type="tns:UserPrivilege" />
+  <xs:complexType name="NewBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applicant" nillable="true" type="tns:Person" />
+      <xs:element minOccurs="0" name="caseId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="funds" nillable="true" type="tns:ArrayOfFund" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="livesAssured" nillable="true" type="tns:ArrayOfPerson" />
+      <xs:element minOccurs="0" name="premium" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productType" nillable="true" type="tns:ProductType" />
+      <xs:element minOccurs="0" name="signatories" nillable="true" type="tns:ArrayOfSignatory" />
+      <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="tns:NewBusinessStatus" />
+      <xs:element minOccurs="0" name="sumAssured" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewBusiness" nillable="true" type="tns:NewBusiness" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="ProductType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="specificationIds" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductType" nillable="true" type="tns:ProductType" />
+  <xs:complexType name="ArrayOfSignatory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Signatory" nillable="true" type="tns:Signatory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSignatory" nillable="true" type="tns:ArrayOfSignatory" />
+  <xs:complexType name="Signatory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="role" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Signatory" nillable="true" type="tns:Signatory" />
+  <xs:simpleType name="NewBusinessStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewQuote" />
+      <xs:enumeration value="IncompleteQuote" />
+      <xs:enumeration value="ValidQuote" />
+      <xs:enumeration value="CompletedQuote" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NewBusinessStatus" nillable="true" type="tns:NewBusinessStatus" />
+  <xs:complexType name="QuoteResponseDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponseDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+          <xs:element minOccurs="0" name="Data" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:element ref="xs:schema" />
+                <xs:any />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QuoteResponseDataContract" nillable="true" type="tns:QuoteResponseDataContract" />
+  <xs:complexType name="RecommendationDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequestDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistributionChannelId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Flag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MyNextReviewDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MyRecommDataContract" nillable="true" type="tns:MyRecommendtionContractList" />
+          <xs:element minOccurs="0" name="MyRemarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutstandingNeeds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonForRecommendation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reasons" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecomId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecomdStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecommDataSheet" nillable="true" type="tns:RecommDataSheetContractList" />
+          <xs:element minOccurs="0" name="SubDistributionChannelId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecommendationDataContract" nillable="true" type="tns:RecommendationDataContract" />
+  <xs:complexType name="MyRecommendtionContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MyRecommendationDataContract" nillable="true" type="tns:MyRecommendationDataContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyRecommendtionContractList" nillable="true" type="tns:MyRecommendtionContractList" />
+  <xs:complexType name="MyRecommendationDataContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecLifeAssured" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecLifeAssuredId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecManuallyEntered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecNeeds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecNeedsId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecOwnerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecPremium" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecPremiumFreq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecPremiumFreqId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecProductTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecRider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecRiderId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecSumAssured" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecomId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MyRecommendationDataContract" nillable="true" type="tns:MyRecommendationDataContract" />
+  <xs:complexType name="RecommDataSheetContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecommDataSheetContract" nillable="true" type="tns:RecommDataSheetContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecommDataSheetContractList" nillable="true" type="tns:RecommDataSheetContractList" />
+  <xs:complexType name="RecommDataSheetContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecAnswer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecAnswerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecQuestionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Recomdid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecommDataSheetContract" nillable="true" type="tns:RecommDataSheetContract" />
+  <xs:complexType name="RecommendationResponseDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponseDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFlag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Flag" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MyNextReviewDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MyRecommDataContract" nillable="true" type="tns:MyRecommendtionContractList" />
+          <xs:element minOccurs="0" name="MyRemarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutstandingNeeds" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonForRecommendation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reasons" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecDocument" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="RecLifeAssuredContract" nillable="true" type="tns:RecLifeAssuredContractList" />
+          <xs:element minOccurs="0" name="RecNeedsContract" nillable="true" type="tns:RecNeedsContractList" />
+          <xs:element minOccurs="0" name="RecOwnerContract" nillable="true" type="tns:RecOwnerContractList" />
+          <xs:element minOccurs="0" name="RecPremiumFrequency" nillable="true" type="tns:RecPremiumFrequencyList" />
+          <xs:element minOccurs="0" name="RecProductName" nillable="true" type="tns:RecProductNameContractList" />
+          <xs:element minOccurs="0" name="RecProductType" nillable="true" type="tns:RecProductTypeContractList" />
+          <xs:element minOccurs="0" name="RecomId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecomdStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecommDataSheet" nillable="true" type="tns:RecommDataSheetContractList" />
+          <xs:element minOccurs="0" name="RecommendationAnswers" nillable="true" type="tns:RecommAnsContractList" />
+          <xs:element minOccurs="0" name="RecommendationQuestions" nillable="true" type="tns:RecommQuesContractList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RecommendationResponseDataContract" nillable="true" type="tns:RecommendationResponseDataContract" />
+  <xs:complexType name="RecLifeAssuredContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecLifeAssuredContract" nillable="true" type="tns:RecLifeAssuredContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecLifeAssuredContractList" nillable="true" type="tns:RecLifeAssuredContractList" />
+  <xs:complexType name="RecLifeAssuredContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecLifeAssured" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecLifeAssuredId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecLifeAssuredContract" nillable="true" type="tns:RecLifeAssuredContract" />
+  <xs:complexType name="RecNeedsContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecNeedsContract" nillable="true" type="tns:RecNeedsContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecNeedsContractList" nillable="true" type="tns:RecNeedsContractList" />
+  <xs:complexType name="RecNeedsContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecNeeds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecNeedsId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecNeedsContract" nillable="true" type="tns:RecNeedsContract" />
+  <xs:complexType name="RecOwnerContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecOwnerContract" nillable="true" type="tns:RecOwnerContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecOwnerContractList" nillable="true" type="tns:RecOwnerContractList" />
+  <xs:complexType name="RecOwnerContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecOwner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecOwnerId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecOwnerContract" nillable="true" type="tns:RecOwnerContract" />
+  <xs:complexType name="RecPremiumFrequencyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecPremiumFrequencyContract" nillable="true" type="tns:RecPremiumFrequencyContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecPremiumFrequencyList" nillable="true" type="tns:RecPremiumFrequencyList" />
+  <xs:complexType name="RecPremiumFrequencyContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecPremiumFreqId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecPremiumFrequency" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecPremiumFrequencyContract" nillable="true" type="tns:RecPremiumFrequencyContract" />
+  <xs:complexType name="RecProductNameContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecProductNameContract" nillable="true" type="tns:RecProductNameContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecProductNameContractList" nillable="true" type="tns:RecProductNameContractList" />
+  <xs:complexType name="RecProductNameContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecProductRider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecRiderId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecProductNameContract" nillable="true" type="tns:RecProductNameContract" />
+  <xs:complexType name="RecProductTypeContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecProductTypeContract" nillable="true" type="tns:RecProductTypeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecProductTypeContractList" nillable="true" type="tns:RecProductTypeContractList" />
+  <xs:complexType name="RecProductTypeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecProductTypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecProductTypeContract" nillable="true" type="tns:RecProductTypeContract" />
+  <xs:complexType name="RecommAnsContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecommAnswersContract" nillable="true" type="tns:RecommAnswersContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecommAnsContractList" nillable="true" type="tns:RecommAnsContractList" />
+  <xs:complexType name="RecommAnswersContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecAnswerControl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecAnswerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecAnswerOrder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecAnswerValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecQuestionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecommAnswersContract" nillable="true" type="tns:RecommAnswersContract" />
+  <xs:complexType name="RecommQuesContractList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecommQuestionContract" nillable="true" type="tns:RecommQuestionContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecommQuesContractList" nillable="true" type="tns:RecommQuesContractList" />
+  <xs:complexType name="RecommQuestionContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecLocationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecQuestContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecQuestDispName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecQuestionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecommQuestionContract" nillable="true" type="tns:RecommQuestionContract" />
+  <xs:complexType name="ZPlanDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequestDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivityId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ByteArray" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FamilyDetails" nillable="true" type="tns:FamilyDetailsList" />
+          <xs:element minOccurs="0" name="FundsCollection" nillable="true" type="tns:FundCollectionList" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NricOrPassport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RedirectUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesPortalUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Smoker" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZPlanStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ZPlanDataContract" nillable="true" type="tns:ZPlanDataContract" />
+  <xs:complexType name="FamilyDetailsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FamilyDetails" nillable="true" type="tns:FamilyDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FamilyDetailsList" nillable="true" type="tns:FamilyDetailsList" />
+  <xs:complexType name="FamilyDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FamilyMember" type="xs:int" />
+      <xs:element minOccurs="0" name="MemberName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberRelation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FamilyDetails" nillable="true" type="tns:FamilyDetails" />
+  <xs:complexType name="FundCollectionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FundsCollection" nillable="true" type="tns:FundsCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FundCollectionList" nillable="true" type="tns:FundCollectionList" />
+  <xs:complexType name="FundsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fund" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FundAllocationAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FundAllocationPercentage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumFrequency" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FundsCollection" nillable="true" type="tns:FundsCollection" />
+  <xs:complexType name="ZPlanResponseDataContract">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponseDataContract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivityId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ByteArray" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="CaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClonedFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NricOrPassport" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RedirectUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesPortalUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Smoker" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZPlanStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ZPlanResponseDataContract" nillable="true" type="tns:ZPlanResponseDataContract" />
+  <xs:complexType name="ExceptionContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strActivity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAgentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strErrorType" type="tns:ErrorType" />
+      <xs:element minOccurs="0" name="strResultCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRole" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strSource" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strStackTrace" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element minOccurs="0" name="strUserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionContract" nillable="true" type="tns:ExceptionContract" />
+</xs:schema>

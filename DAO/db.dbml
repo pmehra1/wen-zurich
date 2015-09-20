@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="zurichdata" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.personalUseAssetsOthers" Member="personalUseAssetsOthers">
+    <Type Name="personalUseAssetsOther">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assetLiabilityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="assetDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="assetAndLiability_personalUseAssetsOther" Member="assetAndLiability" ThisKey="assetLiabilityId" OtherKey="id" Type="assetAndLiability" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.investedAssetOthers" Member="investedAssetOthers">
+    <Type Name="investedAssetOther">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assetLiabilityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="assetDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="assetAndLiability_investedAssetOther" Member="assetAndLiability" ThisKey="assetLiabilityId" OtherKey="id" Type="assetAndLiability" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.liabilityOthers" Member="liabilityOthers">
+    <Type Name="liabilityOther">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="assetLiabilityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="liabilityDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="assetAndLiability_liabilityOther" Member="assetAndLiability" ThisKey="assetLiabilityId" OtherKey="id" Type="assetAndLiability" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.existingassetsg" Member="existingassetsgs">
+    <Type Name="existingassetsg">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="asset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentvalue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="percentpa" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="savinggoalsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="savinggoal_existingassetsg" Member="savinggoal" ThisKey="savinggoalsid" OtherKey="id" Type="savinggoal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.familyNeedsAssets" Member="familyNeedsAssets">
+    <Type Name="familyNeedsAsset">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="familyNeedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="familyNeed_familyNeedsAsset" Member="familyNeed" ThisKey="familyNeedId" OtherKey="id" Type="familyNeed" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.myNeedsCriticalAssets" Member="myNeedsCriticalAssets">
+    <Type Name="myNeedsCriticalAsset">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="myNeedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="myNeed_myNeedsCriticalAsset" Member="myNeed" ThisKey="myNeedId" OtherKey="id" Type="myNeed" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.myNeedsDisabilityAssets" Member="myNeedsDisabilityAssets">
+    <Type Name="myNeedsDisabilityAsset">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="myNeedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="myNeed_myNeedsDisabilityAsset" Member="myNeed" ThisKey="myNeedId" OtherKey="id" Type="myNeed" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.assumption" Member="assumptions">
+    <Type Name="assumption">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="NVarChar(90)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="percentage" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.existingassetrg" Member="existingassetrgs">
+    <Type Name="existingassetrg">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="asset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentvalue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="percentpa" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="retirementgoalsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="retirementgoal_existingassetrg" Member="retirementgoal" ThisKey="retirementgoalsid" OtherKey="id" Type="retirementgoal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.countrycostofeducation" Member="countrycostofeducations">
+    <Type Name="countrycostofeducation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="costofeducation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="countrycostofeducation_educationgoal" Member="educationgoals" ThisKey="id" OtherKey="countryofstudyid" Type="educationgoal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.existingasseteg" Member="existingassetegs">
+    <Type Name="existingasseteg">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="asset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentvalue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="percentpa" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="educationgoalsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="educationgoal_existingasseteg" Member="educationgoal" ThisKey="educationgoalsid" OtherKey="id" Type="educationgoal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RiskProfileAnalysis" Member="RiskProfileAnalysis">
+    <Type Name="RiskProfileAnalysis">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="riskApetiteQuestion1option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion1option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion1option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion1option4" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion1option5" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion1option6" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion2option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion2option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion2option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion2option4" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion3option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion3option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion3option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion3option4" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion3option5" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion4option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion4option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskApetiteQuestion4option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion1option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion1option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion1option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion1option4" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion2option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion2option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion2option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion3option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion3option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion3option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion3option4" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion4option1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion4option2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion4option3" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="measuringRiskTakingAbilityQuestion4option4" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="agreeWithRiskProfileoption1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="agreeWithRiskProfileoption2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="riskProfileValue" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="riskProfileName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.incomeExpenseOthers" Member="incomeExpenseOthers">
+    <Type Name="incomeExpenseOther">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="incomeExpenseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sumAssured" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maturedValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="premium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="incomeExpense_incomeExpenseOther" Member="incomeExpense" ThisKey="incomeExpenseId" OtherKey="id" Type="incomeExpense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.activitystatus" Member="activitystatus">
+    <Type Name="activitystatus">
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="activity" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.activity" Member="activities">
+    <Type Name="activity">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="activity" Member="activity1" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.familyMemberDetails" Member="familyMemberDetails">
+    <Type Name="familyMemberDetail">
+      <Column Name="memberId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="personalDetailId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="occupation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="relationship" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dob" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yrstosupport" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="monthlyIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="personaldetail_familyMemberDetail" Member="personaldetail" ThisKey="personalDetailId" OtherKey="id" Type="personaldetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.myzurichadviser" Member="myzurichadvisers">
+    <Type Name="myzurichadviser">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="selectedoptionid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="selectedoptionothers" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.exceptionlog" Member="exceptionlogs">
+    <Type Name="exceptionlog">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="message" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="source" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="stacktrace" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="targetsitename" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.salesportalinfo" Member="salesportalinfos">
+    <Type Name="salesportalinfo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="activityid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="casestatus" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="userid" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="activitytype" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="redirecturl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="salesportalurl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="userfirstname" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="userlastname" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="roletype" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="usertype" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="saleschannel" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.clonemappingids" Member="clonemappingids">
+    <Type Name="clonemappingid">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clonedfrom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="newid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.insuranceArrangementSaving" Member="insuranceArrangementSavings">
+    <Type Name="insuranceArrangementSaving">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="policyOwnerName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contribution" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="term" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fundValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="natureOfPlan" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="incomeExpenseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="frequency" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="incomeExpense_insuranceArrangementSaving" Member="incomeExpense" ThisKey="incomeExpenseId" OtherKey="id" Type="incomeExpense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.insuranceArrangementRetirement" Member="insuranceArrangementRetirements">
+    <Type Name="insuranceArrangementRetirement">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="policyOwnerName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contribution" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maturityDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="projectedLumpSumMaturity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="projectedIncomeMaturity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="incomeExpenseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="frequency" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="incomeExpense_insuranceArrangementRetirement" Member="incomeExpense" ThisKey="incomeExpenseId" OtherKey="id" Type="incomeExpense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.insuranceArrangementEducation" Member="insuranceArrangementEducations">
+    <Type Name="insuranceArrangementEducation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="policyOwnerName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contribution" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maturityDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="projectedLumpSumMaturity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="projectedIncomeMaturity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="incomeExpenseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="frequency" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="incomeExpense_insuranceArrangementEducation" Member="incomeExpense" ThisKey="incomeExpenseId" OtherKey="id" Type="incomeExpense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.myNeeds" Member="myNeeds">
+    <Type Name="myNeed">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lumpSumRequiredForTreatment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="criticalIllnessInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingAssetsMyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalShortfallSurplusMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lumpSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlyIncomeDisabilityIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="percentOfIncomeCoverageRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlyCoverageRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityInsuranceMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingAssetsMyneedsDisability" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallSurplusMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlyAmountMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="typeOfHospitalCoverage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="anyExistingPlans" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="typeOfRoomCoverage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="coverageOldageYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epOldageYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageIncomeYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epIncomeYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageOutpatientYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epOutpatientYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageDentalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epDentalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coveragePersonalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epPersonalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="detailsOfExistingPlans" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="replacementIncomePercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yearsOfSupportRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflatedAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replacementAmountRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="txtExistingAssetsFamilyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityProtectionReplacementIncomeRequiredPercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityProtectionReplacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityYearsOfSupport" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityReplacementAmountRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingPlansDetail" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="criticalIllnessPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="disabilityPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hospitalmedCoverNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accidentalhealthCoverNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="myNeed_myNeedsCriticalAsset" Member="myNeedsCriticalAssets" ThisKey="id" OtherKey="myNeedId" Type="myNeedsCriticalAsset" />
+      <Association Name="myNeed_myNeedsDisabilityAsset" Member="myNeedsDisabilityAssets" ThisKey="id" OtherKey="myNeedId" Type="myNeedsDisabilityAsset" />
+    </Type>
+  </Table>
+  <Table Name="dbo.savinggoals" Member="savinggoals">
+    <Type Name="savinggoal">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="goal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yrstoaccumulate" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="amtneededfv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maturityvalue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="total" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="regularannualcontrib" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="existingassetstotal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationrate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="savingGoalNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="savinggoal_existingassetsg" Member="existingassetsgs" ThisKey="id" OtherKey="savinggoalsid" Type="existingassetsg" />
+    </Type>
+  </Table>
+  <Table Name="dbo.personaldetails" Member="personaldetails">
+    <Type Name="personaldetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="titleothers" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="nric" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="nationality" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nationalityothers" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="datepicker" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maritalstatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="issmoker" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="employmentstatus" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="occupation" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="companyname" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="contactnumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contactnumberfax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contactnumberhp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contactnumberoffice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="educationlevel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="medicalcondition" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="medicalconditiondetails" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="nominee" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="will" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="surname" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="familyDetailsRequired" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="spokenLanguage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="spokenLanguageOtherstxt" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="writtenLanguage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="writtenLanguageOtherstxt" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="accompanyQuestion" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="trustedIndividualName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="clientRelationship" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="NRICAccompany" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="noAccompaniedIndividualReason" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="personaldetail_familyMemberDetail" Member="familyMemberDetails" ThisKey="id" OtherKey="personalDetailId" Type="familyMemberDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.priorityDetails" Member="priorityDetails">
+    <Type Name="priorityDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="protection1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="protection2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="protection3" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="savings1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="savings2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="savings3" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="protection4" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="protection5" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.educationgoals" Member="educationgoals">
+    <Type Name="educationgoal">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nameofchild" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="currentage" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="agefundsneeded" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="noofyrstosave" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="countryofstudyid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maturityvalue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="total" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="existingassetstotal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="futurecost" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="presentcost" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationrate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="educationGoalNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="educationgoal_existingasseteg" Member="existingassetegs" ThisKey="id" OtherKey="educationgoalsid" Type="existingasseteg" />
+      <Association Name="countrycostofeducation_educationgoal" Member="countrycostofeducation" ThisKey="countryofstudyid" OtherKey="id" Type="countrycostofeducation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.assetAndLiability" Member="assetAndLiabilities">
+    <Type Name="assetAndLiability">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="bankAcctCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cpfoaBal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cpfsaBal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="srsBal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="stocksSharesCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="stocksSharesCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="unitTrustsCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="unitTrustsCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ilpCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ilpCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="srsInvCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="invPropCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="invPropCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="resPropCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="resPropCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="homeMortgage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vehicleLoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cashLoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="creditCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="netWorth" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="regularSumCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lumpSumCash" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="regularSumCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lumpSumCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="submissionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cpfMediSaveBalance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="assetAndLiabilityNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="assetAndLiabilityNotNeededReason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="premiumRecomendedNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="assetIncomePercent" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Association Name="assetAndLiability_personalUseAssetsOther" Member="personalUseAssetsOthers" ThisKey="id" OtherKey="assetLiabilityId" Type="personalUseAssetsOther" />
+      <Association Name="assetAndLiability_investedAssetOther" Member="investedAssetOthers" ThisKey="id" OtherKey="assetLiabilityId" Type="investedAssetOther" />
+      <Association Name="assetAndLiability_liabilityOther" Member="liabilityOthers" ThisKey="id" OtherKey="assetLiabilityId" Type="liabilityOther" />
+    </Type>
+  </Table>
+  <Table Name="dbo.retirementgoals" Member="retirementgoals">
+    <Type Name="retirementgoal">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseid" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="intendedretirementage" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="incomerequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yrstoretirement" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="futureincome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sourcesofincome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalfirstyrincome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="durationretirement" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="lumpsumrequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maturityvalue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="total" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="selforspouse" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="existingassetstotal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationrate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationreturnrate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="retirementGoalNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="retirementgoal_existingassetrg" Member="existingassetrgs" ThisKey="id" OtherKey="retirementgoalsid" Type="existingassetrg" />
+    </Type>
+  </Table>
+  <Table Name="dbo.familyNeeds" Member="familyNeeds">
+    <Type Name="familyNeed">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="replacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yearsOfSupportRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lumpSumRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="otherLiabilities" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="emergencyFundsNeeded" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="finalExpenses" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="otherFundingNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="otherComments" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingLifeInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingAssetsFamilyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalShortfallSurplus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lumpSumRequiredChart" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingSumRequiredChart" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallSumRequiredChart" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationAdjustedReturnsGraph" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yearsOfSupportRequiredGraph" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replacementIncomeChart" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageProtectionOutstanding" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageProtectionInsurances" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageProtectionTotal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageLoan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageShortfall" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replacementIncomePercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="familyIncPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mortgageNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="familyNeed_familyNeedsAsset" Member="familyNeedsAssets" ThisKey="id" OtherKey="familyNeedId" Type="familyNeedsAsset" />
+    </Type>
+  </Table>
+  <Table Name="dbo.incomeExpense" Member="incomeExpenses">
+    <Type Name="incomeExpense">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emergencyFundsNeeded" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortTermGoals" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="extraDetails" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="netMonthlyIncomeAfterCpf" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="netMonthlyExpenses" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlySavings" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lifeInsuranceSA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lifeInsuranceMV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lifeInsurancePremium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lifeInsuranceRemarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="tpdcSA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tpdcMV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tpdcPremium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tpdcRemarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="criticalIllnessSA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="criticalIllnessMV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="criticalIllnessPremium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="criticalIllnessRemarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="disabilityIncomeSA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityIncomeMV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityIncomePremium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityIncomeRemarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="mortgageSA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageMV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgagePremium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mortgageRemarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="others1A" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others1V" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others1Premium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others1Remarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="others2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others2A" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others2V" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="expiry7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others2Premium" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="others2Remarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DeathTermInsuranceSA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DeathWholeLifeInsuranceSA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DeathTermInsuranceTerm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DeathWholeLifeInsuranceTerm" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DeathTermInsurancePremium" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DeathWholeLifeInsurancePremium" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="otherSourcesOfIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="incomeExpenseNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="incomeExpenseNotNeededReason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="assecertainingAffordabilityEnable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="assecertainingAffordabilityReason" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Association Name="incomeExpense_incomeExpenseOther" Member="incomeExpenseOthers" ThisKey="id" OtherKey="incomeExpenseId" Type="incomeExpenseOther" />
+      <Association Name="incomeExpense_insuranceArrangementSaving" Member="insuranceArrangementSavings" ThisKey="id" OtherKey="incomeExpenseId" Type="insuranceArrangementSaving" />
+      <Association Name="incomeExpense_insuranceArrangementRetirement" Member="insuranceArrangementRetirements" ThisKey="id" OtherKey="incomeExpenseId" Type="insuranceArrangementRetirement" />
+      <Association Name="incomeExpense_insuranceArrangementEducation" Member="insuranceArrangementEducations" ThisKey="id" OtherKey="incomeExpenseId" Type="insuranceArrangementEducation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CkaAssessment" Member="CkaAssessments">
+    <Type Name="CkaAssessment">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="agreeCKA" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="disagreeCKA" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="financeRelatedKnowledgeOption1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="financeRelatedKnowledgeOption2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="investmentExperienceOption1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="investmentExperienceOption2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="workingExperienceOption1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="workingExperienceOption2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="educationalExperienceOption1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="educationalExperienceOption2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="csaOutcomeOption1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="csaOutcomeOption2" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="caseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="investmentExperienceList" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="workingExperienceList" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="educationalExperienceList" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

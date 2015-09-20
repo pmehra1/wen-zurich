@@ -1,0 +1,13 @@
+USE [FNA]
+GO
+
+delete from fund_risk_profile_mapping
+where id in (27, 32)
+
+update fund_lkp
+set asset_id = 6
+where id = 11
+
+
+delete from asset_allocation_mapping
+where id in (19, 29, 39, 49, 109, 119, 69)

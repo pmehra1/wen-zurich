@@ -1,0 +1,364 @@
+use FNA
+go
+
+/* my needs table updates */
+
+alter table myNeeds add criticalIllnessPrNeeded int default 2
+go
+alter table myNeeds add disabilityPrNeeded int default 2
+go
+alter table myNeeds add hospitalmedCoverNeeded int default 2
+go
+alter table myNeeds add accidentalhealthCoverNeeded int default 2
+go
+
+update myNeeds set criticalIllnessPrNeeded = 2
+go
+update myNeeds set disabilityPrNeeded = 2
+go
+update myNeeds set hospitalmedCoverNeeded = 2
+go
+update myNeeds set accidentalhealthCoverNeeded = 2
+go
+
+
+/* saving goals table updates */
+
+alter table savinggoals add savingGoalNeeded int default 2
+go
+update savinggoals set savingGoalNeeded = 2
+go
+
+
+/* education goals table updates */
+
+alter table educationgoals add educationGoalNeeded int default 2
+go
+update educationgoals set educationGoalNeeded = 2
+go
+
+
+/* retirement goals table updates */
+
+alter table retirementgoals add retirementGoalNeeded int default 2
+go
+update retirementgoals set retirementGoalNeeded = 2
+go
+
+
+/* personal details updates */
+
+ALTER TABLE personaldetails
+ADD familyDetailsRequired nvarchar(5) NULL,
+spokenLanguage nvarchar(50) NULL,
+spokenLanguageOtherstxt nvarchar(500) NULL,
+writtenLanguage nvarchar(50) NULL,
+writtenLanguageOtherstxt nvarchar(500) NULL,
+accompanyQuestion nvarchar(5) NULL,
+trustedIndividualName nvarchar(500) NULL,
+clientRelationship nvarchar(500) NULL,
+NRICAccompany nvarchar(50) NULL,
+noAccompaniedIndividualReason nvarchar(1000) NULL;
+
+
+/* priority details updates */
+ALTER TABLE dbo.priorityDetails
+ADD protection5 nchar(10) NULL
+
+GO
+
+/* my gaps updates */
+
+ALTER PROCEDURE [dbo].[sp_getGapSummary]    
+@CaseId nvarchar(50)
+AS
+BEGIN
+ 
+DECLARE @FIP AS NVARCHAR(10)
+DECLARE @MORTGAGEPTN AS NVARCHAR(10)
+DECLARE @CRITICALILLNESS AS NVARCHAR(10)
+DECLARE @DISABILITYPTN AS NVARCHAR(10)
+DECLARE @SAVINGGOAL AS NVARCHAR(10)
+DECLARE @CHILDEDUGOAL AS NVARCHAR(10)
+DECLARE @RETIREMENTGOAL AS NVARCHAR(10)
+DECLARE @HOSPITALIZATION AS NVARCHAR(10)
+
+IF EXISTS (SELECT ID FROM priorityDetails where caseid = @CaseId)
+BEGIN
+	SELECT @FIP = ISNULL(pd.protection3, ''),
+	@MORTGAGEPTN = ISNULL(pd.protection1, ''),
+	@CRITICALILLNESS = ISNULL(pd.protection2, ''),
+	@DISABILITYPTN = ISNULL(pd.protection4, ''),
+	@SAVINGGOAL = ISNULL(savings3, ''),
+	@CHILDEDUGOAL = ISNULL(pd.savings2, ''),
+	@RETIREMENTGOAL = ISNULL(pd.savings1, ''),
+	@HOSPITALIZATION = ISNULL(pd.protection5, '')
+	FROM priorityDetails pd
+	WHERE caseid = @CaseId
+END
+ELSE
+BEGIN
+	SET @FIP = ''
+	SET @MORTGAGEPTN = ''
+	SET @CRITICALILLNESS = ''
+	SET @DISABILITYPTN = ''
+	SET @SAVINGGOAL =  ''
+	SET @CHILDEDUGOAL =  ''
+	SET @RETIREMENTGOAL =  ''
+	SET @HOSPITALIZATION = ''
+END
+
+PRINT @FIP
+PRINT @MORTGAGEPTN
+PRINT @CRITICALILLNESS
+PRINT @DISABILITYPTN
+PRINT @SAVINGGOAL
+PRINT @CHILDEDUGOAL
+PRINT @RETIREMENTGOAL
+PRINT @HOSPITALIZATION
+
+DECLARE @GAPSUMMARYTABLE AS TABLE(
+	Id INT,
+	gapSummaryTypeId INT,
+	Title NVARCHAR(3000),
+	Needs NVARCHAR(3000),
+	AmountRequired NVARCHAR(50),
+	ExistingArrangements NVARCHAR(50),
+	CurrentShortfall NVARCHAR(50),
+	MyPriorities NVARCHAR(100)
+)
+
+--PROTECTION GOALS (FAMILY NEEDS)  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ fn.id as Id,  
+ 1 AS gapSummaryTypeId,  
+ 'PROTECTION' AS Title,   
+ 'Family Income Protection' Needs,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fn.totalRequired))) AS AmountRequired,
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fn.existingLifeInsurance)) + SUM(convert(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fnea.presentValue)))) AS ExistingArrangements, 
+ CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fn.totalShortfallSurplus)) AS CurrentShortfall,   
+ @FIP AS MyPriorities  
+ FROM familyNeeds fn   
+  LEFT OUTER JOIN familyNeedsAssets fnea ON fn.id = fnea.familyNeedId    
+   WHERE fn.id = (SELECT MAX(id) FROM familyNeeds WHERE caseId = @CaseId)  
+   GROUP BY fn.id, fn.totalRequired, fn.existingLifeInsurance, fn.totalShortfallSurplus
+
+   
+ --PROTECTION GOALS (MORTGAGE PROTECTION)  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ fn.id as Id,  
+ 2 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Mortgage Protection' Needs,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fn.mortgageProtectionOutstanding))) AS AmountRequired,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fn.mortgageProtectionInsurances))) AS ExistingArrangements,   
+ CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(fn.mortgageProtectionTotal)) AS CurrentShortfall,   
+ @MORTGAGEPTN AS MyPriorities  
+ FROM familyNeeds fn
+  WHERE fn.id = (SELECT MAX(id) FROM familyNeeds WHERE caseId = @CaseId)
+   
+ --PROTECTION GOALS (CRITICAL ILLNESS)  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ mn.id as Id,  
+ 3 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Critical Illness' Needs,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mn.totalRequired))) AS AmountRequired,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mn.criticalIllnessInsurance)) + SUM(CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mnea.presentValue)))) AS ExistingArrangements,     
+ CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mn.totalShortfallSurplusMyNeeds)) AS CurrentShortfall,   
+ @CRITICALILLNESS AS MyPriorities  
+ FROM myNeeds mn   
+  LEFT OUTER JOIN myNeedsCriticalAssets mnea ON mn.id = mnea.myNeedId     
+  WHERE mn.id = (SELECT MAX(id) FROM myNeeds WHERE caseId = @CaseId)  
+  GROUP BY mn.id, mn.totalRequired, mn.criticalIllnessInsurance, mn.totalShortfallSurplusMyNeeds
+   
+ --PROTECTION GOALS (DISABILITY PROTECTION)  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ mn.id as Id,  
+ 4 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Disability Protection' Needs,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mn.disabilityReplacementAmountRequired))) AS AmountRequired,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mn.disabilityInsurance)) + SUM(CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mnda.presentValue))))  AS ExistingArrangements,   
+ CONVERT(DECIMAL(25, 2), dbo.ConvertEmptyToZero(mn.shortfallSurplusMyNeeds)) AS CurrentShortfall,   
+ @DISABILITYPTN AS MyPriorities  
+ FROM myNeeds mn   
+  LEFT OUTER JOIN myNeedsDisabilityAssets mnda ON mn.id = mnda.myNeedId    
+  WHERE mn.id = (SELECT MAX(id) FROM myNeeds WHERE caseId = @CaseId)      
+  GROUP BY mn.id, mn.disabilityReplacementAmountRequired, mn.disabilityInsurance, mn.shortfallSurplusMyNeeds
+   
+ --PROTECTION GOALS (HOSPITALIZATION)  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ mn.id as Id,  
+ 5 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Hospitalization - Type of Hospital' Needs,   
+ CONVERT(VARCHAR(20), mn.typeOfHospitalCoverage) AS AmountRequired,   
+ CASE   
+  WHEN mn.anyExistingPlans = 1 THEN 'YES'  
+  ELSE  
+  'NO'  
+ END AS ExistingArrangements,   
+ '' AS CurrentShortfall,   
+ @HOSPITALIZATION AS MyPriorities  
+ FROM myNeeds mn 
+  WHERE mn.id = (select MAX(id) from myNeeds where caseId = @CaseId)      
+   
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ mn.id as Id,  
+ 6 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Hospitalization - Type Of Room' Needs,   
+ CONVERT(VARCHAR(20), mn.typeOfRoomCoverage) + ' Bed' AS AmountRequired,   
+ CONVERT(VARCHAR(20), '') AS ExistingArrangements,   
+ '' AS CurrentShortfall,   
+ @HOSPITALIZATION AS MyPriorities  
+ FROM myNeeds mn    
+ WHERE mn.id = (select MAX(id) from myNeeds where caseId = @CaseId)
+   
+ --SAVING GOALS  
+ INSERT INTO @GAPSUMMARYTABLE     
+ SELECT   
+ sg.id as Id,  
+ 7 AS gapSummaryTypeId,  
+ 'SAVINGS' AS Title,   
+ 'Goal ' + convert(varchar(10), row_number () over (order by sg.id)) + ' : ' + ISNULL(sg.goal, '') as Needs,
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.amtneededfv))) AS AmountRequired,
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.existingassetstotal)) + CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.maturityvalue))) AS ExistingArrangements,
+ CASE WHEN ((CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.existingassetstotal)) + CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.maturityvalue))) > CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.amtneededfv))) THEN
+	CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.total))
+ ELSE
+	(-1) * CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(sg.total))
+ END AS CurrentShortfall,
+ @SAVINGGOAL AS MyPriorities  
+ FROM savinggoals sg     
+ WHERE sg.caseid = @CaseId
+ AND deleted = 0    
+   
+ --EDUCATION GOALS  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ eg.id as Id,  
+ 8 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Child''s Education ' /*+ convert(varchar(10), row_number () over (order by eg.nameofchild)) */ + ' - ' + eg.nameofchild as Needs,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.futurecost))) AS AmountRequired,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.existingassetstotal)) + CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.maturityvalue))) AS ExistingArrangements,   
+ CASE WHEN ((CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.existingassetstotal)) + CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.maturityvalue))) > CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.futurecost))) THEN 
+	CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.total))
+ ELSE
+	(-1) * CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(eg.total)) 
+ END AS CurrentShortfall,   
+ @CHILDEDUGOAL AS MyPriorities  
+ FROM educationgoals eg     
+ WHERE eg.caseid = @CaseId
+ AND deleted = 0 
+    
+ --RETIREMENT GOALS  
+ INSERT INTO @GAPSUMMARYTABLE  
+ SELECT   
+ rg.id as Id,  
+ 9 AS gapSummaryTypeId,  
+ '' AS Title,   
+ 'Retirement '/* + convert(varchar(10), row_number() over (order by rg.id))*/ Needs,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.lumpsumrequired))) AS AmountRequired,   
+ CONVERT(VARCHAR(20), CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.existingassetstotal)) + CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.maturityvalue))) AS ExistingArrangements,   
+ CASE WHEN ((CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.existingassetstotal)) + CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.maturityvalue))) > CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.lumpsumrequired))) THEN 
+	CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.total))
+ ELSE
+	(-1) * CONVERT(DECIMAL(25,2), dbo.ConvertEmptyToZero(rg.total))
+ END AS CurrentShortfall,    
+ @RETIREMENTGOAL AS MyPriorities  
+ FROM retirementgoals rg    
+ WHERE rg.caseid = @CaseId
+  
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 1)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 1, 'PROTECTION', 'Family Income Protection', '', '', '', '')
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 2)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 2, '', 'Mortgage Protection', '', '', '', '')
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 3)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 3, '', 'Critical Illness', '', '', '', '')
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 4)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 4, '', 'Disability Protection', '', '', '', '')	
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 5)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 5, '', 'Hospitalization - Type of Hospital', '', '', '', '')	
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 6)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 6, '', 'Hospitalization - Type Of Room', '', '', '', '')	
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 7)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 7, 'SAVINGS', 'Goal 1', '', '', '', '')	
+  END  
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 8)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 8, '', 'Child ''s Education', '', '', '', '')	
+  END
+  IF NOT EXISTS (SELECT ID FROM @GAPSUMMARYTABLE WHERE gapSummaryTypeId = 9)
+  BEGIN
+	INSERT INTO @GAPSUMMARYTABLE VALUES (0, 9, '', 'Retirement', '', '', '', '')	
+  END
+  
+  SELECT Id, 
+	 	 gapSummaryTypeId, 
+		 Title, 
+		 Needs, 
+	     AmountRequired, 
+	     ExistingArrangements, 
+	     CurrentShortfall, 
+	     MyPriorities 
+  FROM @GAPSUMMARYTABLE
+  ORDER BY gapSummaryTypeId
+END
+
+
+/* income expense updates */
+alter table incomeExpense add incomeExpenseNeeded int default 0
+go
+alter table incomeExpense add incomeExpenseNotNeededReason nvarchar(200)
+go
+update incomeExpense set incomeExpenseNeeded = 0
+go
+
+
+/* asset liability */
+alter table assetAndLiability add assetAndLiabilityNeeded int default 0
+go
+update assetAndLiability set assetAndLiabilityNeeded = 0
+go
+alter table assetAndLiability add assetAndLiabilityNotNeededReason nvarchar(200) default ''
+go
+
+alter table assetAndLiability add premiumRecomendedNeeded int default 0
+go
+update assetAndLiability set premiumRecomendedNeeded = 0
+go
+alter table assetAndLiability add assetIncomePercent nvarchar(4) default ''
+go
+
+
+/* family needs */
+alter table familyNeeds add familyIncPrNeeded int default 2
+go
+alter table familyNeeds add mortgageNeeded int default 2
+go
+update familyNeeds set familyIncPrNeeded = 2
+go
+update familyNeeds set mortgageNeeded = 2
+go

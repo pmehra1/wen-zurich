@@ -1,0 +1,7 @@
+/******19/08/2012******/
+
+alter table personaldetails add surname nvarchar(50)
+
+update activity set activity='protectiongoalfamily' where id=5
+
+insert into activity values ('protectiongoalmyneeds')

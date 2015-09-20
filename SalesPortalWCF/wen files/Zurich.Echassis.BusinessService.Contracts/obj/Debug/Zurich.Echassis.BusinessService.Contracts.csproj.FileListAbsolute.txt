@@ -1,0 +1,15 @@
+G:\LatestSolution\Zurich.Echassis.BusinessService.Contracts\bin\Debug\Zurich.Echassis.BusinessService.Contracts.dll
+G:\LatestSolution\Zurich.Echassis.BusinessService.Contracts\bin\Debug\Zurich.Echassis.BusinessService.Contracts.pdb
+G:\LatestSolution\Zurich.Echassis.BusinessService.Contracts\obj\Debug\ResolveAssemblyReference.cache
+G:\LatestSolution\Zurich.Echassis.BusinessService.Contracts\obj\Debug\Zurich.Echassis.BusinessService.Contracts.dll
+G:\LatestSolution\Zurich.Echassis.BusinessService.Contracts\obj\Debug\Zurich.Echassis.BusinessService.Contracts.pdb
+C:\Users\Administrator\Desktop\eChassisBusinessService15July2012\wen files\Zurich.Echassis.BusinessService.Contracts\bin\Debug\Zurich.Echassis.BusinessService.Contracts.dll
+C:\Users\Administrator\Desktop\eChassisBusinessService15July2012\wen files\Zurich.Echassis.BusinessService.Contracts\bin\Debug\Zurich.Echassis.BusinessService.Contracts.pdb
+C:\Users\Administrator\Desktop\eChassisBusinessService15July2012\wen files\Zurich.Echassis.BusinessService.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\eChassisBusinessService15July2012\wen files\Zurich.Echassis.BusinessService.Contracts\obj\Debug\Zurich.Echassis.BusinessService.Contracts.dll
+C:\Users\Administrator\Desktop\eChassisBusinessService15July2012\wen files\Zurich.Echassis.BusinessService.Contracts\obj\Debug\Zurich.Echassis.BusinessService.Contracts.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\SalesPortalWCF\wen files\Zurich.Echassis.BusinessService.Contracts\bin\Debug\Zurich.Echassis.BusinessService.Contracts.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\SalesPortalWCF\wen files\Zurich.Echassis.BusinessService.Contracts\bin\Debug\Zurich.Echassis.BusinessService.Contracts.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\SalesPortalWCF\wen files\Zurich.Echassis.BusinessService.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\SalesPortalWCF\wen files\Zurich.Echassis.BusinessService.Contracts\obj\Debug\Zurich.Echassis.BusinessService.Contracts.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\SalesPortalWCF\wen files\Zurich.Echassis.BusinessService.Contracts\obj\Debug\Zurich.Echassis.BusinessService.Contracts.pdb

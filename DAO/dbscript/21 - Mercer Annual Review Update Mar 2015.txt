@@ -1,0 +1,310 @@
+USE [FNA]
+GO
+
+delete  from fund_risk_profile_mapping where id=13
+
+go
+
+delete  from fund_risk_profile_mapping where id in (14,33)
+
+go
+
+delete  from fund_risk_profile_mapping where id in (16)
+
+go
+
+update fund_risk_profile_mapping set allocation_type_id=5 where id in(24,2)
+
+go
+
+update fund_risk_profile_mapping set allocation_type_id=5 where id in(12)
+
+go
+
+
+
+update asset_allocation_mapping set percentage=48,per=48 
+where asset_id=1 and risk_profile_id=1 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=23,per=23 
+where asset_id=2 and risk_profile_id=1 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=4 and risk_profile_id=1 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=19,per=19 
+where asset_id=5 and risk_profile_id=1 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=7,per=7 
+where asset_id=7 and risk_profile_id=1 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=44,per=44 
+where asset_id=1 and risk_profile_id=2 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=16,per=16 
+where asset_id=2 and risk_profile_id=2 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=4 and risk_profile_id=2 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=23,per=23 
+where asset_id=5 and risk_profile_id=2 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=14,per=14 
+where asset_id=7 and risk_profile_id=2 and allocation_type_id=1
+
+go
+
+
+
+
+update asset_allocation_mapping set percentage=28,per=28 
+where asset_id=1 and risk_profile_id=3 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=16,per=16 
+where asset_id=2 and risk_profile_id=3 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=3 and risk_profile_id=3 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=6,per=6 
+where asset_id=4 and risk_profile_id=3 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=32,per=32 
+where asset_id=5 and risk_profile_id=3 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=15,per=15 
+where asset_id=7 and risk_profile_id=3 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=24,per=24 
+where asset_id=1 and risk_profile_id=4 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=8,per=8 
+where asset_id=2 and risk_profile_id=4 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=4,per=4 
+where asset_id=3 and risk_profile_id=4 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=4,per=4 
+where asset_id=4 and risk_profile_id=4 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=34,per=34 
+where asset_id=5 and risk_profile_id=4 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=26,per=26 
+where asset_id=7 and risk_profile_id=4 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=14,per=14 
+where asset_id=1 and risk_profile_id=5 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=2 and risk_profile_id=5 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=3 and risk_profile_id=5 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=10,per=10 
+where asset_id=4 and risk_profile_id=5 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=40,per=40 
+where asset_id=5 and risk_profile_id=5 and allocation_type_id=1
+
+go
+
+update asset_allocation_mapping set percentage=30,per=30 
+where asset_id=7 and risk_profile_id=5 and allocation_type_id=1
+
+go
+
+
+-- Non Core Assets
+
+update asset_allocation_mapping set percentage=48,per=48 
+where asset_id=1 and risk_profile_id=1 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=23,per=23 
+where asset_id=2 and risk_profile_id=1 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=4 and risk_profile_id=1 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=18,per=18 
+where asset_id=5 and risk_profile_id=1 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=5,per=5 
+where asset_id=6 and risk_profile_id=1 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=7 and risk_profile_id=1 and allocation_type_id=6
+
+go
+
+
+
+
+update asset_allocation_mapping set percentage=44,per=44 
+where asset_id=1 and risk_profile_id=2 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=16,per=16 
+where asset_id=2 and risk_profile_id=2 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=4 and risk_profile_id=2 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=22,per=22 
+where asset_id=5 and risk_profile_id=2 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=10,per=10 
+where asset_id=6 and risk_profile_id=2 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=5,per=5 
+where asset_id=7 and risk_profile_id=2 and allocation_type_id=6
+
+go
+
+
+
+update asset_allocation_mapping set percentage=28,per=28 
+where asset_id=1 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=16,per=16 
+where asset_id=2 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=3 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=5,per=5 
+where asset_id=4 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=31,per=31 
+where asset_id=5 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=13,per=13 
+where asset_id=6 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=4,per=4 
+where asset_id=7 and risk_profile_id=3 and allocation_type_id=6
+
+go
+
+
+
+
+
+
+update asset_allocation_mapping set percentage=14,per=14 
+where asset_id=1 and risk_profile_id=5 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=2 and risk_profile_id=5 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=3,per=3 
+where asset_id=3 and risk_profile_id=5 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=9,per=9 
+where asset_id=4 and risk_profile_id=5 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=39,per=39 
+where asset_id=5 and risk_profile_id=5 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=22,per=22 
+where asset_id=6 and risk_profile_id=5 and allocation_type_id=6
+
+go
+
+update asset_allocation_mapping set percentage=10,per=10 
+where asset_id=7 and risk_profile_id=5 and allocation_type_id=6
+
+go

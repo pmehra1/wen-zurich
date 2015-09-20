@@ -1,0 +1,51 @@
+USE [FNA]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_getPortFolioMaster]    Script Date: 09/09/2012 01:39:30 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_getPortFolioMaster]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_getPortFolioMaster]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_getPortFolioMaster]    Script Date: 09/09/2012 01:39:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_getPortFolioMaster]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[sp_getPortFolioMaster]  
+@CaseId nvarchar(50)  
+AS  
+BEGIN  
+
+ DECLARE @TOTALPERCENT INT
+ IF EXISTS(SELECT allocationPercentage FROM portFolioBuilderDetail
+ WHERE portFolioBuilderId in (SELECT id FROM portFolioBuilderMaster WHERE caseId = @CaseId))
+ BEGIN 
+	SELECT @TOTALPERCENT = SUM(allocationPercentage) FROM portFolioBuilderDetail
+	WHERE portFolioBuilderId in (SELECT id FROM portFolioBuilderMaster WHERE caseId = @CaseId) 
+ END 
+ ELSE
+	SET @TOTALPERCENT = 0
+ 
+ SELECT pfm.riskProfileId, 
+ rpl.fullName as riskProfileName, 
+ pfm.followAssetAllocationOnRiskProfileYesNo,  
+ pfm.assetAllocationOnRiskProfileYesNo, 
+ isnull(pfm.agreeWithRiskProfile, 0) as agreeWithRiskProfile, 
+ isnull(pfm.preferredRiskPRofile, -1) as preferredRiskPRofile, 
+ prl.fullName as preferredRiskProfileName,
+ pfm.includeNonCoreFundsYesNo, 
+ isnull(pfm.premiumSelect, 0) as premiumSelect,   
+ convert(integer, isnull(pfm.premiumAmount, 0)) as premiumAmount, 
+ isnull(pfm.paymentMode, -1) as paymentMode,
+ @TOTALPERCENT as premiumPercent,
+ convert(integer, isnull(pfm.premiumTotalAmount, 0)) as premiumTotalAmount
+ FROM portFolioBuilderMaster pfm  
+ INNER JOIN risk_profile_lkp rpl on rpl.id = pfm.riskProfileId   
+ LEFT OUTER JOIN risk_profile_lkp prl on prl.id = pfm.preferredRiskProfile 
+ WHERE caseId = @CaseId  
+  
+END  
+' 
+END
+GO

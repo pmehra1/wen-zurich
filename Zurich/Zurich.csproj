@@ -1,0 +1,934 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05AE0732-FA7D-49CC-9B9B-CAACDA3A323D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zurich</RootNamespace>
+    <AssemblyName>Zurich</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.3.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdPartyDlls\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlTemplates\Zurich\FNAMenu.ascx.cs">
+      <DependentUpon>FNAMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\Zurich\FNAMenu.ascx.designer.cs">
+      <DependentUpon>FNAMenu.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\AssetAndLiabilities.aspx.cs">
+      <DependentUpon>AssetAndLiabilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\AssetAndLiabilities.aspx.designer.cs">
+      <DependentUpon>AssetAndLiabilities.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\AssetAndLiabilityPopUp.aspx.cs">
+      <DependentUpon>AssetAndLiabilityPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\AssetAndLiabilityPopUp.aspx.designer.cs">
+      <DependentUpon>AssetAndLiabilityPopUp.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\EducationGoals\ShowEducationGoals.aspx.cs">
+      <DependentUpon>ShowEducationGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\EducationGoals\ShowEducationGoals.aspx.designer.cs">
+      <DependentUpon>ShowEducationGoals.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\ErrorLogViewer.aspx.cs">
+      <DependentUpon>ErrorLogViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\ErrorLogViewer.aspx.designer.cs">
+      <DependentUpon>ErrorLogViewer.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\IncomeExpensePopUp.aspx.cs">
+      <DependentUpon>IncomeExpensePopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\IncomeExpensePopUp.aspx.designer.cs">
+      <DependentUpon>IncomeExpensePopUp.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\IncomeInsuranceExpense.aspx.cs">
+      <DependentUpon>IncomeInsuranceExpense.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\IncomeInsuranceExpense.aspx.designer.cs">
+      <DependentUpon>IncomeInsuranceExpense.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\Introduction\Introduction.aspx.cs">
+      <DependentUpon>Introduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\Introduction\Introduction.aspx.designer.cs">
+      <DependentUpon>Introduction.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\MyZurichAdviser\MyZurichAdviser.aspx.cs">
+      <DependentUpon>MyZurichAdviser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\MyZurichAdviser\MyZurichAdviser.aspx.designer.cs">
+      <DependentUpon>MyZurichAdviser.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PersonalDetails.aspx.cs">
+      <DependentUpon>PersonalDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PersonalDetails.aspx.designer.cs">
+      <DependentUpon>PersonalDetails.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PortFolioBuilder\GapSummary.aspx.cs">
+      <DependentUpon>GapSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PortFolioBuilder\GapSummary.aspx.designer.cs">
+      <DependentUpon>GapSummary.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PortFolioBuilder\PortFolioModelling.aspx.cs">
+      <DependentUpon>PortFolioModelling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PortFolioBuilder\PortFolioModelling.aspx.designer.cs">
+      <DependentUpon>PortFolioModelling.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PortFolioBuilder\ShowPortFolioModel.aspx.cs">
+      <DependentUpon>ShowPortFolioModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PortFolioBuilder\ShowPortFolioModel.aspx.designer.cs">
+      <DependentUpon>ShowPortFolioModel.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PriorityDetails.aspx.cs">
+      <DependentUpon>PriorityDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\PriorityDetails.aspx.designer.cs">
+      <DependentUpon>PriorityDetails.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\ProtectionGoals\ShowMyNeedProtectionGoals.aspx.cs">
+      <DependentUpon>ShowMyNeedProtectionGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\ProtectionGoals\ShowMyNeedProtectionGoals.aspx.designer.cs">
+      <DependentUpon>ShowMyNeedProtectionGoals.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\ProtectionGoals\ShowProtectionGoals.aspx.cs">
+      <DependentUpon>ShowProtectionGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\ProtectionGoals\ShowProtectionGoals.aspx.designer.cs">
+      <DependentUpon>ShowProtectionGoals.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RetirementGoals\ShowRetirementGoals.aspx.cs">
+      <DependentUpon>ShowRetirementGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RetirementGoals\ShowRetirementGoals.aspx.designer.cs">
+      <DependentUpon>ShowRetirementGoals.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\Cka.aspx.cs">
+      <DependentUpon>Cka.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\Cka.aspx.designer.cs">
+      <DependentUpon>Cka.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\RiskProfile.aspx.cs">
+      <DependentUpon>RiskProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\RiskProfile.aspx.designer.cs">
+      <DependentUpon>RiskProfile.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\RiskProfileSectionB.aspx.cs">
+      <DependentUpon>RiskProfileSectionB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\RiskProfileSectionB.aspx.designer.cs">
+      <DependentUpon>RiskProfileSectionB.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\ShowPortfolioModel.aspx.cs">
+      <DependentUpon>ShowPortfolioModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\RiskProfile\ShowPortfolioModel.aspx.designer.cs">
+      <DependentUpon>ShowPortfolioModel.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\SavingGoals\ShowExistingSavingGoals.aspx.cs">
+      <DependentUpon>ShowExistingSavingGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\SavingGoals\ShowExistingSavingGoals.aspx.designer.cs">
+      <DependentUpon>ShowExistingSavingGoals.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\SavingGoals\ShowSavingGoals.aspx.cs">
+      <DependentUpon>ShowSavingGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\SavingGoals\ShowSavingGoals.aspx.designer.cs">
+      <DependentUpon>ShowSavingGoals.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\Zurich\SavingOptions\SavingOptions.aspx.cs">
+      <DependentUpon>SavingOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Zurich\SavingOptions\SavingOptions.aspx.designer.cs">
+      <DependentUpon>SavingOptions.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ControlTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{93745f57-770a-4f7b-8f90-66cc527ca2b7}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1eef3132-a694-4054-8c3f-1d1b894fe903}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\Zurich\config\wss_minimaltrust.config" />
+    <None Include="Layouts\Zurich\images\20120208\Thumbs.db" />
+    <None Include="Layouts\Zurich\master\minimal.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
+    <None Include="Layouts\Zurich\Printpages\times.ttf" />
+    <None Include="Layouts\Zurich\Printpages\VERDANA.TTF" />
+    <None Include="Layouts\Zurich\Printpages\VERDANAB.TTF" />
+    <None Include="Layouts\Zurich\Printpages\VERDANAI.TTF" />
+    <None Include="Layouts\Zurich\Printpages\VERDANAZ.TTF" />
+    <None Include="Package\Package.package">
+      <PackageId>{07610db8-47be-4c09-bac6-ab1edcf805a7}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActivityStatusCheck\ActivityStatusCheck.csproj">
+      <Project>{B5B5B18E-F77A-418D-8362-510A99D0261C}</Project>
+      <Name>ActivityStatusCheck</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{407FEA7B-234A-41DB-8AB8-BC574E1C4ADD}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{F4A90A1D-8F39-422A-92A6-7CDAA3AB005E}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDFGeneration\PDFGeneration.csproj">
+      <Project>{5C20F98A-9DB9-4EB9-BE0F-46B888B4F220}</Project>
+      <Name>PDFGeneration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ControlTemplates\Zurich\FNAMenu.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\AssetAndLiabilityPopUp.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\config\config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\config\dbmlchange.txt" />
+    <Content Include="Layouts\Zurich\EducationGoals\ShowEducationGoals.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\ErrorLogViewer.aspx" />
+    <Content Include="Layouts\Zurich\images\20120208\application_navigationleft_tab.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\bg.png" />
+    <Content Include="Layouts\Zurich\images\20120208\bullet.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\button_xsmall copy.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\calendar.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\closebtn.png" />
+    <Content Include="Layouts\Zurich\images\20120208\end.png" />
+    <Content Include="Layouts\Zurich\images\20120208\favicon.ico" />
+    <Content Include="Layouts\Zurich\images\20120208\first.png" />
+    <Content Include="Layouts\Zurich\images\20120208\Flag.png" />
+    <Content Include="Layouts\Zurich\images\20120208\header_image.jpg" />
+    <Content Include="Layouts\Zurich\images\20120208\header_Lft.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\header_mid.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\header_rit.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\ico5.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ico6.png" />
+    <Content Include="Layouts\Zurich\images\20120208\icon_acrobat.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\icon_information.png" />
+    <Content Include="Layouts\Zurich\images\20120208\icon_retrieve.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\large_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab1.png" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab12.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab12.png" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab2.png" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab21.png" />
+    <Content Include="Layouts\Zurich\images\20120208\left_tab_war.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\mandatory_field_marker.png" />
+    <Content Include="Layouts\Zurich\images\20120208\megamenu_chevron.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\menuBG.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\navgradient_background.jpg" />
+    <Content Include="Layouts\Zurich\images\20120208\navgradient_background.png" />
+    <Content Include="Layouts\Zurich\images\20120208\navmenu_error.png" />
+    <Content Include="Layouts\Zurich\images\20120208\navmenu_tick.png" />
+    <Content Include="Layouts\Zurich\images\20120208\navmenu_warning.png" />
+    <Content Include="Layouts\Zurich\images\20120208\next.png" />
+    <Content Include="Layouts\Zurich\images\20120208\previous.png" />
+    <Content Include="Layouts\Zurich\images\20120208\right_tab.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\right_tab1.png" />
+    <Content Include="Layouts\Zurich\images\20120208\right_tab12.png" />
+    <Content Include="Layouts\Zurich\images\20120208\right_tab2.png" />
+    <Content Include="Layouts\Zurich\images\20120208\right_tab21.png" />
+    <Content Include="Layouts\Zurich\images\20120208\SearchBG.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\seperator.gif" />
+    <Content Include="Layouts\Zurich\images\20120208\small_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\tableBelowFooter.jpg" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_highlight-soft_65_06389b_1x100.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-icons_222222_256x240.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-icons_888888_256x240.png" />
+    <Content Include="Layouts\Zurich\images\20120208\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Layouts\Zurich\images\20120208\warning.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xlarge.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xlarge_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xsmall.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xsmall_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxlarge.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxlarge_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxsmall.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxsmall_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxxlarge.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxxlarge_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxxsmall.png" />
+    <Content Include="Layouts\Zurich\images\20120208\xxxsmall_disable.png" />
+    <Content Include="Layouts\Zurich\images\20120208\zurich_main_new_logo.gif" />
+    <Content Include="Layouts\Zurich\images\calendar.gif" />
+    <Content Include="Layouts\Zurich\images\checkmark.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\Legend.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\CoreAssets\PortFolioModel_CoreAssets_01Cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\CoreAssets\PortFolioModel_CoreAssets_02MCautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\CoreAssets\PortFolioModel_CoreAssets_03Balanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\CoreAssets\PortFolioModel_CoreAssets_04MAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\CoreAssets\PortFolioModel_CoreAssets_05Adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\NonCoreAssets\PortFolioModel_NonCoreAssets_01Cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\NonCoreAssets\PortFolioModel_NonCoreAssets_02MCautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\NonCoreAssets\PortFolioModel_NonCoreAssets_03Balanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\NonCoreAssets\PortFolioModel_NonCoreAssets_04MAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\PortFolioModelImages\NonCoreAssets\PortFolioModel_NonCoreAssets_05Adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_Adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_Balanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_BalancedAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_BalancedModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_Cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_CautiousAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_CautiousBalanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_CautiousModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_CautiousModCautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_ModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_ModAdventurousAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_ModCautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_ModCautiousAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_ModCautiousBalanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\CoreAssets_ModCautiousModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\RangeOfReturns_CoreAssets.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\CoreAssets\RangeOfReturns_CoreAssets.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_Adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_Balanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_BalancedAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_BalancedModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_Cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_CautiousAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_CautiousBalanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_CautiousModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_CautiousModCautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_ModAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_ModAdventurousAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_ModCautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_ModCautiousAdventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_ModCautiousBalanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\NonCoreAssets_ModCautiousModAdenturous.png" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\RangeOfReturns_NonCoreAssets.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\RangeOfReturnsImages\NonCoreAssets\RangeOfReturns_NonCoreAssets.png" />
+    <Content Include="Layouts\Zurich\images\Content\Risk Profile_Calc.png" />
+    <Content Include="Layouts\Zurich\images\family_protection_canvas.jpg" />
+    <Content Include="Layouts\Zurich\images\menu_images\blueslate_background.gif" />
+    <Content Include="Layouts\Zurich\images\priority_bg.png" />
+    <Content Include="Layouts\Zurich\images\retirement_canvas.jpg" />
+    <Content Include="Layouts\Zurich\images\saving_goals_canvas.jpg" />
+    <Content Include="Layouts\Zurich\IncomeExpensePopUp.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\Introduction\Introduction.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\MyZurichAdviser\MyZurichAdviser.aspx" />
+    <Content Include="Layouts\Zurich\portalimages\1.png" />
+    <Content Include="Layouts\Zurich\portalimages\Assign.bmp" />
+    <Content Include="Layouts\Zurich\portalimages\BlankImage.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\block.JPG" />
+    <Content Include="Layouts\Zurich\portalimages\Clone.bmp" />
+    <Content Include="Layouts\Zurich\portalimages\closeBtn.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\Create.bmp" />
+    <Content Include="Layouts\Zurich\portalimages\E-Sign.bmp" />
+    <Content Include="Layouts\Zurich\portalimages\Flag.PNG" />
+    <Content Include="Layouts\Zurich\portalimages\headingBG.png" />
+    <Content Include="Layouts\Zurich\portalimages\helpIcon.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\ico1.png" />
+    <Content Include="Layouts\Zurich\portalimages\ico2.png" />
+    <Content Include="Layouts\Zurich\portalimages\ico3.png" />
+    <Content Include="Layouts\Zurich\portalimages\ico4.png" />
+    <Content Include="Layouts\Zurich\portalimages\ico5.png" />
+    <Content Include="Layouts\Zurich\portalimages\ico6.png" />
+    <Content Include="Layouts\Zurich\portalimages\ico7.png" />
+    <Content Include="Layouts\Zurich\portalimages\icon_acrobat.gif" />
+    <Content Include="Layouts\Zurich\portalimages\icon_retrieve.gif" />
+    <Content Include="Layouts\Zurich\portalimages\icoo1.png" />
+    <Content Include="Layouts\Zurich\portalimages\inputError.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\inputPass.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\large.png" />
+    <Content Include="Layouts\Zurich\portalimages\leftcrn.png" />
+    <Content Include="Layouts\Zurich\portalimages\left_ar.GIF" />
+    <Content Include="Layouts\Zurich\portalimages\left_nav_bg1_selected.gif" />
+    <Content Include="Layouts\Zurich\portalimages\left_nav_twisty_down.gif" />
+    <Content Include="Layouts\Zurich\portalimages\left_nav_twisty_right.gif" />
+    <Content Include="Layouts\Zurich\portalimages\left_tab.gif" />
+    <Content Include="Layouts\Zurich\portalimages\mandatory_field_marker.gif" />
+    <Content Include="Layouts\Zurich\portalimages\megamenu_chevron.gif" />
+    <Content Include="Layouts\Zurich\portalimages\menuBG.gif" />
+    <Content Include="Layouts\Zurich\portalimages\midcrn.png" />
+    <Content Include="Layouts\Zurich\portalimages\Modify.bmp" />
+    <Content Include="Layouts\Zurich\portalimages\NewCase.bmp" />
+    <Content Include="Layouts\Zurich\portalimages\pdf_icon.JPG" />
+    <Content Include="Layouts\Zurich\portalimages\pdf_icon1.JPG" />
+    <Content Include="Layouts\Zurich\portalimages\right_ar.GIF" />
+    <Content Include="Layouts\Zurich\portalimages\right_tab.gif" />
+    <Content Include="Layouts\Zurich\portalimages\ritcrn.png" />
+    <Content Include="Layouts\Zurich\portalimages\searchBG.gif" />
+    <Content Include="Layouts\Zurich\portalimages\seperator.gif" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\credits.txt" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\loading-small.gif" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\loading.gif" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\loading_small.gif" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\next-horizontal.gif" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\prev-horizontal.gif" />
+    <Content Include="Layouts\Zurich\portalimages\skins\ie7\skin.css" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\credits.txt" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\left_ar.GIF" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\next-horizontal.png" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\next-vertical.png" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\prev-horizontal.png" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\prev-vertical.png" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\right_ar.GIF" />
+    <Content Include="Layouts\Zurich\portalimages\skins\tango\skin.css" />
+    <Content Include="Layouts\Zurich\portalimages\small.png" />
+    <Content Include="Layouts\Zurich\portalimages\sort_asc.gif" />
+    <Content Include="Layouts\Zurich\portalimages\sort_asc.png" />
+    <Content Include="Layouts\Zurich\portalimages\sort_asc_disabled.png" />
+    <Content Include="Layouts\Zurich\portalimages\sort_both.png" />
+    <Content Include="Layouts\Zurich\portalimages\sort_desc.gif" />
+    <Content Include="Layouts\Zurich\portalimages\sort_desc.png" />
+    <Content Include="Layouts\Zurich\portalimages\sort_desc_disabled.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-icons_222222_256x240.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-icons_454545_256x240.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-icons_888888_256x240.png" />
+    <Content Include="Layouts\Zurich\portalimages\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Layouts\Zurich\portalimages\xlarge.png" />
+    <Content Include="Layouts\Zurich\portalimages\xsmall.png" />
+    <Content Include="Layouts\Zurich\portalimages\xxlarge.png" />
+    <Content Include="Layouts\Zurich\portalimages\xxlargeDisable.png" />
+    <Content Include="Layouts\Zurich\portalimages\xxsmall.png" />
+    <Content Include="Layouts\Zurich\portalimages\xxxlarge.PNG" />
+    <Content Include="Layouts\Zurich\portalimages\xxxsmall.png" />
+    <Content Include="Layouts\Zurich\portalimages\xxxxlarge.png" />
+    <Content Include="Layouts\Zurich\portalimages\zdsg_V1.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\ZurichImage.jpg" />
+    <Content Include="Layouts\Zurich\portalimages\zurich_main_new_logo.gif" />
+    <Content Include="Layouts\Zurich\PortFolioBuilder\GapSummary.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\PortFolioBuilder\PortFolioModelling.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\PortFolioBuilder\ShowPortFolioModel.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\Printpages\AssetLiabilitiesPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\blank.png" />
+    <Content Include="Layouts\Zurich\Printpages\CkaPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\Core_Assets.png" />
+    <Content Include="Layouts\Zurich\Printpages\EducationGoalPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\Footer.html" />
+    <Content Include="Layouts\Zurich\Printpages\GAPSummary.html" />
+    <Content Include="Layouts\Zurich\Printpages\GreyGradientBar.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header.html" />
+    <Content Include="Layouts\Zurich\Printpages\headerpdf.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\headertitleimage.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_01.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_02.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_03.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_04.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_05.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_06.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_07.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_08.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_09.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_10.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_11.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header\120911_bar_12.png" />
+    <Content Include="Layouts\Zurich\Printpages\Header_Bar.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\IncomeExpensePrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\MzaPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\navgradient_background.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\Non_core_Assets.png" />
+    <Content Include="Layouts\Zurich\Printpages\PersonalDetailsPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\PortFolioModelForRiskProfilePrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\PortfolioModelPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\PriorityDetailsPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\ProtectionGoalMyNeedsPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\ProtectionGoalPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\RadioButtonNotSelected.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\RadioButtonNotSelected.png" />
+    <Content Include="Layouts\Zurich\Printpages\RadioButtonSelected.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\RadioButtonSelected.png" />
+    <Content Include="Layouts\Zurich\Printpages\RetirementGoalPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\RiskPlotterPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\RiskProfile.html" />
+    <Content Include="Layouts\Zurich\Printpages\RiskProfileChart.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\RiskProfileChart.png" />
+    <Content Include="Layouts\Zurich\Printpages\Risk_Profile_Calc.png" />
+    <Content Include="Layouts\Zurich\Printpages\SavingsGoalPrint.html" />
+    <Content Include="Layouts\Zurich\Printpages\small_tick_mark.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\tick_01a.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\tick_01b.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\tick_02a.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\tick_02b.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\tick_mark.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\tiny_tick_mark.jpg" />
+    <Content Include="Layouts\Zurich\Printpages\ZurichLogo.png" />
+    <Content Include="Layouts\Zurich\Printpages\ZurichLogo1.png" />
+    <Content Include="Layouts\Zurich\ProtectionGoals\ShowMyNeedProtectionGoals.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\RiskProfile\Cka.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\RiskProfile\RiskProfile.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\RiskProfile\RiskProfileSectionB.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\RiskProfile\ShowPortfolioModel.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\RiskProfile\StartRiskProfile.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\images\add-icon.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\1st_Page.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\2nd_Page.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\3rd_Page.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\add-icon.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\arrow-next.png" />
+    <Content Include="Layouts\Zurich\images\Content\arrow-prev.png" />
+    <Content Include="Layouts\Zurich\images\Content\arrows-ffffff.png" />
+    <Content Include="Layouts\Zurich\images\Content\arrow_left.png" />
+    <Content Include="Layouts\Zurich\images\Content\arrow_right.png" />
+    <Content Include="Layouts\Zurich\images\Content\core_adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\core_balanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\core_cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\core_moderately_adventorous.png" />
+    <Content Include="Layouts\Zurich\images\Content\core_moderately_cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\curve.png" />
+    <Content Include="Layouts\Zurich\images\Content\delete-icon.png" />
+    <Content Include="Layouts\Zurich\images\Content\download.png" />
+    <Content Include="Layouts\Zurich\images\Content\downward.png" />
+    <Content Include="Layouts\Zurich\images\Content\EducationCurve.png" />
+    <Content Include="Layouts\Zurich\images\Content\educationgoalcurve.png" />
+    <Content Include="Layouts\Zurich\images\Content\educationTable.png" />
+    <Content Include="Layouts\Zurich\images\Content\example-frame.png" />
+    <Content Include="Layouts\Zurich\images\Content\Gradient_Pg1.png" />
+    <Content Include="Layouts\Zurich\images\Content\Gradient_Pg2.png" />
+    <Content Include="Layouts\Zurich\images\Content\headingBG.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Layouts\Zurich\images\Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Layouts\Zurich\images\Content\jquery-ui-1.8.7.css" />
+    <Content Include="Layouts\Zurich\images\Content\loading.gif" />
+    <Content Include="Layouts\Zurich\images\Content\noncore_adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\noncore_balanced.png" />
+    <Content Include="Layouts\Zurich\images\Content\noncore_cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\noncore_moderately_adventurous.png" />
+    <Content Include="Layouts\Zurich\images\Content\noncore_moderately_cautious.png" />
+    <Content Include="Layouts\Zurich\images\Content\page.png" />
+    <Content Include="Layouts\Zurich\images\Content\pagination.png" />
+    <Content Include="Layouts\Zurich\images\Content\priority.png" />
+    <Content Include="Layouts\Zurich\images\Content\priority_bgd.png" />
+    <Content Include="Layouts\Zurich\images\Content\ProtectionGoalChart.png" />
+    <Content Include="Layouts\Zurich\images\Content\protectionGoals.png" />
+    <Content Include="Layouts\Zurich\images\Content\radio.png" />
+    <Content Include="Layouts\Zurich\images\Content\RiskProfileChart.png" />
+    <Content Include="Layouts\Zurich\images\Content\SavingGoalChart.png" />
+    <Content Include="Layouts\Zurich\images\Content\saving_option.jpg" />
+    <Content Include="Layouts\Zurich\images\Content\saving_option.png" />
+    <Content Include="Layouts\Zurich\images\Content\Site.css" />
+    <Content Include="Layouts\Zurich\images\Content\ui.jqgrid.css" />
+    <Content Include="Layouts\Zurich\images\Content\ui.multiselect.css" />
+    <Content Include="Layouts\Zurich\images\Content\unselectedRadio.png" />
+    <Content Include="Layouts\Zurich\images\Content\xxlarge.png" />
+    <Content Include="Layouts\Zurich\images\Content\xxverylarge.png" />
+    <Content Include="Layouts\Zurich\images\Content\xxveryverylarge.png" />
+    <Content Include="Layouts\Zurich\images\priority_bgd.png" />
+    <Content Include="Layouts\Zurich\ProtectionGoals\ShowProtectionGoals.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\RetirementGoals\ShowRetirementGoals.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\SavingGoals\ShowExistingSavingGoals.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\SavingOptions\SavingOptions.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\styles\corefixup.css" />
+    <Content Include="Layouts\Zurich\styles\css\jquery-ui-i18n.min.js" />
+    <Content Include="Layouts\Zurich\styles\css\jquery-ui.css" />
+    <Content Include="Layouts\Zurich\styles\css\jquery-ui.min.js" />
+    <Content Include="Layouts\Zurich\styles\css\jquery.bgiframe-2.1.2.js" />
+    <Content Include="Layouts\Zurich\styles\css\jquery.min.js" />
+    <Content Include="Layouts\Zurich\styles\css\ui.jqgrid.css" />
+    <Content Include="Layouts\Zurich\styles\css\ui.multiselect.css" />
+    <Content Include="Layouts\Zurich\styles\css\ui.theme.css" />
+    <Content Include="Layouts\Zurich\styles\dlgframe.css" />
+    <Content Include="Layouts\Zurich\styles\FNAMenu.css" />
+    <Content Include="Layouts\Zurich\styles\FNAStyles\04.css" />
+    <Content Include="Layouts\Zurich\styles\FNAStyles\common.css" />
+    <Content Include="Layouts\Zurich\styles\FNAStyles\style.css" />
+    <Content Include="Layouts\Zurich\styles\FNAStyles\utility.css" />
+    <Content Include="Layouts\Zurich\styles\FNAStyles\Zurichstyle.css" />
+    <Content Include="Layouts\Zurich\styles\jsgrid.css" />
+    <Content Include="Layouts\Zurich\styles\js\04.js" />
+    <Content Include="Layouts\Zurich\styles\js\savingOptions.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\nivo-slider.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\slideshow.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\slidestyle.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\stylesprinkle.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\superfish-navbar.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\superfish-vertical.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\superfish.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui-lightness\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\css\ui.jqgrid.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\grid.locale-en.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot.barRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\changes.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\copyright.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\excanvas.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\excanvas.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\gpl-2.0.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jqPlotCssStyling.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jqPlotOptions.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jquery.jqplot.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jquery.jqplot.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jquery.jqplot.min.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jquery.jqplot.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jquery.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\jquery.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.barRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.ciParser.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.cursor.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.cursor.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.dragable.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.dragable.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.highlighter.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.json2.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.json2.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pointLabels.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.trendline.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jqplot\plugins\jqplot.trendline.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-1.4.1.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-1.4.1.min-vsdoc.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-1.5.2.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery-ui-personalized-1.5.2.packed.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.jqplot.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.jqplot.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.nivo.slider.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.nivo.slider.pack.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.validate.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.validate.min-vsdoc.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\jquery.validate.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.base.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.celledit.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.common.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.custom.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.filter.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.formedit.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.grouping.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.import.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.inlinedit.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.jqueryui.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.subgrid.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.tbltogrid.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\grid.treegrid.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\hoverIntent.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-ar.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-bg.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-bg1251.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-cat.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-cn.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-cs.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-da.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-de.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-el.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-en.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-es.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-fa.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-fi.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-fr.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-gl.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-he.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-hu.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-is.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-it.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-ja.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-lt.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-nl.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-no.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-pl.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-pt-br.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-pt.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-ro.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-ru.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-sk.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-sr.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-sv.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-tr.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\i18n\grid.locale-ua.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\jqDnR.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\jqModal.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\jquery.fmatter.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\JsonXml.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\superfish.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\js\supersubs.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\MicrosoftAjax.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\oldJquery\grid.locale-en.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\oldJquery\jquery-1.5.2.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\oldJquery\jquery-1.5.2.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\oldJquery\jquery.jqGrid.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\popup\jquery-1.7.1.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\popup\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\slides.min.jquery.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\slideshow.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\sprinkle.js" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\default\arrows.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\default\bullets.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\default\default.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\default\loading.gif" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\arrows.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\bullets.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\loading.gif" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\orman.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\readme.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\ribbon.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\orman\slider.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\bullets.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\controlnav.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\featured.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\loading.gif" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\pascal.css" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\readme.txt" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\ribbon.png" />
+    <Content Include="Layouts\Zurich\styles\js\Scripts\themes\pascal\slider.png" />
+    <Content Include="Layouts\Zurich\styles\js\utility.js" />
+    <Content Include="Layouts\Zurich\styles\js\zurichscript.js" />
+    <Content Include="Layouts\Zurich\styles\MySiteLayout.css" />
+    <Content Include="Layouts\Zurich\styles\FNAStyles\Site.css" />
+    <Content Include="Layouts\Zurich\styles\savingOptionJs\excanvas.js" />
+    <Content Include="Layouts\Zurich\styles\savingOptionJs\html5-canvas-bar-graph.js" />
+    <Content Include="Layouts\Zurich\styles\webAnalytics_cluster.css" />
+    <Content Include="Layouts\Zurich\AssetAndLiabilities.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\IncomeInsuranceExpense.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\PersonalDetails.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\PriorityDetails.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\SavingGoals\ShowSavingGoals.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\Zurich\styles\widget.css" />
+    <Content Include="ThirdPartyDlls\itextsharp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+    <Folder Include="Layouts\Zurich\Contents\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+</Project>

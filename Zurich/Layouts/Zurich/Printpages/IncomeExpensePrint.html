@@ -1,0 +1,560 @@
+﻿<table width="100%">
+    <tr>
+        <td width="10%">&nbsp;</td>
+        <td width="90%">
+        <table width="100%">
+            <tr>
+                <td>
+                    This information helps to ascertain the affordability of the recommendation(s) and plan(s)
+                    for your financial need(s). Would you like your cashflow to be taken into consideration for the Needs Analysis
+                    and Recommendation(s)? [assecertainingAffordabilityEnable]
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    [assecertainingAffordabilityReason]
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Liquidity
+                </td>
+            </tr>
+         </table>
+        <table width="100%">
+             <tr>
+                <td valign="top">
+                <table class="tableStyle">                    
+                    <tr>
+                        <td width="60%" class="oddRowStyle">Emergency Funds Needed (SGD)</td>
+                        <td width="40%" class="oddRowStyle" align="right">$ [emergencyFundNeeded] </td>
+                    </tr>
+                    <tr>
+                        <td width="60%" class="evenRowStyle">Any factors that will significantly affect your income/expenses in the next 12 Months?</td>
+                        <td width="40%" class="evenRowStyle" align="right">[shortTermGoalsIn12Months] </td>
+                    </tr>
+                </table>
+                <table class="tableStyle">
+                    <tr>
+                        <td class="oddRowStyle" style="font-style:italic" colspan="2">
+							If 'Yes', please provide details<br/>
+							[detailShortTermGoalsIn12Months] 
+						</td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        
+        <table width="100%">
+            <tr>
+                <td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Income & Expense
+                </td>
+                <td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;" align="right">
+                    SGD
+                </td>
+            </tr>
+         </table>
+        <table width="100%">
+            <tr>
+                <td valign="top">
+                    <table class="tableStyle">                   
+                        <tr>
+                            <td width="60%" class="oddRowStyle">Monthly Income After CPF </td>
+                            <td width="40%" class="oddRowStyle" align="right">$ [netMonthlyIncomeAfterCPF]</td>
+                        </tr>
+                        <tr>
+                            <td width="60%" class="evenRowStyle">Other Sources of Income, e.g. rental, business?</td>
+                            <td width="40%" class="evenRowStyle" align="right"><table width="100%" ><tr><td align="left" class="evenRowStyleNoBorder">Add:</td><td align="right" class="evenRowStyleNoBorder">$ [otherSourcesIncome]</td></tr></table></td>
+                        </tr>
+                        <tr>
+                            <td width="60%" class="oddRowStyle">Monthly Expenses </td>
+                            <td width="40%" class="oddRowStyle" align="right"><table width="100%" ><tr><td align="left" class="oddRowStyleNoBorder">Less:</td><td align="right" class="oddRowStyleNoBorder">$ [netMonthlyExpenses]</td></tr></table></td>
+                        </tr>
+                        <tr>
+                            <td width="60%" class="totalRowStyle"><span style="color:[shortfallSurplusColour]"><b>[surplusShortfall]</b></span></td>
+                            <td width="40%" class="totalRowStyle" align="right"><span style="color:[shortfallSurplusColour]"><b>$ [ttlspdef]</b></span></td>
+                        </tr>
+                    </table>
+                </td>
+             </tr>
+         </table>
+
+         <table width="100%">
+            <tr>
+                <td colspan="2" style="font-family:Verdana;">
+                    This information helps to evaluate if your existing insurance portfolio is adequate in meeting your financial needs(s). 
+                    Would you like your existing insurance portfolio to be taken into consideration for the Needs Analysis and Recommendations(s)&nbsp;&nbsp;[incomeInsuranceEnable]
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana;" colspan="2">
+                   [incomeExpenseNotNeededReason]
+                 </td>
+            </tr>
+         </table>
+         
+         <table width="100%">
+            <tr>
+                <td width="55%" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Existing Arrangements Towards Protection
+                </td>
+				<td width="45%" align="center" style="font-size:5pt;font-family:Verdana;font-weight:bold;color:gray;">
+					Specify the value only in case where the applicant is the life to be assured
+				</td>
+            </tr>
+         </table>
+          <table width="100%" class="tableStyle">
+            <tr class="tableHeaderStyle" align="center">
+                <td>&nbsp;</td>
+                <td>
+                     Death (Term)
+                </td>
+                <td>
+                    Death (Whole Life)
+                </td>
+                <td>
+                    Death (CPF-Funded)
+                </td>
+                <td>
+                    Total Permanent Disability
+                </td>
+                <td>
+                    Critical Illness Protection
+                </td>
+                <td>
+                    Mortgage
+                </td>
+            </tr>
+            <tr class="oddRowStyle">
+                <td>
+                     Sum Assured (SGD)
+                </td>
+                <td align="center">
+                     $ [deathTermInsuranceSA]
+                </td>
+                <td align="center">
+                    $ [deathWholelifeInsuranceSA]
+                </td>
+                <td align="center">
+                    $ [lifeInsuranceSA]
+                </td>
+                <td align="center">
+                    $ [tpdcSA]
+                </td>
+                <td align="center">
+                    $ [criticalIllnessSA]
+                </td>
+                <td align="center">
+                    $ [mortgageSA]
+                </td>
+            </tr>
+            <tr class="evenRowStyle">
+                <td>
+                     Term (Years)
+                </td>
+                <td align="center">
+                     [deathTermInsuranceTerm]
+                </td>
+                <td align="center">
+                    [deathWholelifeInsuranceTerm]
+                </td>
+                <td align="center">
+                    [lifeInsuranceMV]
+                </td>
+                <td align="center">
+                    [tpdcMV]
+                </td>
+                <td align="center">
+                    [criticalIllnessMV]
+                </td>
+                <td align="center">
+                    [mortgageMV]
+                </td>
+            </tr>
+            <tr class="oddRowStyle">
+                <td>
+                     Premium (per year) (SGD)
+                </td>
+                <td align="center">
+                     $ [deathTermInsurancePremium]
+                </td>
+                <td align="center">
+                    $ [deathWholelifeInsurancePremium]
+                </td>
+                <td align="center">
+                    $ [lifeInsurancePremium]
+                </td>
+                <td align="center">
+                    $ [tpdcPremium]
+                </td>
+                <td align="center">
+                    $ [criticalIllnessPremium]
+                </td>
+                <td align="center">
+                    $ [mortgagePremium]
+                </td>
+            </tr>
+         </table>
+         
+
+         <table width="100%">
+            <tr>
+                <td width="50%" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Existing Arrangements Towards Savings
+                </td>
+				<td width="50%" align="center" style="font-size:5pt;font-family:Verdana;font-weight:bold;color:gray;">
+					Specify the value only in case where the applicants are Policy Owners 
+				</td>
+                
+            </tr>
+         </table>
+         <table width="100%" class="tableStyle">
+            <tr class="tableHeaderStyle" align="center">
+                <td align="center">
+                     Policy Owner
+                </td>
+                <td align="center">
+                    Purpose of the Plan
+                </td>
+                <td align="center">
+                    Company
+                </td>
+                <td align="center">
+                    Contribution (SGD)
+                </td>
+                <td align="center">
+                    Frequency
+                </td>
+                <td align="center">
+                    Term (Years)
+                </td>
+                <td align="center">
+                    Current Fund Value (SGD)
+                </td>
+            </tr>
+            [easavings]
+         </table>
+
+         
+         <table width="100%">
+            <tr>
+                <td width="50%" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Existing Arrangements Towards Retirement
+                </td>
+				<td width="50%" align="center" style="font-size:5pt;font-family:Verdana;font-weight:bold;color:gray;">
+					Specify the value only in case where the applicants are Policy Owners
+				</td>
+                
+            </tr>
+         </table>
+         <table width="100%" class="tableStyle">
+            <tr class="tableHeaderStyle">
+                <td align="center">
+                     Policy Owner
+                </td>
+                <td align="center">
+                    Company/Plan
+                </td>
+                <td align="center">
+                    Contribution (SGD)
+                </td>
+                <td align="center">
+                    Frequency
+                </td>
+                <td align="center">
+                    Maturity Date
+                </td>
+                <td align="center">
+                    Projected Lumpsum at Maturity (SGD)
+                </td>
+                <td align="center">
+                    Projected Income at Maturity (SGD)
+                </td>
+            </tr>
+            [earetirement]
+         </table>
+         
+         <table width="100%">
+            <tr>
+                <td width="50%" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Existing Arrangements Towards Children's Education
+                </td>
+				<td width="50%" align="center" style="font-size:5pt;font-family:Verdana;font-weight:bold;color:gray;">
+					Specify the value only in case where the applicants are Policy Owners
+				</td>                
+            </tr>
+         </table>
+         <table width="100%" class="tableStyle">
+            <tr class="tableHeaderStyle">
+                <td align="center">
+                     Policy Owner
+                </td>
+                <td align="center">
+                    Company/Plan
+                </td>
+                <td align="center">
+                    Contribution (SGD)
+                </td>
+                <td align="center">
+                    Frequency
+                </td>
+                <td align="center">
+                    Maturity Date
+                </td>
+                <td align="center">
+                    Projected Lumpsum at Maturity (SGD)
+                </td>
+                <td align="center">
+                    Projected Income at Maturity (SGD)
+                </td>
+            </tr>
+            [eaeducation]
+         </table>
+</td>
+    </tr>
+    <tr>
+        <td width="10%">&nbsp;</td>
+        <td width="90%">
+        <table width="100%">
+            <tr>
+                <td style="font-family:Verdana;" colspan="2">
+                    This information helps to ascertain the planning of your financial needs(s). 
+                    Would you like your assets and liabilities to be taken into consideration for the Needs Analysis and Recommendations(s)?&nbsp;&nbsp;[assetAndLiabilityNeeded]
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana;" colspan="2">
+                   [assetLiabilitiesNotNeededReason]
+                 </td>
+            </tr>
+         </table>
+
+
+    <table width="100%">
+            <tr>
+                <td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Assets
+                </td>
+            </tr>
+         </table>
+     
+     <table width="100%">
+        <tr>
+            <td valign=top>
+            
+                <table width="100%" class="tableStyle">
+                    
+                    <tr align="center" class="tableHeaderStyle">
+                        <td width="60%"><b>Cash &amp; Equivalents</b></td>
+                        <td width="20%"><b>Cash (SGD)</b></td>
+                        <td width="20%"><b>CPF (SGD)</b></td>
+                    </tr>
+                    <tr>
+                        <td class="oddRowStyle">Bank Account</td>
+                        <td align="right" class="oddRowStyle">$ [bankAcctCash]</td>
+                        <td class="unusedCellStyle"></td>
+                    </tr>
+                    <tr>
+                        <td class="evenRowStyle">CPF-OA Balance</td>
+                        <td class="unusedCellStyle"></td>
+                        <td align="right" class="evenRowStyle">$ [cpfoaBal]</td>
+                    </tr>
+                    <tr>
+                        <td class="oddRowStyle">CPF-SA Balance</td>
+                        <td class="unusedCellStyle"></td>
+                        <td align="right" class="oddRowStyle">$ [cpfsaBal]</td>
+                    </tr>
+                    <tr>
+                        <td class="evenRowStyle">CPF Medisave Balance</td>
+                        <td class="unusedCellStyle"></td>
+                        <td align="right" class="evenRowStyle">$ [cpfMedisaveBalance]</td>
+                    </tr>
+                    <tr>
+                        <td class="evenRowStyle">SRS Balance</td>
+                        <td align="right" class="evenRowStyle">$ [srsBal]</td>
+                        <td class="unusedCellStyle"></td>
+                    </tr>
+
+                    <tr align="center" class="tableHeaderStyle">
+                        <td width="60%"><b>Invested Assets</b></td>
+                        <td width="20%"></td>
+                        <td width="20%"></td>
+                    </tr>
+                    <tr class="oddRowStyle">
+                        <td>Stocks &amp; Shares</td>
+                        <td align="right">$ [stocksSharesCash]</td>
+                        <td align="right">$ [stocksSharesCpf]</td>
+                    </tr>
+                    <tr class="evenRowStyle">
+                        <td>Unit Trusts</td>
+                        <td align="right">$ [unitTrustsCash]</td>
+                        <td align="right">$ [unitTrustsCpf]</td>
+                    </tr>
+                    <tr class="oddRowStyle">
+                        <td>Investment Linked Policies</td>
+                        <td align="right">$ [ilpCash]</td>
+                        <td align="right">$ [ilpCpf]</td>
+                    </tr>
+                    <tr>
+                        <td class="evenRowStyle">SRS</td>
+                        <td align="right" class="evenRowStyle">$ [srsInvCash]</td>
+                        <td class="unusedCellStyle"></td>
+                    </tr>
+                    <tr class="oddRowStyle">
+                        <td>Investment Properties</td>
+                        <td align="right">$ [invPropCash]</td>
+                        <td align="right">$ [invPropCpf]</td>
+                    </tr>
+                    <tr class="evenRowStyle">
+						<td>Others:</td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+					</tr>
+					[othersInvestedAssets]
+
+                    <tr align="center" class="tableHeaderStyle">
+                        <td width="60%"><b>Personal Use Assets</b></td>
+                        <td width="20%"></td>
+                        <td width="20%"></td>
+                    </tr>
+                    <tr class="oddRowStyle">
+                        <td>Residential Property</td>
+                        <td align="right">$ [resPropCash]</td>
+                        <td align="right">$ [resPropCpf]</td>
+                    </tr>
+                    <tr class="evenRowStyle">
+						<td>Others:</td>
+                        <td align="right"></td>
+                        <td align="right"></td>
+					</tr>
+					[othersPersonalUse]
+                    <tr class="totalRowStyle">
+                        <td><b>TOTAL ASSETS</b></td>
+                        <td align="right"><b>$ [totalAssetsCash]</b></td>
+                        <td align="right"><b>$ [totalAssetsCpf]</b></td>
+                    </tr>
+                    
+                </table>
+                
+            </td>
+        </tr>
+        </table>
+		
+        <table width="100%" cellpadding="2">
+            <tr>
+                <td width="60%" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+                    Liabilities
+                </td>
+				<td width="40%" align="right" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+					<b>SGD</b>
+				</td>
+            </tr>
+         </table>
+		 <table width="100%">
+        <tr>
+            <td valign="top">            
+            <table width="100%">                    
+                    <tr class="oddRowStyle">
+                        <td width="60%">Home Mortgage</td>
+                        <td width="40%" align="right">$ [homeMortgage]</td>
+                    </tr>
+                    <tr class="evenRowStyle">
+                        <td width="60%">Vehicle Loan</td>
+                        <td width="40%" align="right">$ [vehicleLoan]</td>
+                    </tr>
+                    <tr class="oddRowStyle">
+                        <td width="60%">Cash Loan</td>
+                        <td width="40%" align="right">$ [cashLoan]</td>
+                    </tr>
+                    <tr class="evenRowStyle">
+                        <td width="60%">Credit Card</td>
+                        <td width="40%" align="right">$ [creditCard]</td>
+                    </tr>
+                    <tr class="oddRowStyle">
+                        <td width="60%">Others:</td>
+                        <td width="40%" align="right"></td>
+                    </tr>
+					[othersLiabilities]
+                    <tr class="totalRowStyle">
+                        <td width="60%"><b>TOTAL LIABILITIES</b></td>
+                        <td width="40%" align="right"><b>$ [totalLiabilitiesOthers]</b></td>
+                    </tr>
+                    </table>
+				    <br/>
+                    <table width="100%">
+                        <tr class="borderRow">
+                            <td>
+                                <table width="100%">
+					                <tr>
+						                <td class="noBorderRow" style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+							                Net Worth (Assets - Liabilities)
+						                </td>
+						                <td class="noBorderRow" align="right">
+							               <b>$ [netWorth]</b>
+						                </td>
+					                </tr>
+				                 </table>
+                            </td>
+                        </tr>
+                    </table>
+                    
+				 <br />
+                      
+                <table width="100%" cellpadding="2">
+					<tr>
+						<td style="font-size:10pt;font-family:Verdana;font-weight:bold;color:#003399;">
+							Free Funds For Planning
+						</td>
+					</tr>
+                    <tr>
+                        <td>
+                            This information is important for planning your financial needs(s). Please indicate below your available funds for planning.
+                        </td>
+                    </tr>
+				 </table>    
+                    <table width="100%" class=tableStyle>
+                    <tr align="center" class="tableHeaderStyle">
+                        <td>AVAILABLE FUNDS FOR PLANNING</td>
+                        <td align="center"><b>Cash (SGD)</b></td>
+                        <td align="center"><b>CPF (SGD)</b></td>
+                    </tr>                    
+                    <tr class="oddRowStyle">
+                        <td>Regular Sum (per year)</td>
+                        <td align="right">$ [regularSumCash]</td>
+                        <td align="right">$ [regularSumCpf]</td>
+                    </tr>
+                    <tr class="evenRowStyle">
+                        <td>Lump Sum</td>
+                        <td align="right">$ [lumpSumCash]</td>
+                        <td align="right">$ [lumpSumCpf]</td>
+                    </tr>
+
+                </table>
+
+            <table width="100%">
+            <tr>
+                <td style="font-family:Verdana;" colspan="3">
+                    Does the premium recommended form a substantial portion of your assets / surplus?&nbsp;&nbsp;&nbsp;&nbsp;[premiumRecomended]
+                 </td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana;" colspan="3">
+                   Asset / Annual Income:&nbsp;&nbsp;&nbsp;&nbsp;[assetIncomePercent]
+                 </td>
+            </tr>
+            <tr>
+                <td style="font-family:Verdana;" colspan="3">
+                   If your answer is "Yes". you may encounter a potential risk in the future of not being able to continue paying your premiums
+                 </td>
+            </tr>
+           </table>
+                
+            </td>
+        </tr>
+     </table>
+</td>
+    </tr>
+</table>

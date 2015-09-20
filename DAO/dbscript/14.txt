@@ -1,0 +1,188 @@
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[CkaAssessment]') AND name = N'IX_CkaAssessment')
+DROP INDEX [IX_CkaAssessment] ON [dbo].[CkaAssessment]
+GO
+CREATE NONCLUSTERED INDEX [IX_CkaAssessment] ON [dbo].[CkaAssessment] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[assetAndLiability]') AND name = N'IX_assetAndLiability')
+DROP INDEX [IX_assetAndLiability] ON [dbo].[assetAndLiability] 
+GO
+CREATE NONCLUSTERED INDEX [IX_assetAndLiability] ON [dbo].[assetAndLiability] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[activitystatus]') AND name = N'IX_activitystatus')
+DROP INDEX [IX_activitystatus] ON [dbo].[activitystatus] 
+GO
+CREATE NONCLUSTERED INDEX [IX_activitystatus] ON [dbo].[activitystatus] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[savinggoals]') AND name = N'IX_savinggoals')
+DROP INDEX [IX_savinggoals] ON [dbo].[savinggoals] 
+GO
+CREATE NONCLUSTERED INDEX [IX_savinggoals] ON [dbo].[savinggoals] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[salesportalinfo]') AND name = N'IX_salesportalinfo')
+DROP INDEX [IX_salesportalinfo] ON [dbo].[salesportalinfo] 
+GO
+CREATE NONCLUSTERED INDEX [IX_salesportalinfo] ON [dbo].[salesportalinfo] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[RiskProfileAnalysis]') AND name = N'IX_RiskProfileAnalysis')
+DROP INDEX [IX_RiskProfileAnalysis] ON [dbo].[RiskProfileAnalysis] 
+GO
+CREATE NONCLUSTERED INDEX [IX_RiskProfileAnalysis] ON [dbo].[RiskProfileAnalysis] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[retirementgoals]') AND name = N'IX_retirementgoals')
+DROP INDEX [IX_retirementgoals] ON [dbo].[retirementgoals] 
+GO
+CREATE NONCLUSTERED INDEX [IX_retirementgoals] ON [dbo].[retirementgoals] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[priorityDetails]') AND name = N'IX_priorityDetails')
+DROP INDEX [IX_priorityDetails] ON [dbo].[priorityDetails] 
+GO
+CREATE NONCLUSTERED INDEX [IX_priorityDetails] ON [dbo].[priorityDetails] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[portFolioBuilderMaster]') AND name = N'IX_portFolioBuilderMaster')
+DROP INDEX [IX_portFolioBuilderMaster] ON [dbo].[portFolioBuilderMaster] 
+GO
+CREATE NONCLUSTERED INDEX [IX_portFolioBuilderMaster] ON [dbo].[portFolioBuilderMaster] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[personalUseAssetsOthers]') AND name = N'IX_personalUseAssetsOthers')
+DROP INDEX [IX_personalUseAssetsOthers] ON [dbo].[personalUseAssetsOthers] 
+GO
+CREATE NONCLUSTERED INDEX [IX_personalUseAssetsOthers] ON [dbo].[personalUseAssetsOthers] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[personaldetails]') AND name = N'IX_personaldetails')
+DROP INDEX [IX_personaldetails] ON [dbo].[personaldetails] 
+GO
+CREATE NONCLUSTERED INDEX [IX_personaldetails] ON [dbo].[personaldetails] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[myzurichadviser]') AND name = N'IX_myzurichadviser')
+DROP INDEX [IX_myzurichadviser] ON [dbo].[myzurichadviser] 
+GO
+CREATE NONCLUSTERED INDEX [IX_myzurichadviser] ON [dbo].[myzurichadviser] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[myNeeds]') AND name = N'IX_myNeeds')
+DROP INDEX [IX_myNeeds] ON [dbo].[myNeeds] 
+GO
+CREATE NONCLUSTERED INDEX [IX_myNeeds] ON [dbo].[myNeeds] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[liabilityOthers]') AND name = N'IX_liabilityOthers')
+DROP INDEX [IX_liabilityOthers] ON [dbo].[liabilityOthers] 
+GO
+CREATE NONCLUSTERED INDEX [IX_liabilityOthers] ON [dbo].[liabilityOthers] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[investedAssetOthers]') AND name = N'IX_investedAssetOthers')
+DROP INDEX [IX_investedAssetOthers] ON [dbo].[investedAssetOthers] 
+GO
+CREATE NONCLUSTERED INDEX [IX_investedAssetOthers] ON [dbo].[investedAssetOthers] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[insuranceArrangementSaving]') AND name = N'IX_insuranceArrangementSaving')
+DROP INDEX [IX_insuranceArrangementSaving] ON [dbo].[insuranceArrangementSaving] 
+GO
+CREATE NONCLUSTERED INDEX [IX_insuranceArrangementSaving] ON [dbo].[insuranceArrangementSaving] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[insuranceArrangementRetirement]') AND name = N'IX_insuranceArrangementRetirement')
+DROP INDEX [IX_insuranceArrangementRetirement] ON [dbo].[insuranceArrangementRetirement] 
+GO
+CREATE NONCLUSTERED INDEX [IX_insuranceArrangementRetirement] ON [dbo].[insuranceArrangementRetirement] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[insuranceArrangementEducation]') AND name = N'IX_insuranceArrangementEducation')
+DROP INDEX [IX_insuranceArrangementEducation] ON [dbo].[insuranceArrangementEducation] 
+GO
+CREATE NONCLUSTERED INDEX [IX_insuranceArrangementEducation] ON [dbo].[insuranceArrangementEducation] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[incomeExpense]') AND name = N'IX_incomeExpense')
+DROP INDEX [IX_incomeExpense] ON [dbo].[incomeExpense] 
+GO
+CREATE NONCLUSTERED INDEX [IX_incomeExpense] ON [dbo].[incomeExpense] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[familyNeeds]') AND name = N'IX_familyNeeds')
+DROP INDEX [IX_familyNeeds] ON [dbo].[familyNeeds] 
+GO
+CREATE NONCLUSTERED INDEX [IX_familyNeeds] ON [dbo].[familyNeeds] 
+(
+	[caseId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[educationgoals]') AND name = N'IX_educationgoals')
+DROP INDEX [IX_educationgoals] ON [dbo].[educationgoals] 
+GO
+CREATE NONCLUSTERED INDEX [IX_educationgoals] ON [dbo].[educationgoals] 
+(
+	[caseid] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO

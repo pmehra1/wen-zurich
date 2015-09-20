@@ -1,0 +1,48 @@
+﻿a:link
+    {
+        color: #034af3;
+        text-decoration: underline;
+    }
+    a:visited
+    {
+        color: #505abc;
+    }
+    a:hover
+    {
+        color: #1d60ff;
+        text-decoration: none;
+    }
+    a:active
+    {
+        color: #12eb87;
+    }
+    
+    fieldset 
+    {
+        -moz-border-radius:15px;  
+        border-radius: 15px;  
+        -webkit-border-radius: 15px;
+        margin: 1em 0;
+        padding: 1em;
+        border: 1px solid #CCC;
+    }
+
+    fieldset p 
+    {
+        margin: 2px 12px 10px 10px;
+    }
+
+    legend 
+    {
+        text-transform:capitalize;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 2px 4px 8px 4px;
+    }
+    
+    .innerTableHeader {
+        background: url("/_layouts/Zurich/images/20120208/navgradient_background.jpg") no-repeat scroll left top white;
+        color: #039;
+        font-size: 1em;
+        font-weight: bold;
+        }

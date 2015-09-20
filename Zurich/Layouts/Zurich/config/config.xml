@@ -1,0 +1,7 @@
+<?xml version='1.0'?>
+   <configuration>
+     <dbconfig>
+       <connectionURL>Data Source=WIN-NROO1OAGM8T;Initial Catalog=zurichdata;User ID=zurich;Password=password$1</connectionURL>
+       <!--<connectionURL>Data Source=hkwdbu02\sit;Initial Catalog=FNA;User ID=HSRVFNA;Password=ZurichWen@1</connectionURL>-->
+     </dbconfig>
+   </configuration>

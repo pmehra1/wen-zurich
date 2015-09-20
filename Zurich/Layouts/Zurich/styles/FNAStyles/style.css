@@ -1,0 +1,308 @@
+/************ Reset ************/
+img{border:0}
+html, body, div, p,h1,h2,h3,h4,h5,h6,a,form,table, td,em{padding:0;margin:0; vertical-align: baseline;font-size:100%;}
+ul{margin:0px}
+table{border-collapse:collapse}
+select,input,textarea {font-family:verdana;font-size:1.0em;border-color: #8E8E8E #B8B8B8 #B8B8B8 #8E8E8E;border-width: 1px; }
+body{font-family:verdana;font-size:0.75em;color:#000;background:url("/_layouts/Zurich/images/20120208/bg.png") repeat scroll center transparent;width:100%;height:100%;margin:0; padding:0}
+
+/************ Common ************/
+.chassis_page_hide_this{display:none;}
+.chassis_page_show_this{display:block;}
+.chassis_page_border_none{border:none;width:100%}
+.chassis_valign_top{vertical-align:top;}
+.chassis_page_float_left{float:left;}
+.chassis_page_float_right{float:right;}
+.chassis_page_font_bold{font-weight:bold;}
+.chassis_text_align_right{text-align:right;padding-right:3px;}
+.chassis_currency_margin_right{margin-left:8px;}
+.chassis_percentage_margin_right{margin-left:3px;}
+.chassis_check{top:3px;position:relative;#top:2px;}
+.chassis_radio{top:3px;position:relative;#top:1px;}
+.chassis_margin_left_0{margin-left:0}
+.chassis_padding_left_34{padding-left:34px !important;}
+.chassis_padding_left_5{padding-left:5px;}
+.chassis_list_style_type{list-style-type:none;padding:0}
+.chassis_two_column_editable{padding-left:20px;}
+.chassis_padding_top_2{float:left;padding-top:2px;}
+.chassis_border{border:1px solid #B8B8B8;padding: 2px 1px}
+/************ Body layout ************/
+#chassis_outer_container{clear:both;width:900px; margin:0 auto; color:#000;background-color:#FFF;height:100%;overflow:hidden;}
+.chassis_page_container{clear:both;width:900px; margin:0 auto;background-color: #FFF;}
+.chassis_application_pane{background-color:#FFF;border:0 none;color:#333333;float:left;margin:0;width:100%;padding:0 0 20px 0;}
+.chassis_application_body{background-color:#FFF;width:100%;float:left;clear:both;font-size:0.917em;}
+
+/************ Content Grid layout ************/
+.chassis_application_body table thead td{width:100%; padding: 7px 10px; text-align: left;vertical-align: top; background: url("/_layouts/Zurich/images/20120208/navgradient_background.jpg") no-repeat scroll left top #FFF;color:#003399;font-size:1em;font-weight: bold;}
+.chassis_single_column_list{width:100%;margin:10px 0 0 0;float:left;clear:both;}
+.chassis_single_column_list .chassis_label_column{width:880px;padding:3px 10px;}
+.chassis_two_column_list{width:100%;margin:10px 0 0 0;float:left;clear:both;}
+.chassis_two_column_list .chassis_label_column{width:240px;padding:7px 10px;}
+.chassis_two_column_list .chassis_data_column{width:610px;padding:7px 10px 7px 20px;}
+.chassis_three_column_list{width:100%;margin:10px 0 0 0;float:left;clear:both;}
+.chassis_three_column_list .chassis_label_column {width:240px; padding:7px 30px 7px 10px;}
+.chassis_three_column_list .chassis_data_column {width:300px; padding:7px 10px 7px 0;}
+.chassis_four_column_list{width:100%;margin:10px 0 0 0;float:left;clear:both;}
+.chassis_four_column_list .chassis_label_column {width: 160px; padding:7px 10px;}
+.chassis_four_column_list .chassis_data_column {width: 245px; padding:7px 10px 7px 20px;}
+.chassis_four_column_list .chassis_data_column .chassis_no_padding_right{padding-right:0px}
+
+/************ Header container support: Logo, search, Language selection and etc.. ************/
+.chassis_center_layout{background-color:#FFF;width:900px;margin:0 auto;text-align:left;}
+.chassis_page_header_container{float:left;width:900px;text-align:left;color:inherit;background-color:#FFF;}
+.chassis_page_header_container .chassis_page_header_banner{width:880px;height:60px;float:left;margin:20px 0px 13px 20px; padding:0px;background:url(/_layouts/Zurich/images/20120208/zurich_main_new_logo.gif) no-repeat top left;}
+.chassis_page_header_container .chassis_page_header_banner h1{color:#003399;background-color:transparent;margin-top:0px;padding:3px 0px 0px 170px;font-size:1.2em;font-weight:bold;width:300px;display:inline;float:left;}
+.chassis_page_header_container .chassis_page_header_banner .chassis_logout a{float:right; margin-top:3px; font-size:0.917em;text-decoration:none;color:#003399}
+.chassis_page_header_container .chassis_page_header_banner .chassis_page_language_selection_container{float:right;width:auto;font-size:0.917em; margin-top:18px;clear:both;}
+.chassis_page_header_container .chassis_page_header_banner .chassis_selected_language a{float:right; margin-top:3px; font-size:0.917em;text-decoration:none;color:#003399}
+.chassis_page_header_container .chassis_page_header_banner ul{float:left;clear:both;margin: auto;padding: 0;width:auto;list-style-type:none;padding:5px 0px 0px 0px;}
+.chassis_page_header_container .chassis_page_header_banner ul li{display:inline;margin:0;}
+.chassis_page_header_container .chassis_page_header_banner ul li a{color:#003399;float:left;text-decoration: none;padding:0px 6px 0px 6px;background-color:transparent;}
+.chassis_page_header_container .chassis_page_header_banner .chassis_border_right{border-right:1px solid #e2e8f1;}
+.chassis_page_header_container .chassis_page_header_banner .chassis_selected_language_last{padding-right:0;margin-right:0;}
+
+/************ Footer ************/
+.chassis_page_footer_container{float:left;width:900px; text-align:left;padding:2px 0px 20px 0;margin:0px; font-size:0.917em;color:inherit;background-color:#FFF}
+.chassis_page_footer_container .chassis_page_footer_copyright{float:right;padding-left:10px;} 
+.chassis_page_footer_container .chassis_page_footer_navigation{float:right;display:inline;}
+.chassis_page_footer_container .chassis_page_footer_navigation ul{float:right;margin: auto;padding: 0;width: auto;list-style-type:none;}
+.chassis_page_footer_container .chassis_page_footer_navigation ul li{display:inline;margin:0;}
+.chassis_page_footer_container .chassis_page_footer_navigation ul li a{border-right: 1px solid #999;color:#003399;background-color:transparent;float: left;padding:0px 10px;text-decoration: none;}
+
+/******************** Primary Navigation ********************/
+.chassis_page_navigation_container {background-image:url("/_layouts/Zurich/images/20120208/menuBG.gif");float:left;clear:both;height:27px;font-size:0.917em;width:100%;border-bottom:2px solid #003399;}
+.chassis_page_navigation_container ul{float:left;width:auto;margin:auto;padding:0px;}
+.chassis_page_navigation_container ul li{text-align:left; margin:0px;display:inline;background: url("/_layouts/Zurich/images/20120208/seperator.gif") no-repeat scroll 0 0 transparent;float:left;padding:0 1px;}
+.chassis_page_navigation_container ul li a{text-decoration:none;line-height:26px;margin:0 15px;}
+.chassis_page_navigation_container ul .chassis_page_navigation_home{padding:0px 98px 0px 15px;background: none repeat scroll 0 0 transparent;}
+.chassis_page_navigation_container ul .chassis_page_navigation_home a{margin:0 23px !important;}
+.chassis_page_navigation_container .chassis_page_navigation_dropdown{color:#000;float:left;display:block;height:27px;position:relative;background-color:transparent;}
+.chassis_page_navigation_container ul li a.chassis_page_navigation_menu, a.chassis_page_navigation_menu:visited, a.chassis_page_navigation_menu:active{text-decoration:none;line-height:27px;margin:0 15px;}
+.chassis_page_navigation_container a.chassis_page_navigation_menu:hover{color:#000;text-decoration:none;line-height:27px;border-bottom:#ef7c00 1px solid;}
+.chassis_page_navigation_container a.chassis_page_navigation_menu, a.chassis_page_navigation_menu:visited {color:#000;}
+.chassis_page_navigation_container ul li a#chassis_page_navigation_selected {border:none;}
+.chassis_page_navigation_container ul li a#chassis_page_navigation_selected:hover{text-decoration:underline;border-bottom:none;}
+.chassis_page_navigation_container ul li a#chassis_page_navigation_selected {background: url("/_layouts/Zurich/images/20120208/left_tab.gif") no-repeat  scroll left  top #E6E9E8;float:left;padding:0px 0px;text-decoration:none;width:auto;margin:0px 5px!important;white-space:nowrap;line-height:27px;color: #FFF;}
+.chassis_page_navigation_container ul li a#chassis_page_navigation_selected .chassis_page_navigation_outer{background: url("/_layouts/Zurich/images/20120208/right_tab.gif") no-repeat right top ;padding:0px 10px;float:left;line-height:27px;background-color:transparent;}
+.chassis_page_navigation_container .chassis_page_navigation_home a#chassis_page_navigation_selected span{padding:0 18px !important;}
+.chassis_page_navigation_container div.chassis_page_navigation_flyout {color:#000;background-color: #FFF;height: auto !important;position: absolute;top:27px;left:0px;right:auto;visibility: hidden;width: auto;z-index: 999;white-space: nowrap;padding: 21px 5px 21px 5px;border: 1px solid #d7dadb;}
+.chassis_page_navigation_container ul *:hover div.chassis_page_navigation_flyout {visibility: visible;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout ul {margin: 0px;padding:0px;width: auto;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout li {width:100%;display:block;padding:0 5px 0 4px;background: transparent url("/_layouts/Zurich/images/20120208/megamenu_chevron.gif") no-repeat center left;display:block;line-height: 173%;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout .chassis_page_navigation_menu_subheading {width:100%;display:block;padding:0 5px 0 18px;background: transparent url("/_layouts/Zurich/images/20120208/megamenu_chevron.gif") no-repeat center left;display:block;line-height: 173%;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout .chassis_page_navigation_menu_subheading span{min-height: 21px;font-weight:bold;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout .chassis_page_navigation_menu_subitem, ul div.chassis_page_navigation_flyout .chassis_page_navigation_menu_underline {min-height:22px;margin:0px 12px 0px 15px;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout li a span{color:#343434;}
+.chassis_page_navigation_container ul div.chassis_page_navigation_flyout li a:hover {color:#ef7c00;text-decoration:underline;display:block;}
+.chassis_page_navigation_container div.chassis_page_navigation_flyout li a, div.chassis_page_navigation_flyout li a:visited,div.chassis_page_navigation_flyout li a:active {text-decoration:none;color:#343434;width:auto;display:block;margin:0px;padding:0px;}
+.chassis_page_navigation_container ul .chassis_page_navigation_menu_underline {border-bottom:1px solid #d7dadb;width:170px;height:100%;}
+/*Time out menu Navigation*/
+.chassis_page_navigation_multicontiner_Offset{width:690px;float:left;}
+.chassis_page_navigation_multi_offset{margin-left:-234px}
+.chassis_page_navigation_multi_Offset{width:230px;float:left;}
+.chassis_page_navigation_single_Offset{width:210px;float:left;}
+.chassis_page_navigation_last_Offset{margin-left:-43px}
+
+/************* Buttons Enable state************/
+.chassis_application_button_xxxsmall, .chassis_application_button_xxsmall, .chassis_application_button_xsmall, .chassis_application_button_small, 
+.chassis_application_button_large, .chassis_application_button_xlarge, .chassis_application_button_medium, .chassis_application_button_xxxlarge, 
+.chassis_application_button_xxxxlarge{border: medium none;color:#FFF;background-color:transparent;height:21px;margin:0;padding:0;text-align:center;cursor:pointer;}
+.chassis_application_button_xxxsmall {background: url("/_layouts/Zurich/images/20120208/xxxsmall.png") no-repeat scroll 0 0 transparent;width:36px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xxsmall {background: url("/_layouts/Zurich/images/20120208/xxsmall.png") no-repeat scroll 0 0 transparent;width:36px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xsmall {background: url("/_layouts/Zurich/images/20120208/xsmall.png") no-repeat scroll 0 0 transparent;width:44px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_small {background: url("/_layouts/Zurich/images/20120208/small.png") no-repeat scroll 0 0 transparent;width:48px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_large {background: url("/_layouts/Zurich/images/20120208/large.png") no-repeat scroll 0 0 transparent;width:57px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xlarge {background: url("/_layouts/Zurich/images/20120208/xlarge.png") no-repeat scroll 0 0 transparent;width:60px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_medium {background: url("/_layouts/Zurich/images/20120208/xxlarge.png") no-repeat scroll 0 0 transparent;width:71px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xxxlarge {background: url("/_layouts/Zurich/images/20120208/xxxlarge.png") no-repeat scroll 0 0 transparent;width:123px;padding:0 0 2px 0;margin-top:5px;height:21px;}
+
+/************* Buttons Disable state************/
+.chassis_application_button_xxxsmall_disable, .chassis_application_button_xxsmall_disable, .chassis_application_button_xsmall_disable, .chassis_application_button_small_disable, 
+.chassis_application_button_large_disable, .chassis_application_button_xlarge_disable, .chassis_application_button_medium_disable, .chassis_application_button_xxxlarge_disable, 
+.chassis_application_button_xxxxlarge_disable, .chassis_application_button_xxxlarge_add_disable, .chassis_application_button_xxxlarge_addall_disable,
+.chassis_application_button_xxxlarge_remove_disable, .chassis_application_button_xxxlarge_removeall_disable{border: medium none;color:#FFF;background-color:transparent;height:21px;margin:0;padding:0;text-align:center;color:#c2c2c2;}
+.chassis_application_button_xxxlarge_add_disable, .chassis_application_button_xxxlarge_addall_disable, 
+.chassis_application_button_xxxlarge_remove_disable, .chassis_application_button_xxxlarge_removeall_disable{background: url("/_layouts/Zurich/images/20120208/xxxlarge_disable.png") no-repeat scroll 0 0 transparent;width:123px;padding:0 0 2px 0;margin-top:5px;height:21px;cursor:auto;}
+
+.chassis_application_button_xxxsmall_disable {background: url("/_layouts/Zurich/images/20120208/xxxsmall_disable.png") no-repeat scroll 0 0 transparent;width:36px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xxsmall_disable {background: url("/_layouts/Zurich/images/20120208/xxsmall_disable.png") no-repeat scroll 0 0 transparent;width:36px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xsmall_disable {background: url("/_layouts/Zurich/images/20120208/xsmall_disable.png") no-repeat scroll 0 0 transparent;width:44px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_small_disable {background: url("/_layouts/Zurich/images/20120208/small_disable.png") no-repeat scroll 0 0 transparent;width:48px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_large_disable {background: url("/_layouts/Zurich/images/20120208/large_disable.png") no-repeat scroll 0 0 transparent;width:57px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xlarge_disable {background: url("/_layouts/Zurich/images/20120208/xlarge_disable.png") no-repeat scroll 0 0 transparent;width:60px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_medium_disable {background: url("/_layouts/Zurich/images/20120208/xxlarge_disable.png") no-repeat scroll 0 0 transparent;width:71px;height:21px;padding:0 0 2px 0;}
+.chassis_application_button_xxxlarge_disable {background: url("/_layouts/Zurich/images/20120208/xxxlarge_disable.png") no-repeat scroll 0 0 transparent;width:123px;padding:0 0 2px 0;margin-top:5px;height:21px;}
+/*:root .chassis_application_button_medium {padding-bottom:0\9;}*/
+
+/************ Select and Text box fixed width ************/
+.chassis_application_extra_small_text_box {width:44px;}
+.chassis_application_extra_small_text_boxs{width:82px;}
+.chassis_application_small_text_box {width:86px;}
+.chassis_application_zplan_small_text_box {width:110px;}
+.chassis_application_medium_text_box{ width:147px;}
+.chassis_application_large_text_box{ width:180px;}
+.chassis_application_extra_small_select_lists {width:49px;}/*used for List navigation and Currency and Amount*/
+.chassis_application_extra_small_select_list {width:65px;}
+.chassis_application_small_select_list {width:90px;height:19px;}
+.chassis_application_medium_select_list { width:150px;height:19px;}
+
+/************ Hyperlink Global ************/
+.chassis_hyperlink{color:#003399;text-decoration:none;background-color:transparent; }
+
+/************ Application header ************/
+.chassis_application_header{width:900px;text-align:left;padding:0;float:left;font-size:0.917em;padding:0px 0 20px 0; }
+.chassis_application_header .chassis_application_summary_section{width:690px;float:left;padding:0;}
+.chassis_application_header .chassis_application_summary_section tr td{padding:2px 0 2px 0px;}
+.chassis_application_header .chassis_application_summary_section h1{border-bottom: 1px solid #C3CCDD;color: #003399;font-weight:bold;margin: 0px 0px 1px 0px;padding:5px 0em 5px 10px; font-size:1.2em;background-color:transparent;}
+.chassis_application_header .chassis_application_summary_section label{float:left; width:110px; padding:3px 0 2px 10px; color:#666666; background-color:transparent;}
+.chassis_application_header .chassis_application_summary_section span{float:left; width:110px; padding-top:3px; padding-bottom:2px; color:#000; background-color:transparent;}
+
+.chassis_application_header .chassis_application_context_section{float:left;width:180px;margin:0px 0px 0px 30px;padding:0px}
+.chassis_application_header .chassis_application_context_section h1{border-bottom: 1px solid #C3CCDD;color: #003399;font-size:1.2em;font-weight: bold;margin: 0px 0px 1px 0px;padding:5px 0px 5px 0px;background-color:transparent;}
+.chassis_application_header .chassis_application_context_section ul{padding:0 10px 0 0;margin:0px;list-style-type:none;clear:both;}
+.chassis_application_header .chassis_application_context_section ul li{padding:0px;margin:0px;padding:5px 0 4px 0;}
+.chassis_application_header .chassis_application_context_section ul li a{text-decoration:none; color:#003399;background-color:transparent;}
+.chassis_application_header .chassis_application_context_section .chassis_pdf_link{background-image:url(/_layouts/Zurich/images/20120208/icon_acrobat.gif);background-position: left bottom;background-repeat: no-repeat;padding-left: 19px;}
+.chassis_application_header .chassis_application_context_section .chassis_retrieve_link{background-image:url(/_layouts/Zurich/images/20120208/icon_retrieve.gif);background-position: left center;background-repeat: no-repeat;padding-left: 19px;padding-bottom:2px; }
+
+
+.table_header{background: #06389B url(/_layouts/Zurich/images/20120208/ui-bg_highlight-soft_65_06389b_1x100.png) 50% 50% repeat-x}
+.table_header td {color:White}
+
+.table_footer{background:url(/_layouts/Zurich/images/20120208/tableBelowFooter.JPEG) 50% 50% repeat-x}
+
+
+/************ Application navigation level ************/
+.chassis_application_navigation_container ul {padding: 7px 0px 6px 0px;background: url("/_layouts/Zurich/images/20120208/navgradient_background.jpg") no-repeat bottom left;list-style: none;margin-left: 0px; border-bottom:2px solid #003399;}
+.chassis_application_navigation_container li {display: inline;	padding-top:7px;padding-bottom:6px; #padding-bottom:0px; #padding-top:0px;background: url("/_layouts/Zurich/images/20120208/seperator.gif") no-repeat top right;}
+.chassis_application_navigation_container_tick {margin-left:-15px; margin-bottom:-5px}
+.chassis_application_navigation_container_error{margin-left:-18px; margin-bottom:-2px; padding-right:3px}
+.chassis_application_navigation_container {width:900px;color: black;float:left;padding:4px 0;}
+.chassis_application_navigation_container .chassis_application_navigation_inner,.chassis_application_navigation_container .chassis_application_navigation_outer {display:inline;padding-bottom:3px;}
+.chassis_application_navigation_container .chassis_application_navigation_outer {margin:0 7px 0 4px;}
+.chassis_application_navigation_container a,
+.chassis_application_navigation_container a:link,
+.chassis_application_navigation_container a:visited,
+.chassis_application_navigation_container a:active,
+.chassis_application_navigation_container a:hover {	color: black;margin: 0px 9px 0px 10px;	text-decoration: none;}
+.chassis_application_navigation_container a:hover {border-bottom: 1px solid #ef7c00;}
+.chassis_application_navigation_selected .chassis_application_navigation_inner {background: transparent url("/_layouts/Zurich/images/20120208/left_tab.gif") no-repeat top left;margin-right:4px; padding-top: 7px; #padding-top:7px; padding-bottom:6px;}
+.chassis_application_navigation_selected .chassis_application_navigation_outer {background: transparent url("/_layouts/Zurich/images/20120208/right_tab.gif") no-repeat top right;padding-top:7px; #padding-top: 0px; padding-bottom:6px; #padding-bottom:0px;padding-right:5px;}
+.chassis_application_navigation_selected a,
+.chassis_application_navigation_selected a:link,
+.chassis_application_navigation_selected a:visited,
+.chassis_application_navigation_selected a:active,
+.chassis_application_navigation_selected a:hover {color:white;padding-left:14px;margin-right: 0px;margin-left: 0px;}
+.chassis_application_navigation_selected a:hover {text-decoration: underline;border-bottom: none;}
+.chassis_application_page_warnings{background: url("/_layouts/Zurich/images/20120208/navmenu_warning.png") no-repeat scroll left bottom transparent;height:16px;width:15px; display: inline;padding:0px;margin-left:10px}
+.chassis_application_page_errors{background: url("/_layouts/Zurich/images/20120208/navmenu_error.png") no-repeat;padding:2px 0 0 0;height:16px;width:15px; display: inline;margin-left:10px}
+.chassis_application_page_complete{background: url("/_layouts/Zurich/images/20120208/navmenu_tick.png") no-repeat;height:16px; width:15px; padding:3px 0 0 0;margin-left:10px;}
+.chassis_application_page_empty{}
+.chassis_application_nav_first_entry{margin-left:10px !important; }
+.chassis_application_page_complete, .chassis_application_page_errors, .chassis_application_page_warnings,
+.chassis_application_navigation_selected .chassis_application_page_complete a, .chassis_application_navigation_selected .chassis_application_page_errors a, .chassis_application_navigation_selected .chassis_application_page_warnings a{padding-left:10px;}
+
+/************ Application navigation level 1 ************/
+.chassis_application_navigation_selected_tab1 .chassis_application_navigation_inner {background: transparent url("/_layouts/Zurich/images/20120208/left_tab1.png") no-repeat top left;margin-right:4px; padding-top: 7px; #padding-top:7px; padding-bottom:6px;}
+.chassis_application_navigation_selected_tab1 .chassis_application_navigation_outer {background: transparent url("/_layouts/Zurich/images/20120208/right_tab1.png") no-repeat top right;padding-top:7px; #padding-top: 0px; padding-bottom:6px; #padding-bottom:0px;padding-right:5px;}
+.chassis_application_navigation_selected_tab1 a,
+.chassis_application_navigation_selected_tab1 a:link,
+.chassis_application_navigation_selected_tab1 a:visited,
+.chassis_application_navigation_selected_tab1 a:active,
+.chassis_application_navigation_selected_tab1 a:hover {color:white;padding-left:10px;margin-right: 0px;margin-left: 0px;}
+.chassis_application_navigation_selected_tab1 a:hover {text-decoration: underline;border-bottom: none;}
+
+/************ Application navigation level 2 ************/
+.chassis_application_navigation_selected_tab2 .chassis_application_navigation_inner {background: transparent url("/_layouts/Zurich/images/20120208/left_tab2.png") no-repeat top left;margin-right:4px; padding-top: 7px; #padding-top:7px; padding-bottom:6px;}
+.chassis_application_navigation_selected_tab2 .chassis_application_navigation_outer {background: transparent url("/_layouts/Zurich/images/20120208/right_tab2.png") no-repeat top right;padding-top:7px; #padding-top: 0px; padding-bottom:6px; #padding-bottom:0px;padding-right:5px;}
+.chassis_application_navigation_selected_tab2 a,
+.chassis_application_navigation_selected_tab2 a:link,
+.chassis_application_navigation_selected_tab2 a:visited,
+.chassis_application_navigation_selected_tab2 a:active,
+.chassis_application_navigation_selected_tab2 a:hover {	color:black;padding-left:10px;margin-right: 0px;	margin-left: 0px;}
+.chassis_application_navigation_selected_tab2 a:hover {	text-decoration: underline;	border-bottom: none;}
+
+/************* Tooltip Support icon************/
+.chassis_info_icon{vertical-align:bottom;}
+.chassis_overlaypop{border:1px solid #8f9091;font-size:0.917em;padding:5px;display:none;left:0px;float:left;width:150px;position:absolute;top:0px;height:auto;background-color:#e6f3fb;color:inherit;text-align:left;}
+
+/************ Application page - Foot Notes ************/
+.chassis_application_footnotes {float:left;width:100%;padding:3px 0}
+.chassis_application_footnotes ul {list-style: none outside none; margin-left:10px; padding-left:0;float:left;width:100%;}
+.chassis_application_footnotes ul li {background: url("/_layouts/Zurich/images/20120208/mandatory_field_marker.png");background-position: 1px 50%; background-repeat: no-repeat;padding-left: 10px;}
+
+/************* Application page Buttons container************/
+.chassis_application_button_container {text-align:right;}
+
+/************ Application mandatory Icon************/
+span.chassis_application_mandatory_field {background: url("/_layouts/Zurich/images/20120208/mandatory_field_marker.png");background-position: 1px 50%;background-repeat: no-repeat; margin-left: -11px; padding-left: 10px; }
+
+/************ Response Enabling ************/
+.chassis_application_disable_color{color:#999;}
+
+/************ Feedback on Interaction ************/
+.chassis_application_feedback_error{color:#FF0000;padding:7px 0 0px 10px;font-weight:bold;float:left;color:#ff0000;line-height:17px;}
+
+/************ Conformation Checkbox ************/
+.chassis_application_horizontal_seperator{float:left;border-top:1px solid #D7DADB;width:880px;margin:5px 10px 0 10px; }
+
+/************ Bullet ************/
+.chassis_bullet_image{color:#003399}
+.chassis_bullet_image li{padding:3px 0 1px 0;#overflow:auto;#padding:2px 0 0 0;}
+.chassis_bullet_image li span{color:#000;}
+.chassis_bullet_margin_left{#margin-left:40px;}
+
+/************ Modern Popup Global ************/
+.chassis_updated_successful{width:32%;position:absolute;top:20%;left:33%;z-index:400;background-color:#e7f3fa;padding:10px;display:none;height:300px;border:1px solid #ccc;margin:0px !important;}      
+.chassis_successful_popup_close{float:right;cursor:pointer;}
+.chassis_popup_h3{padding-bottom:10px;}
+
+/************ Tables List navigation************/
+.chassis_application_list_navigation {background-color: #CDCDCD;margin: 10px 0 0 0px;text-align:left;width: 100%;cursor:default }
+.chassis_application_list_navigation thead tr th, .chassis_application_list_navigation tfoot tr th, .chassis_application_list_navigation tbody td {background-color: #003399;border: 1px solid #FFF;padding: 5px;}
+.chassis_application_list_navigation thead tr .header {background-position: right center;background-repeat: no-repeat;color:#FFF;font-weight:normal; text-align: center;}
+.chassis_application_list_navigation tbody td {background-color: #FFF;color: #3D3D3D;padding: 4px; vertical-align: top; text-align:left;}
+.chassis_application_list_navigation tbody tr.odd td {background-color: #F0F0F6;}
+.chassis_application_list_navigation thead tr .headerSortDown, .chassis_application_list_navigation thead tr .headerSortUp {background-color: #8DBDD8;}
+.chassis_application_list_navigation_icon{padding:0 0 0 0px;top:2px;position:relative;height:15px;width:15px }
+.chassis_application_list_navigation_results{float:right;font-weight:bold;line-height:22px; }
+.ui-datepicker-trigger{padding:0 0 0 5px;top:2px;position:relative;}
+.ui-datepicker table{background-color:#E7E7E7; }
+
+/************ Shifter box ************/
+.chassis_shifterbox .chassis_language_continer{width:600px;margin:10px 0px 5px 58px}
+.chassis_shifterbox .chassis_language{width:320px}
+.chassis_shifterbox .chassis_fromselect{float:left;width:130px;margin: 0 0 0 60px;}
+.chassis_shifterbox .chassis_fromselect select{width:115px;height:118px}
+.chassis_shifterbox .chassis_condition_select{float:left; width:130px; margin: 0 30px;}
+.chassis_shifterbox .chassis_toselect{width:130px;margin:0 30px;}
+.chassis_shifterbox .chassis_toselect select{width:115px;height:118px}
+
+/************ Hierarchical checkbox  ************/
+#chassis_application_hierarchial_input_checked_all{position:relative; z-index:1;}
+#chassis_application_hierarchial_checked{font-weight:bold;font-size:18px;position: absolute;top:-4px;#top:1px;left:6px;z-index: 999;padding:0;}
+.chassis_application_hierarchial_ul{#margin-left:40px}
+
+/************ Mandatory field ************/
+.chassis_application_mandatory_warning{background: url("/_layouts/Zurich/images/20120208/warning.png") no-repeat scroll 100% 51%;border:1px solid #d51923;color:#d51923;z-index:999;}
+.chassis_application_mandatory_small_warning{background: url("/_layouts/Zurich/images/20120208/warning.png") no-repeat scroll 74% 49%;border:1px solid #d51923;color:#d51923;z-index:999;}
+.chassis_application_mandatory_tooltip{border:1px red solid; position:absolute;padding:5px;margin-top:-5px; background-color:#f2f2f2; font-weight:bold; color:#ff0000;}
+.chassis_application_mandatory_tooltip_non_info{margin-right:2px;#margin-right:0px;}
+
+/************Auto completion ************/
+.chassis_application_auto_complete {padding: 0px;border: 1px solid #B8B8B8 ;background-color: white;overflow: hidden;}
+.chassis_application_auto_complete ul {width: 100%;list-style-position: outside;list-style: none;padding: 0;margin: 0;}
+.chassis_application_auto_complete li {margin: 0px;padding: 2px 5px;cursor: default;display: block;font-family:Verdana;font-size: 0.917em;line-height: 16px;overflow: hidden;}
+.chassis_application_auto_complete_loading {background: #FFF;}
+.chassis_application_auto_complete_odd {background-color: #EEE;}
+.chassis_application_auto_complete_over {background-color: #003399;color: #FFF;}
+
+/************ Index Page ************/
+.chassis_index_left_section{float:left;width:690px;padding:0;margin:0;}
+.chassis_index_carousel{float: left;width:100%;}
+.chassis_index_featured_category_left{float:left;padding:30px 20px 0 0;width:335px}
+.chassis_index_featured_category_right{float:left;padding: 0;width:335px;}
+.chassis_index_right_section{float:left;width:180px;padding:0;margin:0 0 0 30px;}
+
+
+.riskProfileScore {font-size:smaller;color:#039}

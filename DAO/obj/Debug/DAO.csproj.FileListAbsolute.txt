@@ -1,0 +1,6 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DAO\bin\Debug\DAO.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DAO\bin\Debug\DAO.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DAO\bin\Debug\DAO.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DAO\obj\Debug\DAO.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\DAO\obj\Debug\DAO.pdb

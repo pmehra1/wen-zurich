@@ -1,0 +1,1909 @@
+/*Master Class*/
+body
+{
+    font-family: verdana;
+    font-size: 8pt;
+    color: #000000;
+    background: url("/_layouts/Zurich/portalimages/bg.png") repeat-y scroll center transparent;
+    width: 100%;
+    margin: 0px;
+}
+img
+{
+    border: 0px;
+}
+p, h1, h2, h3, h4, h5, h6
+{
+    padding: 0px;
+    margin: 0px;
+}
+input
+{
+    margin-top: 3px;
+}
+select
+{
+    margin-top: 4px;
+}
+.padMargin
+{
+    padding: 0px;
+    margin: 0px;
+}
+.dateBackGroundColour
+{
+    background-color: #B8B8B8;
+}
+.outerContiner
+{
+    clear: both;
+    width: 900px;
+    margin: 0 auto;
+}
+.floatL
+{
+    float: left;
+}
+.floatR
+{
+    float: right;
+}
+.clear
+{
+    clear: both;
+}
+.hidethis
+{
+    display: none;
+}
+.padRGHT
+{
+    padding-right: 5px;
+}
+.padTB3
+{
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+.padLFT
+{
+    padding-left: 15px;
+}
+.pad_LFT
+{
+    padding-left: 10px;
+}
+.padTB5
+{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+.padTB8
+{
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+.ico5margin
+{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.ico5margin_top
+{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.textwidth
+{
+    width: 30px;
+}
+.borderNone
+{
+    border: 0px;
+}
+.icon_margin
+{
+    margin-left: -12px;
+}
+.padding_left
+{
+    padding-left: 15px;
+}
+.borderRight
+{
+    border-right: 1px solid #003399;
+    padding-right: 2px;
+}
+.border_global
+{
+    border: 1px solid #003399;
+}
+.width125
+{
+    width: 125px;
+}
+.text_align
+{
+    text-align: center !important;
+}
+.lineheight
+{
+    line-height: 16px;
+}
+.mar_bot
+{
+    margin-bottom: -10px;
+}
+
+.blueCircle
+{
+    vertical-align:bottom;
+    background-image: url(/_layouts/Zurich/portalimages/ico7.png);
+    
+}
+.validPass
+{
+    background-image: url(/_layouts/Zurich/portalimages/ico7.png);
+    width: 8px;
+    height: 8px;
+    float: left;
+    margin-top: 8px;
+}
+.validFail
+{
+    background-image: url(/_layouts/Zurich/portalimages/ico6.png);
+    width: 8px;
+    height: 8px;
+    float: left;
+    margin-top: 8px;
+    display: none;
+}
+.margin_top
+{
+    margin-top: 10px;
+}
+.tab_nbg
+{
+    background: inherit !important;
+}
+/* Heading Global*/
+.chassis_ContentArea #centerDiv .headingGlobal
+{
+    background-image: url(/_layouts/Zurich/portalimages/headingBG.png);
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    font-size: 1em;
+    width: 880px;
+    padding: 0px 10px;
+    font-weight: bold;
+    color: #003399;
+}
+
+/* Label Global*/
+.echasis_label_global
+{
+    float: left;
+    padding: 8px 0px;
+}
+
+
+/*---- User Panel -- */
+
+.chassis_header_container .user_panel
+{
+    background-image: url('/_layouts/Zurich/portalimages/headingBG.png');
+    color: #003399;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 98%;
+    padding: 0px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.chassis_header_container .user_panel .user_det
+{
+    float: left;
+    font-size: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 1px;
+}
+.chassis_header_container .user_panel .login_det
+{
+    float: right;
+    font-size: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-top: 1px;
+}
+
+/* -- End -- */
+
+/*Maincontainer*/
+
+.echasis_maincontainerBG_G
+{
+    width: 100%;
+    float: left;
+    background-color: #F8F8F8;
+    color: inherit;
+}
+
+/*Data container global*/
+.echassis_data_continer_G
+{
+    float: left;
+    width: 100%;
+    background-color: #FfFfFf;
+}
+
+/* input text box8*/
+.echasis_inputtextbox_height
+{
+    height: 14px;
+}
+
+/* list style type*/
+.echasis_styletype_G
+{
+    list-style: none;
+}
+/*background color*/
+.echasis_BGcolor_G
+{
+    background-image: url(/_layouts/Zurich/portalimages/headingBG.png);
+    height: 30px;
+    float: left;
+    font-size: 1em;
+    padding: 0px 10px;
+    font-weight: bold;
+    color: #003399;
+}
+
+
+/*Single column Global*/
+.echasis_one_Column_G
+{
+    width: 880px;
+    padding: 0px 10px;
+    float: left;
+}
+.echasis_one_ColumnBG_G
+{
+    width: 880px;
+    padding: 0px 10px;
+    background-color: #F8F8F8;
+    float: left;
+}
+
+
+/*Two column Global*/
+.echasis_Two_LabelCol_G
+{
+    width: 240px;
+    float: left;
+    padding: 0px 30px 0px 10px;
+}
+.echasis_Two_DataCol_G
+{
+    width: 610px;
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+
+/*Three column Global*/
+.echasis_Three_LabelCol_G
+{
+    width: 240px;
+    float: left;
+    padding: 0px 30px 0px 10px;
+}
+.echasis_Three_DataCol_G
+{
+    width: 300px;
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+.echasis_Three_LabelCol_TwoG
+{
+    width: 300px;
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+
+/* Four column Global*/
+.echasis_Four_LabelCol_OneG
+{
+    width: 160px;
+    float: left;
+    padding: 0px 30px 0px 10px;
+}
+.echasis_Four_DataCol_G
+{
+    width: 245px;
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+.echasis_Four_LabelCol_TwoG
+{
+    width: 160px;
+    float: left;
+    padding: 0px 30px 0px 0px;
+}
+
+/*Hyperlink Global*/
+.echasis_hyperlink_G
+{
+    text-decoration: none;
+    color: #003399;
+}
+
+/*Color Global*/
+.echasis_Colorlightblue_G
+{
+    background-color: #E2E8F1 !important;
+}
+
+/*Font color*/
+.echasis_fontColorlightblue_G
+{
+    color: #003399;
+}
+
+/* UL Margin None*/
+.echasis_Ul_marginNone_G
+{
+    list-style-type: none;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*popup*/
+.echasis_heading_margin
+{
+    margin-top: -2px;
+}
+
+/*Content Area Start*/
+.chassis_ContentArea
+{
+    float: left;
+    width: 900px;
+    text-align: left;
+    padding: 20px 0px;
+    margin: 0px;
+    font-size: 0.9em;
+    color: inherit;
+    background-color: #fff;
+}
+.chassis_ContentArea .centerDivFull
+{
+    float: left;
+    width: 100% !important;
+}
+.chassis_ContentArea .center_With_PromotionR
+{
+    float: left;
+    width: 690px !important;
+    padding: 0px 0px 0px 10px;
+}
+.chassis_ContentArea .center_With_PromotionL
+{
+    float: left;
+    width: 690px !important;
+    padding: 0px 10px 0px 0px;
+}
+.chassis_ContentArea .center_With_Two_Promotion
+{
+    float: left;
+    width: 500px;
+}
+.chassis_ContentArea .leftPromotion
+{
+    float: left;
+    width: 160px;
+    padding: 0px 30px 0px 10px;
+}
+.chassis_ContentArea .rightPromotion
+{
+    float: left;
+    width: 160px;
+    padding: 0px 10px 0px 30px;
+}
+
+/*Application Navigation */
+.echasis_application_navigation
+{
+    width: 100%;
+    float: left;
+    height: 100%;
+    margin: 5px 0px;
+    border: 1px solid #eeeeee !important;
+    padding: 5px 0px 0px 0px;
+}
+.echasis_application_navigation .bg
+{
+    background-image: url(/_layouts/Zurich/portalimages/menuBG.gif);
+    float: left;
+    clear: both;
+    height: 27px;
+    font-size: 0.9em;
+    width: 95%;
+    border-bottom: 2px solid #003399;
+}
+.echasis_application_navigation ul.tabs
+{
+    list-style-type: none;
+    padding: 0px;
+    margin: 11px 0px 6px 0px;
+    height: 27px;
+}
+.echasis_application_navigation ul.tabs .firstnav
+{
+    background: none repeat scroll 0 0 transparent;
+}
+.echasis_application_navigation ul.tabs li
+{
+    text-align: left;
+    margin: 0px;
+    display: inline;
+    background: url(/_layouts/Zurich/portalimages/seperator.gif) no-repeat scroll 0 0 transparent;
+    float: left;
+    padding: 0 1px;
+}
+.echasis_application_navigation ul.tabs a
+{
+    line-height: 27px;
+    color: #000;
+    float: left;
+    padding: 0px 15px;
+    text-decoration: none;
+    width: auto;
+}
+
+.echasis_application_navigation ul.tabs a.current
+{
+    background: transparent url(/_layouts/Zurich/portalimages/left_tab.gif) no-repeat top left;
+    background-color: #e6e9e8;
+    padding: 0px;
+    margin: 0px 5px;
+    float: left;
+    white-space: nowrap;
+}
+.echasis_application_navigation ul.tabs a.current .linkpartAN
+{
+    background-color: #e6e9e8;
+    background: transparent url(/_layouts/Zurich/portalimages/right_tab.gif) no-repeat top right;
+    color: #fff;
+    float: left;
+    padding: 0px 10px 0px 10px;
+    margin: 0px;
+}
+
+.echasis_application_navigation ul.tabs a:hover
+{
+    background: url("/_layouts/Zurich/portalimages/left_tab.gif") no-repeat scroll left top #E6E9E8;
+    float: left;
+    padding: 0px 0px;
+    text-decoration: none;
+    width: auto;
+    margin: 0px 5px;
+    white-space: nowrap;
+    line-height: 27px;
+}
+.echasis_application_navigation ul.tabs a:hover span
+{
+    background: url("/_layouts/Zurich/portalimages/right_tab.gif") no-repeat right top;
+    color: #ffffff;
+    padding: 0px 10px;
+    float: left;
+    line-height: 27px;
+}
+
+.echasis_application_navigation .echassis_page_pass
+{
+    background: url("/_layouts/Zurich/portalimages/navmenu_tick.png") no-repeat scroll center top transparent !important;
+    display: inline;
+    padding-top: 22px;
+    position: relative;
+    z-index: 99;
+}
+.echasis_application_navigation .echassis_page_error
+{
+    background: url("/_layouts/Zurich/portalimages/navmenu_error.png") no-repeat scroll center top transparent !important;
+    display: inline;
+    padding-top: 22px;
+    position: relative;
+    z-index: 99;
+}
+.echasis_application_navigation .echassis_page_warnings
+{
+    background: url("/_layouts/Zurich/portalimages/navmenu_warning.png") no-repeat scroll center top transparent !important;
+    display: inline;
+    padding-top: 22px;
+    position: relative;
+    z-index: 99;
+}
+
+/*Popup Global*/
+#updatedSuccessful
+{
+    width: 32%;
+    position: absolute;
+    top: 20%;
+    left: 400px;
+    z-index: 400;
+    background-color: #e7f3fa;
+    padding: 10px;
+    display: none;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin: 0px !important;
+}
+.successfulPopupClose
+{
+    float: right;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+
+/*Error Preventation global*/
+.overlayPop
+{
+    border: 1px solid #8f9091;
+    padding: 5px;
+    display: none;
+    left: 0px;
+    float: left;
+    width: 265px;
+    position: absolute;
+    top: 0px;
+    height: auto;
+    background-color: #e6f3fb;
+    text-align: left;
+}
+
+/*span align global*/
+.echasis_sapn_fntbld
+{
+    font-weight: bold;
+}
+.echasis_span_align
+{
+    margin-left: 3px;
+}
+.echasis_span_padding
+{
+    float: right;
+    padding-top: 5px;
+}
+.echasis_span_Top_padding
+{
+    margin-top: 5px;
+    float: left;
+}
+.echasis_span_Top_padding_righ
+{
+    float: right;
+    margin-top: 5px;
+}
+
+
+/*Form*/
+.form
+{
+    float: left;
+    width: 100%;
+    background-color: #eeeeee;
+}
+/*display-none*/
+.echasis_display_none
+{
+    display: none;
+}
+
+/*Confirmation Checkbox*/
+.checkbord
+{
+    border-bottom: 1px solid #C7C7C7;
+}
+
+/*list style type*/
+.echasis_list_none
+{
+    list-style-type: none;
+}
+
+/* data entry group*/
+.echassis_data_entry_group
+{
+    float: left;
+    width: 100%;
+}
+
+/* Text and Instruction*/
+.text_instruction
+{
+    float: left;
+    width: 100%;
+}
+
+.text_instruction ul li
+{
+    margin: 0;
+    padding: 0 0 0 25px;
+    list-style-type: none;
+    background: url("/_layouts/Zurich/portalimages/bullet.gif") no-repeat;
+    background-position: 12px 8px;
+}
+
+/*Output Display Field*/
+.outputDis
+{
+    float: left;
+    clear: both;
+    width: 880px;
+    background-color: #eeeeee;
+    padding: 0px 10px;
+}
+.outputDis .left
+{
+    float: left;
+    width: 240px;
+    padding: 0px 30px 0px 0px;
+    line-height: 30px;
+}
+.outputDis .border
+{
+    border-bottom: 1px solid #c7c7c7;
+    padding: 0px;
+    clear: both;
+    width: 880px;
+}
+.outputDis .right
+{
+    float: left;
+}
+
+/***************************Table Starts ***************************/
+
+.vtabs
+{
+    /* a border is required for IE otherwise the tab panels will not be aligned correctly. */
+    position: relative;
+    width: 600px;
+}
+.vtabs .vtabs-tab-column
+{
+    position: absolute;
+    left: 0;
+    margin: 0;
+    width: 170px;
+    min-width: 170px;
+}
+.vtabs .vtabs-tab-column ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+/* css for tab that is open */
+.vtabs .vtabs-tab-column ul li.open, .vtabs .vtabs-tab-column ul li.closed
+{
+    background-color: #f8f8f8;
+    margin: 0px;
+    padding-left: 7px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    min-height: 20px;
+    z-index: 10;
+}
+/* css for tab that is closed */
+.vtabs .vtabs-tab-column ul li.closed
+{
+    background-color: #E2E8F1;
+    background-repeat: repeat-x;
+}
+/* css for tab hover */
+.vtabs .vtabs-tab-column ul li:hover
+{
+    background-color: #efefef;
+    background-repeat: repeat-x;
+}
+/* css for link on tab that's open */
+.vtabs .vtabs-tab-column ul li a.open, .vtabs .vtabs-tab-column ul li a.closed
+{
+    font: 11px Helvetica, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: #000;
+}
+/* css for link on tab that's closed */
+.vtabs .vtabs-tab-column ul li a.closed
+{
+    color: blue;
+}
+.vtabs .vtabs-content-column
+{
+    padding: 0px;
+    margin: 0px;
+}
+/* css for the content panels */
+.vtabs .vtabs-content-column .vtabs-content-panel
+{
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 0px 0px 0px 10px;
+}
+
+
+/*Radio button*/
+.Radiotext
+{
+    margin-left: 25px;
+}
+.Radiotext_span
+{
+    font-weight: bold;
+}
+
+
+/*Checkbox*/
+.checktext
+{
+    border-bottom: 2px solid #FFFFFF;
+    color: #003399;
+}
+
+/*.outerContiner span{font-weight:bold;}*/
+.checkbor
+{
+    border-bottom: 2px solid white;
+}
+
+/*multiline*/
+.multicom
+{
+    width: 100px;
+    float: left;
+    padding-top: 10px;
+    color: #003399;
+}
+.multitext
+{
+    width: 200px;
+    float: left;
+    margin-left: 100px;
+    margin-top: -25px;
+    padding-top: 10px;
+    color: #003399;
+}
+.multicon
+{
+    width: 300px;
+    float: left;
+    clear: both;
+    color: #003399;
+    padding: 0px 0px 0px 10px;
+}
+.multilnetxt
+{
+    margin-top: 64px;
+    margin-left: 99px;
+    color: #003399;
+}
+.multilnetxt span
+{
+    font-weight: bold;
+}
+.multi_span
+{
+    float: left;
+    margin-top: -15px;
+    margin-left: 35px;
+}
+
+
+/*Hyperlink*/
+.hymin
+{
+    width: 893px;
+    height: 20px;
+    background-color: #eeeeee;
+    padding: 10px;
+    font-weight: bold;
+}
+.hymin a
+{
+    text-decoration: none;
+    border-right: 1px solid blue;
+    padding: 0px 5px;
+    color: #003399;
+}
+.hymin1
+{
+    background-color: #003399;
+    color: inherit;
+    float: left;
+    clear: both;
+    height: 34px;
+    width: 893px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+.hymin1 ul
+{
+    float: left;
+    width: auto;
+    margin: auto;
+    padding: 0px;
+}
+.hymin1 li
+{
+    text-align: left;
+    margin: 0px;
+    display: inline;
+}
+.menu
+{
+    border-right: 1px solid #999999;
+    color: #FFFFFF;
+    float: left;
+    height: 22px;
+    padding: 10px 12px 2px;
+    text-decoration: none;
+    width: 100px;
+    font-size: 1em;
+}
+.menus
+{
+    border-right: 1px solid #999999;
+    color: #FFFFFF;
+    float: left;
+    padding: 10px 5px 5px;
+    text-decoration: none;
+    width: auto;
+    font-size: 1em;
+    height: 19px;
+}
+
+/*Shifter Box*/
+.echasis_shifterBox
+{
+    margin: 0 auto;
+    width: 650px;
+}
+.echasis_shifterBox .conLang
+{
+    float: left;
+    width: 600px;
+    clear: both;
+    margin: 10px 0px 5px 58px;
+}
+.echasis_shifterBox .language
+{
+    float: left;
+    width: 412px;
+}
+.echasis_shifterBox .fromSelect
+{
+    float: left;
+    width: 130px;
+    padding: 0 60px;
+}
+.echasis_shifterBox .fromSelect select
+{
+    width: 115px;
+    height: 118px;
+}
+.echasis_shifterBox .conSelect
+{
+    float: left;
+    width: 130px;
+    padding: 0 30px;
+}
+.echasis_shifterBox .conSelect input
+{
+    width: 130px;
+    height: 23px;
+}
+.echasis_shifterBox .toSelect
+{
+    float: left;
+    width: 130px;
+    padding: 0 30px;
+}
+.echasis_shifterBox .toSelect select
+{
+    width: 115px;
+    height: 118px;
+}
+
+/*Portal Footer*/
+.chassis_footer
+{
+    float: left;
+    width: 880px;
+    text-align: left;
+    padding: 2px 10px 2px 10px;
+    font-size: 0.9em;
+    color: inherit;
+    background-color: #fff;
+}
+.chassis_footer .copyright
+{
+    float: left;
+    width: 100%;
+}
+.chassis_footer .copyright ul
+{
+    float: right;
+    margin: auto;
+    padding: 0;
+    width: auto;
+    list-style-type: none;
+}
+.chassis_footer .copyright ul li
+{
+    display: inline;
+    margin: 0;
+}
+.chassis_footer .copyright ul .copypad
+{
+    padding-left: 10px;
+}
+.chassis_footer .copyright ul li a
+{
+    border-right: 1px solid #999999;
+    color: #003399;
+    float: left;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+/*Application Header*/
+.chassis_application_header
+{
+    float: left;
+    width: 880px;
+    text-align: left;
+    padding: 0px 10px;
+}
+.chassis_application_header .application_summary
+{
+    width: 680px;
+    float: left;
+}
+.chassis_application_header .application_summary h1
+{
+    border-bottom: 1px solid #C3CCDD;
+    color: #003399;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px 0px 1px 0px;
+    padding: 0.5em 0em;
+    font-size: 1.2em;
+}
+.chassis_application_header .application_summary .data_container
+{
+    float: left;
+    width: 220px;
+    padding: 0px;
+    display: inline;
+}
+.chassis_application_header .application_summary .data
+{
+    float: left;
+    width: 215px;
+    padding: 3px 0px;
+}
+.chassis_application_header .application_summary .data label
+{
+    color: #666666;
+    background-color: transparent;
+}
+.chassis_application_header .quicktools
+{
+    float: left;
+    width: 170px;
+    margin: 0px 0px 0px 30px;
+}
+.chassis_application_header .quicktools h1
+{
+    border-bottom: 1px solid #C3CCDD;
+    color: #003399;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0px 0px 1px 0px;
+    padding: 0.5em 0em;
+}
+.chassis_application_header .quicktools ul
+{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+.chassis_application_header .quicktools ul li
+{
+    padding: 0px;
+    margin: 0px;
+    padding: 3px 0px;
+}
+.chassis_application_header .quicktools ul li a
+{
+    text-decoration: none;
+    color: #003399;
+}
+.chassis_application_header .quicktools .icon_acrobat
+{
+    background-image: url(/_layouts/Zurich/portalimages/icon_acrobat.gif);
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 19px;
+}
+.chassis_application_header .quicktools .icon_retrieve
+{
+    padding-left: 20px;
+}
+
+/*Portal Header*/
+.chassis_header_container
+{
+    float: left;
+    width: 900px;
+    text-align: left;
+    color: inherit;
+    background-color: #fff;
+}
+.chassis_header_container .logo_container
+{
+    width: 880px;
+    height: 60px;
+    float: left;
+    margin: 10px 0px;
+    padding: 0px 10px;
+}
+.chassis_header_container .logo_container .logo
+{
+    height: 37px;
+    width: 63px;
+    float: left;
+    margin: 0px 0px 0px 20px;
+    padding-top: 20px;
+}
+.chassis_header_container .logo_container .flag
+{
+    background-image: url(/_layouts/Zurich/portalimages/flag.png) !important;
+    float: left;
+    margin-left: 54px;
+    width: 30px;
+    height: 30px;
+}
+.chassis_header_container .logo_container h1
+{
+    color: #003399;
+    background-color: transparent;
+    margin-top: 0px;
+    padding: 3px 0px 0px 35px;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 170px;
+    display: inline;
+    float: left;
+}
+.chassis_header_container .logo_container .headerLinks
+{
+    float: right;
+    width: auto;
+    font-size: 0.9em;
+}
+.chassis_header_container .logo_container .auxiliary_navigation
+{
+    float: right;
+    width: auto;
+    clear: both;
+}
+.chassis_header_container .logo_container ul
+{
+    float: left;
+    clear: both;
+    margin: auto;
+    padding: 0;
+    width: auto;
+    list-style-type: none;
+    padding: 5px 0px 0px 0px;
+}
+.chassis_header_container .logo_container ul li
+{
+    display: inline;
+    margin: 0;
+}
+.chassis_header_container .logo_container ul li a
+{
+    color: #003399;
+    float: left;
+    border-right: 1px solid #999999;
+    text-decoration: none;
+    padding: 0px 6px 0px 6px;
+}
+.chassis_header_container .logo_container ul .language_selection
+{
+    color: #000;
+    background-color: transparent;
+    padding: 0px 0px 0px 6px;
+    float: left;
+}
+.chassis_header_container .logo_container ul li select
+{
+    float: left;
+    font-size: 0.9em;
+    width: 70px;
+    margin-left: 5px;
+    margin: 0px;
+}
+.chassis_header_container .logo_container .auxiliary_search
+{
+    float: right;
+    width: auto;
+    clear: both;
+    margin: 10px 0px 0px 0px;
+}
+.chassis_header_container .logo_container .auxiliary_search ul
+{
+    clear: both;
+    margin: auto;
+    padding: 0;
+    width: auto;
+    list-style-type: none;
+    padding: 5px 0px 0px 0px;
+}
+.chassis_header_container .logo_container .auxiliary_search ul li
+{
+    display: inline;
+    margin: 0;
+}
+.chassis_header_container .logo_container .auxiliary_search ul .searchImg
+{
+    background-image: url(/_layouts/Zurich/portalimages/searchBG.gif);
+    float: left;
+    width: 141px;
+    height: 20px;
+    margin: 0px 10px 0px 0px;
+}
+.chassis_header_container .logo_container .auxiliary_search ul li .inputarea
+{
+    border: 0px;
+    float: right;
+    width: 110px;
+    font-size: 0.9em;
+    margin: 3px 10px 0px 0px;
+    vertical-align: top;
+}
+
+
+/* Primary Navigation */
+#navigation
+{
+    background-image: url(/_layouts/Zurich/portalimages/menuBG.gif);
+    float: left;
+    clear: both;
+    height: 27px;
+    font-size: 0.9em;
+    width: 100%;
+    border-bottom: 2px solid #003399;
+}
+.chassis_header_container #navigation ul
+{
+    float: left;
+    width: auto;
+    margin: auto;
+    padding: 0px;
+}
+.chassis_header_container #navigation ul li
+{
+    text-align: left;
+    margin: 0px;
+    display: inline;
+    background: url(/_layouts/Zurich/portalimages/seperator.gif) no-repeat scroll 0 0 transparent;
+    float: left;
+    padding: 0 1px;
+}
+.chassis_header_container #navigation ul li a
+{
+    line-height: 27px;
+    color: #000;
+    float: left;
+    padding: 0px 15px;
+    text-decoration: none;
+    width: auto;
+}
+.chassis_header_container #navigation ul .homeitem
+{
+    padding: 0px 60px 0px 20px;
+    background: none repeat scroll 0 0 transparent;
+}
+.chassis_header_container #navigation .menuitem
+{
+    color: #000;
+    float: left;
+    display: block;
+    height: 27px;
+    position: relative;
+}
+.chassis_header_container #navigation ul li a.menulink:hover
+{
+    background: url("/_layouts/Zurich/portalimages/left_tab.gif") no-repeat scroll left top #E6E9E8;
+    float: left;
+    padding: 0px 0px;
+    text-decoration: none;
+    width: auto;
+    margin: 0px 5px;
+    white-space: nowrap;
+    line-height: 27px;
+}
+.chassis_header_container #navigation ul li a.menulink:hover span
+{
+    background: url("/_layouts/Zurich/portalimages/right_tab.gif") no-repeat right top;
+    color: #ffffff;
+    padding: 0px 10px;
+    float: left;
+    line-height: 27px;
+}
+.chassis_header_container #navigation #menu li a#highlightMain
+{
+    background: transparent url(/_layouts/Zurich/portalimages/left_tab.gif) no-repeat top left;
+    background-color: #e6e9e8;
+    padding: 0px;
+    margin: 0px 5px;
+    float: left;
+    white-space: nowrap;
+}
+.chassis_header_container #navigation #menu li a#highlightMain .linkpart
+{
+    background-color: #e6e9e8;
+    background: transparent url(/_layouts/Zurich/portalimages/right_tab.gif) no-repeat top right;
+    color: #fff;
+    font-weight: bold;
+    float: left;
+    padding: 0px 10px;
+}
+.chassis_header_container #navigation div.flyout
+{
+    color: #000;
+    background-color: #fff;
+    height: auto !important;
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    right: auto;
+    visibility: hidden;
+    width: auto;
+    z-index: 200;
+    white-space: nowrap;
+    padding: 21px 5px 14px 5px;
+    border: 1px solid #d7dadb;
+}
+.chassis_header_container #navigation ul#menu *:hover div.flyout
+{
+    visibility: visible;
+}
+.chassis_header_container #navigation #menu div.flyout ul
+{
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+.chassis_header_container #navigation #menu div.flyout li
+{
+    width: 100%;
+    display: block;
+    padding-right: 5px;
+    padding-left: 15px;
+    background: transparent url(/_layouts/Zurich/portalimages/megamenu_chevron.gif) no-repeat center left;
+    display: block;
+    line-height: 173%;
+    margin-right: 5px;
+}
+.chassis_header_container #navigation #menu div.flyout .subheading
+{
+    min-height: 21px;
+    font-weight: bold;
+}
+.chassis_header_container #navigation #menu div.flyout .subitem, #menu div.flyout .underline
+{
+    min-height: 20px;
+    margin: 0px 12px 0px 5px;
+}
+.chassis_header_container #navigation #menu div.flyout .subitem a:hover
+{
+    color: #003399;
+}
+.chassis_header_container #navigation div.flyout li a, div.flyout li a:visited, div.flyout li a:active
+{
+    text-decoration: none;
+    color: #343434;
+    width: auto;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+.chassis_header_container #navigation #menu .underline
+{
+    border-bottom: 1px solid #d7dadb;
+    width: 170px;
+    height: 100%;
+}
+.chassis_header_container #navigation div.flyout a.linkpart
+{
+    color: #343434;
+}
+.threeOffset
+{
+    margin-left: -90px;
+}
+.timeout_multicontiner_Offset
+{
+    width: 690px;
+    float: left;
+}
+.timeout_multi_Offset
+{
+    width: 230px;
+    float: left;
+}
+.timeout_Single_Offset
+{
+    width: 210px;
+    float: left;
+}
+.lastOffset
+{
+    margin-left: -70px;
+}
+
+/*Mandatory fields */
+
+
+
+/* Product Overview*/
+.chassis_Product_Overview
+{
+    float: left;
+    width: 900px;
+    text-align: left;
+    padding: 0px 0px;
+}
+.chassis_Product_Overview .left_continer
+{
+    width: 600px;
+    float: left;
+}
+.chassis_Product_Overview .left_continer .header
+{
+    float: left;
+    width: 100%;
+}
+.chassis_Product_Overview .left_continer .tittles
+{
+    width: 180px;
+    background-image: url(/_layouts/Zurich/portalimages/headingBG.png);
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    font-size: 1em;
+    padding: 0px 10px;
+    font-weight: bold;
+    color: #003399;
+}
+.chassis_Product_Overview .left_continer .data_contineer
+{
+    color: #003399;
+    width: 600px;
+    float: left;
+    background-color: #f7f7f7;
+}
+.chassis_Product_Overview .left_continer .row_data
+{
+    width: 190px;
+    padding: 1px 0px 0px 10px;
+    float: left;
+}
+.chassis_Product_Overview .right_continer
+{
+    width: 250px;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 50px;
+}
+.chassis_Product_Overview .right_continer .top_panel
+{
+    background-color: #f8f8f8;
+    width: 250px;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    height: 80px;
+    color: #003399;
+    border: 1px solid #dddddd;
+}
+.chassis_Product_Overview .right_continer .bottom_continer
+{
+    background-image: url(/_layouts/Zurich/portalimages/headingBG.png);
+    height: 30px;
+    width: 225px;
+    float: left;
+    margin-top: 30px;
+    border: 1px solid #dddddd;
+    font-size: 1em;
+    padding: 0px 10px;
+    font-weight: bold;
+    color: #003399;
+}
+.chassis_Product_Overview .right_continer .text
+{
+    height: 40px;
+    width: 245px;
+    color: #003399;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+    border: 1px solid #dddddd;
+}
+
+/*Editable page*/
+.chassis_Editable
+{
+    float: left;
+    width: 100%;
+}
+.chassis_Editable .button
+{
+    float: left;
+    padding: 2px 0px 2px 285px;
+}
+
+/* Buttons */
+.chassis_application_button_xxxsmall, .chassis_application_button_xxsmall, .chassis_application_button_xsmall, .chassis_application_button_small, .chassis_application_button_large, .chassis_application_button_xlarge, .chassis_application_button_xxlarge, .chassis_application_button_xxxlarge, .chassis_application_button_xxxxlarge
+{
+    border: medium none;
+    color: #FFFFFF;
+    background-color: transparent;
+    height: 21px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.chassis_application_button_xxxsmall
+{
+    background: url("/_layouts/Zurich/portalimages/xxxsmall.png") no-repeat scroll 0 0 transparent;
+    width: 28px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_xxsmall
+{
+    background: url("/_layouts/Zurich/portalimages/xxsmall.png") no-repeat scroll 0 0 transparent;
+    width: 36px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_xsmall
+{
+    background: url("/_layouts/Zurich/portalimages/xsmall.png") no-repeat scroll 0 0 transparent;
+    width: 44px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_small
+{
+    background: url("/_layouts/Zurich/portalimages/small.png") no-repeat scroll 0 0 transparent;
+    width: 48px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_large
+{
+    background: url("/_layouts/Zurich/portalimages/large.png") no-repeat scroll 0 0 transparent;
+    width: 57px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_xlarge
+{
+    background: url("/_layouts/Zurich/portalimages/xlarge.png") no-repeat scroll 0 0 transparent;
+    width: 60px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_xxlarge
+{
+    background: url("/_layouts/Zurich/portalimages/xxlarge.png") no-repeat scroll 0 0 transparent;
+    width: 71px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+.chassis_application_button_xxxlarge
+{
+    background: url("/_layouts/Zurich/portalimages/xxxlarge.png") no-repeat scroll 0 0 transparent;
+    width: 124px;
+    height: 21px;
+    padding-bottom: 2px;
+}
+
+
+/*Feedback on interaction*/
+.warning
+{
+    width: 900px;
+    float: left;
+    background-color: #FFA07A;
+    clear: both;
+    height: 70px;
+    color: #003399;
+    margin-top: 10px;
+}
+.warning .warningimg
+{
+    width: 50px;
+    float: left;
+    height: 50px;
+    background-color: #dddddd;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.warning .warningtext
+{
+    width: 800px;
+    margin-left: 65px;
+    padding-top: 0px;
+    margin-top: 20px;
+}
+.visualerror
+{
+    background-color: #E2E8F1 !important;
+}
+
+
+/*Application page*/
+.application_page
+{
+    width: 900px;
+    float: left;
+    margin: 0px 0px;
+}
+.application_page .button_column .inners
+{
+    width: 90px;
+    float: right;
+}
+
+/*Response discloser*/
+.leftcon
+{
+    width: 180px;
+    float: left;
+    background-color: #E2E8F1;
+    font-size: 0.9em;
+}
+.leftcon ul
+{
+    list-style-type: none;
+    padding: 0px;
+}
+.midcontxt
+{
+    float: left;
+    padding: 6px 5px 0px 5px;
+    font-size: 0.9em;
+    width: 170px;
+    text-align: right;
+}
+.midconint
+{
+    background-color: #E2E8F1;
+    width: 180px;
+    float: left;
+    font-size: 0.9em;
+}
+.midconint ul
+{
+    list-style-type: none;
+    padding: 0px;
+}
+.midcontleftnavi
+{
+    float: left;
+    padding-right: 5px;
+    padding-top: 13px;
+    text-align: right;
+    width: 175px;
+}
+.midcontrightnavi
+{
+    background-color: #E2E8F1;
+    width: 170px;
+    float: left;
+    padding: 11px 0px 0px 10px;
+    height: 25px;
+}
+.rightcon
+{
+    float: left;
+    width: 360px;
+    font-size: 0.9em;
+}
+.rightconright
+{
+    width: 175px;
+    float: left;
+    background-color: #E2E8F1;
+    padding-left: 5px;
+}
+.rightconright ul
+{
+    list-style-type: none;
+    padding: 0px;
+}
+.rightconleftint
+{
+    width: 180px;
+    float: left;
+    background-color: #E2E8F1;
+    margin-top: 0px;
+    height: 30px;
+}
+.rightconleftint ul
+{
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 4px;
+    width: 100px;
+}
+.rightconleftint li
+{
+    padding-left: 10px;
+}
+.rightconleftint input
+{
+    width: 130px;
+}
+.rightconleftint select
+{
+    width: 130px;
+}
+
+/*Product data entry*/
+.product_data_entry
+{
+    width: 100%;
+    float: left;
+}
+.product_data_entry .procon
+{
+    width: 100%;
+    background-color: #ffffff;
+    float: left;
+}
+.product_data_entry .promain
+{
+    width: 900px;
+    background-color: #dddddd;
+    padding: 7px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.product_data_entry .tablecol
+{
+    background-image: url(/_layouts/Zurich/portalimages/headingBG.png);
+    height: 30px;
+    float: left;
+    font-size: 1em;
+    width: 880px;
+    padding: 0px 10px;
+    font-weight: bold;
+    color: #003399;
+}
+.product_data_entry .tablecol .first
+{
+    float: left;
+    width: 210px;
+    padding-left: 4px;
+}
+.product_data_entry .tablecol .sec
+{
+    float: left;
+    width: 45px;
+    padding-right: 55px;
+}
+.product_data_entry .tablecol .second
+{
+    float: left;
+    width: 30px;
+    padding-right: 20px;
+}
+.product_data_entry .tablecol .third
+{
+    float: left;
+    width: 50px;
+    padding-right: 20px;
+}
+.product_data_entry .tablecol span
+{
+    padding-right: 10px;
+}
+.product_data_entry .tablecol .four
+{
+    float: left;
+    width: 30px;
+    padding-right: 50px;
+}
+.product_data_entry .tablecol .five
+{
+    float: left;
+    width: 70px;
+    padding-right: 90px;
+}
+.product_data_entry .tablecol .six
+{
+    float: left;
+    width: 60px;
+    padding-right: 16px;
+}
+.product_data_entry .tablecol .seven
+{
+    float: left;
+    width: 60px;
+}
+.product_data_entry .tablecollabel
+{
+    background-color: #ffffff;
+    float: left;
+}
+.product_data_entry .fir
+{
+    float: left;
+    width: 45px;
+}
+.product_data_entry .margin
+{
+    margin-left: 50px;
+}
+.product_data_entry .sec
+{
+    float: left;
+    width: 100px;
+}
+.product_data_entry .prnmfir
+{
+    float: left;
+    width: 170px;
+    padding-left: 10px;
+}
+.product_data_entry .prnmsec
+{
+    float: left;
+    padding-right: 15px;
+    width: 34px;
+}
+.product_data_entry .prnmfour
+{
+    float: left;
+    width: 50px;
+}
+.product_data_entry .prnmfive
+{
+    float: left;
+    width: 50px;
+    padding-right: 20px;
+}
+.product_data_entry .prnmsix
+{
+    float: left;
+    width: 65px;
+    padding-left: 91px;
+}
+.product_data_entry .pre
+{
+    float: left;
+    width: 70px;
+    margin-left: 15px;
+}
+.product_data_entry .pre_one
+{
+    float: left;
+    width: 70px;
+    margin-left: 97px;
+}
+.product_data_entry .prefir
+{
+    float: left;
+    width: 73px;
+    margin-left: 78px;
+    background-color: #E2E8F1;
+    line-height: 32px;
+    padding-right: 5px;
+    font-weight: bold;
+    text-align: right;
+}
+.product_data_entry .prefir_one
+{
+    float: left;
+    width: 73px;
+    margin-left: -4px;
+    background-color: #E2E8F1;
+    line-height: 32px;
+    padding-right: 5px;
+    font-weight: bold;
+    text-align: right;
+}
+.product_data_entry .presec
+{
+    float: left;
+    width: 74px;
+    background-color: #E2E8F1;
+    line-height: 32px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 5px;
+}
+.product_data_entry .lastfour
+{
+    padding: 7px;
+    float: right;
+    width: 500px;
+}
+.product_data_entry .lastfour .buttons_g
+{
+    float: right;
+    padding: 0px 5px;
+}
+
+
+/*dropdown*/
+.dropcon
+{
+    background-color: #e7e7e7;
+    width: 890px;
+    height: 20px;
+    padding: 0px 0px 0px 10px;
+}
+.dropcon select
+{
+    margin-left: 125px;
+}
+
+/* Table */
+.font_type_size{font-family:verdana;font-size:0.75em;}
+ 
+.centerpanel_heading_container{line-height:28px; font-size:14px; color:#FFFFFF; font-weight:bold;background-color:transparent;}
+.centerpanel_heading_container .heading_left{background:url("/_layouts/Zurich/portalimages/Header_Lft.gif") no-repeat scroll 0 0 transparent; width:10px; height:30px; display:inline; float:left}
+.centerpanel_heading_container .heading_middle{background:url("/_layouts/Zurich/portalimages/Header_mid.gif") repeat-x scroll 0 0 transparent; float:left; display:inline; height:30px; width: 272px}
+.centerpanel_heading_container .heading_right{background:url("/_layouts/Zurich/portalimages/Header_rit.gif") no-repeat scroll 0 0 transparent; float:right; width:8px; height:30px; }
+.centerpanel_heading_container .desc_heading_middle{background:url("/_layouts/Zurich/portalimages/Header_mid.gif") repeat-x scroll 0 0 transparent; float:left; display:inline; height:30px; width: 978px}
+ 
+.sub_heading{background-image:url('/_layouts/Zurich/portalimages/headingBG.png');
+height:30px;float:left;font-size:1em;font-weight:bold;color:#003399;line-height:30px;background-color:transparent;
+}
+.sub_heading span{padding:0px 10px;float:left;}
+
+.add_width
+{
+    width:100px;
+}
+
+/* End*/
+
+.chassis_application_feedback_error{color:#FF0000;padding:7px 0 0 10px;font-weight:bold;}
+.chassis_application_save_success{color:#008000;padding:7px 0 0 10px;font-weight:bold;}
+

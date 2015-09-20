@@ -1,0 +1,6 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\ActivityStatusCheck\bin\Debug\ActivityStatusCheck.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\ActivityStatusCheck\bin\Debug\ActivityStatusCheck.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\ActivityStatusCheck\bin\Debug\ActivityStatusCheck.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\ActivityStatusCheck\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\ActivityStatusCheck\obj\Debug\ActivityStatusCheck.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\Zurich\ActivityStatusCheck\obj\Debug\ActivityStatusCheck.pdb
