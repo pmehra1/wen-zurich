@@ -341,7 +341,7 @@
     function calculateAssets() {
 
         removeZeroesIncomeExpense();
-        
+
         var sumCashAssets = 0;
         var sumCpfAssets = 0;
         var sumAssets = 0;
@@ -404,7 +404,7 @@
             sumCpfAssets += parseFloat(document.getElementById('<%=ilpCpf.ClientID %>').value);
         }
 
-        
+
 
         if (document.getElementById('<%=srsInvCash.ClientID %>') != null && document.getElementById('<%=srsInvCash.ClientID %>').value != '' && !isNaN(document.getElementById('<%=srsInvCash.ClientID %>').value)) {
             sumCashAssets += parseFloat(document.getElementById('<%=srsInvCash.ClientID %>').value);
@@ -422,7 +422,7 @@
             sumCpfAssets += parseFloat(document.getElementById('<%=cpfMediSaveBalance.ClientID %>').value);
         }
 
-        
+
 
         if (document.getElementById('<%=resPropCash.ClientID %>') != null && document.getElementById('<%=resPropCash.ClientID %>').value != '' && !isNaN(document.getElementById('<%=resPropCash.ClientID %>').value)) {
             sumCashAssets += parseFloat(document.getElementById('<%=resPropCash.ClientID %>').value);
@@ -432,24 +432,24 @@
             sumCpfAssets += parseFloat(document.getElementById('<%=resPropCpf.ClientID %>').value);
         }
 
-          sumCashAssets += sumOthersInvestedAssetsCash();
-          sumCashAssets += sumOthersPersonalAssetsCash();
+        sumCashAssets += sumOthersInvestedAssetsCash();
+        sumCashAssets += sumOthersPersonalAssetsCash();
 
-          sumCpfAssets += sumOthersInvestedAssetsCpf();
-          sumCpfAssets += sumOthersPersonalAssetsCpf();
+        sumCpfAssets += sumOthersInvestedAssetsCpf();
+        sumCpfAssets += sumOthersPersonalAssetsCpf();
 
-          sumLiabilities += sumOthersLiabilities();
-
-
+        sumLiabilities += sumOthersLiabilities();
 
 
-          document.getElementById('<%=totalLiabilitiesOthers.ClientID %>').value = sumLiabilities;
-          document.getElementById('<%=personalUseAssetsTotalCash.ClientID %>').value = sumCashAssets;
-          document.getElementById('<%=personalUseAssetsTotalCPF.ClientID %>').value = sumCpfAssets;
-        
-          sumAssets = sumCashAssets + sumCpfAssets;
-          document.getElementById('<%=netWorth.ClientID %>').value = sumAssets - sumLiabilities;
-    
+
+
+        document.getElementById('<%=totalLiabilitiesOthers.ClientID %>').value = sumLiabilities;
+        document.getElementById('<%=personalUseAssetsTotalCash.ClientID %>').value = sumCashAssets;
+        document.getElementById('<%=personalUseAssetsTotalCPF.ClientID %>').value = sumCpfAssets;
+
+        sumAssets = sumCashAssets + sumCpfAssets;
+        document.getElementById('<%=netWorth.ClientID %>').value = sumAssets - sumLiabilities;
+
     }
 
     function next() {
@@ -476,7 +476,7 @@
             $('#othersPersonalAssetsFieldSet').show();
             $('#otherLiabilitiesfieldSet').show();
             $('#othersAllAssetsFieldSet').show();
-           }
+        }
         else if (selection == "1" || selection == "0") {
             $("#mainForm :input").attr("disabled", true);
             $("#fundsForPlanningPart1 :input").attr("disabled", false);
@@ -494,18 +494,16 @@
 
         var selection = $('#<%=premiumRecomended.ClientID %> input:checked').val();
 
-        if (selection == "0") 
-        {
+        if (selection == "0") {
             $('#percentAssetIncomeId').show();
         }
-        else
-        {
+        else {
             $('#<%=assetIncomePercent.ClientID %>').val("");
             $('#percentAssetIncomeId').hide();
         }
 
     }
-    
+
 
 
     function formsubmit() {
@@ -1021,7 +1019,7 @@
 
                     <table class="chassis_two_column_list" summary="Adviser details" id="fundsForPlanningPart2">
                         <tr>
-                            <td colspan="2">Does the premium recommended form a substantial portion of your assets / surplus?
+                            <td colspan="2">Does the investment contribution recommended form a substantial portion of your assets / surplus?
                             <asp:radiobuttonlist id="premiumRecomended" class="chassis_radio" RepeatDirection = "Horizontal" runat="server">
                                 <asp:listitem value="0" Text = "&nbsp;Yes&nbsp;&nbsp;"/>
                                 <asp:listitem value="1" Text = "&nbsp;No&nbsp;&nbsp;"/>
@@ -1031,6 +1029,9 @@
                            </div>
 
                             </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">(Note : Budget is considered substantial if it is more than 50% of assets or surplus.)</td>
                         </tr>
                         <tr>
                             <td colspan="2">If your answer is "Yes". you may encounter a potential risk in the future of not being able to continue paying your premiums</td>

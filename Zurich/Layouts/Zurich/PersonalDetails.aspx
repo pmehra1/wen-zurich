@@ -882,6 +882,13 @@
                     Note: It is recommended for you to be accompanied by a Trusted Individual if you belong to <b>two of the following profile:</b> (i) Attained academic qualifications which are below GCE 'O' level, 'N' level certifications (ii) Not conversant in spoken or written English (iii) Age 62 and above
                 </span>
             </td>
+        </tr>  
+        <tr>
+            <td colspan="4" >
+                <span style="color:Gray;">
+                    A “Trusted Individual” is a person who is/has: (i)At least aged 18; (ii) At least GCE ‘N’ or ‘O’ Level Certificate, or Equivalent Academic Qualification;(iii) Proficient in spoken or written English; and (iv) A person who has the trust of the Client.
+                </span>
+            </td>
         </tr>                 
      </tbody>
     </table>

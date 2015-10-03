@@ -66,14 +66,14 @@
     function checkboxClicked() {
 
         var chkGroup = $("input[id^=<%=mzaoptions.ClientID %>]");
-        
+
         if (($(chkGroup[3]).attr('checked') == 'checked')) {
             $(".usermessage").show();
         }
         else {
             $(".usermessage").hide();
             $(".usermessage").val("");
-           
+
         }
 
     }
@@ -181,10 +181,10 @@
 <table class="chassis_two_column_list">
     <tbody>
         <tr>
-            <td class="chassis_label_column">Your Zurich Adviser is a representative of Zurich Life Singapore, which is an exempt Financial Adviser under the Financial Advisers Act (Cap110). Zurich Life Singapore is authorized to arrange and advise on life, accident and health and investment-linked insurance contracts provided by it and other insurance providers who it may partner from time to time.</td>
+            <td class="chassis_label_column">Your Nexus Adviser is a representative of Nexus Financial Services Pte Ltd (Nexus Singapore), which is a Licensed Financial Adviser (LFA) licensed under the Financial Advisers Act (Cap 110).</td>
         </tr>
         <tr>
-            <td class="chassis_label_column">Your Zurich Adviser is authorized to arrange and provide advice on the following products:</td>
+            <td class="chassis_label_column">Your Nexus Adviser is authorized to arrange and provide advice on the following products:</td>
         </tr>
         <tr>
             <td class="chassis_label_column">
@@ -198,10 +198,13 @@
             </td>
         </tr>
         <tr>
-            <td class="chassis_label_column"><b>Policies and/or financial products purchased without the completion of the Z Plan, or following partial or inaccurate completion, may not be appropriate for your needs.</b></td>
+            <td class="chassis_label_column">Your Nexus Adviser must have sufficient information before making a suitable recommendation.The information that you provide on your investment objectives, financial situation and your particular needs will be the basis on which advice and recommendation will be given.  If there have been any changes in your circumstances since completing this document, please notify your Nexus Adviser as it may affect the needs analysis process.</td>
         </tr>
         <tr>
-            <td class="chassis_label_column">Completion of the Z Plan will enable your Zurich Adviser to obtain information to conduct an overall needs analysis and to offer you suitable advice to address your core wealth needs and lifestyle goals. We would like to assure you that any information you provide will be treated with strictest confidence.</td>
+            <td class="chassis_label_column">Any recommendation or recommendations made to you following a partial or inaccurate completion of this document, may not be appropriate for you.</td>
+        </tr>
+        <tr>
+            <td class="chassis_label_column">Full completion of this Nexus Fact Find document will enable you Nexus Adviser to obtain information to conduct an overall needs analysis and to offer you suitable advice to address your core wealth needs and lifestyle goals.  We would like to assure you that any information you provide will be used only for recommending appropriate investment products and not for any other purpose.</td>
         </tr>
         <tr>
         <td>

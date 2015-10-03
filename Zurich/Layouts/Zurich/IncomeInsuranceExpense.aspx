@@ -224,17 +224,17 @@
                 $("#savingsPlusTable :input").attr("disabled", false);
                 $("#retirementPlusTable :input").attr("disabled", false);
                 $("#educationPlusTable :input").attr("disabled", false);
-                
 
-                
-                
+
+
+
                 $('#<%=assecertainingAffordabilityReason.ClientID %>').val("");
                 $('#<%=assecertainingAffordabilityReason.ClientID %>').hide();
                 $('#liquidityForm').show();
                 $('#incomeExpenseForm').show();
-                $('#incomeInsuranceEnableTable').show();
-               
-                
+                //$('#incomeInsuranceEnableTable').show();
+
+
             }
             else if (selection == "1" || selection == "0") {
                 $("#liquidityForm :input").attr("disabled", true);
@@ -248,9 +248,9 @@
                 $('#<%=assecertainingAffordabilityReason.ClientID %>').show();
                 $('#liquidityForm').hide();
                 $('#incomeExpenseForm').hide();
-                $('#incomeInsuranceEnableTable').hide();
-                
-                
+                //$('#incomeInsuranceEnableTable').hide();
+
+
             }
 
         }
@@ -351,7 +351,7 @@
         function CalculateSurplusShortfall() {
 
             removeZeroesIncomeExpense();
-            
+
             var monthlyIncomeAfterCPF = 0;
 
             if (!isNaN(document.getElementById("<%=netMonthlyIncomeAfterCpf.ClientID %>").value) && document.getElementById("<%=netMonthlyIncomeAfterCpf.ClientID %>").value != "") {
@@ -526,7 +526,7 @@
                 $('#educationPlusTable').show();
                 $('#<%=incomeExpenseNotNeededReason.ClientID %>').val("");
                 $('#<%=incomeExpenseNotNeededReason.ClientID %>').hide();
-               
+
             }
             else {
                 $("#exitingArrangementTowardsProtection :input").attr("disabled", true);
