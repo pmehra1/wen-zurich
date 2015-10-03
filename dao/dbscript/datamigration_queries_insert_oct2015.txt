@@ -1,0 +1,561 @@
+
+create table temp1(
+activityid nvarchar(50)
+)
+
+insert into temp1 values 
+('2040'),
+('2041'),
+('2045')
+
+declare @CloneFromID nvarchar(50)
+declare @Cnt int = 0
+
+declare cursor_activityids cursor for  
+select activityid from temp1
+		
+open cursor_activityids   
+fetch next from cursor_activityids into @CloneFromID 
+
+declare cursor_educationgoalids cursor for  
+select id from [zurichdata].dbo.educationgoals where caseid = @CloneFromID
+		
+declare cursor_neweducationgoalids cursor for  
+select id from [FNA].dbo.educationgoals where caseid = @CloneFromID
+
+declare cursor_savinggoalids cursor for  
+select id from [zurichdata].dbo.savinggoals where caseid = @CloneFromID
+		
+declare cursor_newsavinggoalids cursor for  
+select id from [FNA].dbo.savinggoals where caseid = @CloneFromID
+		
+while @@FETCH_STATUS = 0   
+	begin   
+		
+	/* activity status */
+	if exists (select caseid from [zurichdata].dbo.activitystatus where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.activitystatus where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.activitystatus(caseId, activity, status)
+		(select caseid, activity, status from [zurichdata].dbo.activitystatus where caseId = @CloneFromID)
+		
+		print 'Activitystatus table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+	end 
+	
+	/* clonemappingids */
+	if exists (select clonedfrom from [zurichdata].dbo.clonemappingids where clonedfrom = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.clonemappingids where clonedfrom = @CloneFromID
+		
+		insert into [FNA].dbo.clonemappingids(clonedfrom,newid)
+		(select clonedfrom,newid from [zurichdata].dbo.clonemappingids where clonedfrom = @CloneFromID)
+		
+		print 'Clonemappingids table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+	end 
+	
+	/* salesportalinfo */
+	if exists (select activityid from [zurichdata].dbo.salesportalinfo where activityid = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.salesportalinfo where activityid = @CloneFromID
+		
+		insert into [FNA].dbo.salesportalinfo(activityid,activitytype,caseid,casestatus,country,redirecturl,roletype,saleschannel,salesportalurl,userfirstname,userid,userlastname,usertype)
+		(select activityid,activitytype,caseid,casestatus,country,redirecturl,roletype,saleschannel,salesportalurl,userfirstname,userid,userlastname,usertype from [zurichdata].dbo.salesportalinfo where activityid = @CloneFromID)
+		
+		print 'Salesportalinfo table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+	end 
+	
+	/* clone my zurich adviser */
+	if exists (select caseid from [zurichdata].dbo.myzurichadviser where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.myzurichadviser where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.myzurichadviser (caseId, selectedoptionid, selectedoptionothers)
+		(select caseid, selectedoptionid, selectedoptionothers from [zurichdata].dbo.myzurichadviser where caseId = @CloneFromID)
+		
+		print 'Myzurichadviser table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+	end
+	
+	/* clone personal details and family member details */
+	if exists (select caseid from [zurichdata].dbo.personaldetails where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.personaldetails where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.personaldetails (caseId, address, companyname, contactnumber, contactnumberfax, contactnumberhp, contactnumberoffice, datepicker, 
+educationlevel, email, employmentstatus, gender, issmoker, maritalstatus, medicalcondition, medicalconditiondetails, name, nationality, nominee, nric, occupation, 
+surname, title, will, familyDetailsRequired, spokenLanguage, spokenLanguageOtherstxt, writtenLanguage, writtenLanguageOtherstxt, accompanyQuestion, trustedIndividualName, clientRelationship, NRICAccompany, noAccompaniedIndividualReason)
+		(select caseid, address, companyname, contactnumber, contactnumberfax, contactnumberhp, contactnumberoffice, datepicker, educationlevel, email, 
+employmentstatus, gender, issmoker, maritalstatus, medicalcondition, medicalconditiondetails, name, nationality, nominee, nric, occupation, surname, title, will, familyDetailsRequired, spokenLanguage, spokenLanguageOtherstxt, writtenLanguage, writtenLanguageOtherstxt, accompanyQuestion, trustedIndividualName, clientRelationship, NRICAccompany, noAccompaniedIndividualReason from 
+[zurichdata].dbo.personaldetails where caseId = @CloneFromID)
+
+		print 'Personaldetails table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @personaldetailId int
+		select @personaldetailId = id from [zurichdata].dbo.personaldetails where caseId = @CloneFromID
+		
+		declare @newpersonaldetailId int
+		select @newpersonaldetailId = id from [FNA].dbo.personaldetails where caseId = @CloneFromID
+		
+		
+		if exists (select personalDetailId from [zurichdata].dbo.familyMemberDetails where personalDetailId = @personaldetailId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.familyMemberDetails where personalDetailId = @personaldetailId
+			
+			insert into [FNA].dbo.familyMemberDetails (personalDetailId, dob, monthlyIncome, name, occupation, relationship, yrstosupport)
+			(select @newpersonaldetailId, dob, monthlyIncome, name, occupation, relationship, yrstosupport from [zurichdata].dbo.familyMemberDetails where personalDetailId = 
+@personaldetailId)
+
+			print 'FamilyMemberDetails table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+	
+	/* clone priority details */
+	if exists (select caseid from [zurichdata].dbo.priorityDetails where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.priorityDetails where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.priorityDetails (caseId, protection1, protection2, protection3, protection4, protection5, savings1, savings2, savings3)
+		(select caseid, protection1, protection2, protection3, protection4, protection5, savings1, savings2, savings3 from [zurichdata].dbo.priorityDetails where caseId = @CloneFromID)
+		
+		print 'PriorityDetails table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+	end
+	
+	/* clone income expense and its details */
+	if exists (select caseid from [zurichdata].dbo.incomeExpense where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.incomeExpense where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.incomeExpense (caseId, DeathTermInsurancePremium, DeathTermInsuranceSA, DeathTermInsuranceTerm, DeathWholeLifeInsurancePremium, 
+DeathWholeLifeInsuranceSA, DeathWholeLifeInsuranceTerm, criticalIllnessMV, criticalIllnessPremium, criticalIllnessRemarks, criticalIllnessSA, disabilityIncomeMV, 
+disabilityIncomePremium, disabilityIncomeRemarks, disabilityIncomeSA, emergencyFundsNeeded, expiry1, expiry2, expiry3, expiry4, expiry5, expiry6, expiry7, extraDetails, 
+lifeInsuranceMV, lifeInsurancePremium, lifeInsuranceRemarks, lifeInsuranceSA, monthlySavings, mortgageMV, mortgagePremium, mortgageRemarks, mortgageSA, 
+netMonthlyExpenses, netMonthlyIncomeAfterCpf, otherSourcesOfIncome, others1A, others1Premium, others1Remarks, others1V, others2, others2A, others2Premium, 
+others2Remarks, others2V, shortTermGoals, tpdcMV, tpdcPremium, tpdcRemarks, tpdcSA, incomeExpenseNeeded, incomeExpenseNotNeededReason, assecertainingAffordabilityEnable, assecertainingAffordabilityReason)
+		(select caseid, DeathTermInsurancePremium, DeathTermInsuranceSA, DeathTermInsuranceTerm, DeathWholeLifeInsurancePremium, DeathWholeLifeInsuranceSA, 
+DeathWholeLifeInsuranceTerm, criticalIllnessMV, criticalIllnessPremium, criticalIllnessRemarks, criticalIllnessSA, disabilityIncomeMV, disabilityIncomePremium, 
+disabilityIncomeRemarks, disabilityIncomeSA, emergencyFundsNeeded, expiry1, expiry2, expiry3, expiry4, expiry5, expiry6, expiry7, extraDetails, lifeInsuranceMV, 
+lifeInsurancePremium, lifeInsuranceRemarks, lifeInsuranceSA, monthlySavings, mortgageMV, mortgagePremium, mortgageRemarks, mortgageSA, netMonthlyExpenses, 
+netMonthlyIncomeAfterCpf, otherSourcesOfIncome, others1A, others1Premium, others1Remarks, others1V, others2, others2A, others2Premium, others2Remarks, others2V, 
+shortTermGoals, tpdcMV, tpdcPremium, tpdcRemarks, tpdcSA, incomeExpenseNeeded, incomeExpenseNotNeededReason, assecertainingAffordabilityEnable, assecertainingAffordabilityReason from [zurichdata].dbo.incomeExpense where caseId = @CloneFromID)
+
+		print 'IncomeExpense table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @incomeexpenseId int
+		select @incomeexpenseId = id from [zurichdata].dbo.incomeExpense where caseId = @CloneFromID
+		
+		declare @newincomeexpenseId int
+		select @newincomeexpenseId = id from [FNA].dbo.incomeExpense where caseId = @CloneFromID
+		
+		if exists (select incomeExpenseId from [zurichdata].dbo.insuranceArrangementSaving where incomeExpenseId = @incomeexpenseId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.insuranceArrangementSaving where incomeExpenseId = @incomeexpenseId
+		
+			insert into [FNA].dbo.insuranceArrangementSaving (incomeExpenseId, company, contribution, fundValue, natureOfPlan, policyOwnerName, term, frequency)
+			(select @newincomeexpenseId, company, contribution, fundValue, natureOfPlan, policyOwnerName, term, frequency from [zurichdata].dbo.insuranceArrangementSaving where 
+incomeExpenseId = @incomeexpenseId)
+
+			print 'InsuranceArrangementSaving table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+		if exists (select incomeExpenseId from [zurichdata].dbo.insuranceArrangementRetirement where incomeExpenseId = @incomeexpenseId)
+		begin
+		
+			select @Cnt = count(*) from [zurichdata].dbo.insuranceArrangementRetirement where incomeExpenseId = @incomeexpenseId
+			
+			insert into [FNA].dbo.insuranceArrangementRetirement (incomeExpenseId, company, contribution, maturityDate, policyOwnerName, projectedIncomeMaturity, 
+projectedLumpSumMaturity, frequency)
+			(select @newincomeexpenseId, company, contribution, maturityDate, policyOwnerName, projectedIncomeMaturity, projectedLumpSumMaturity, frequency from 
+[zurichdata].dbo.insuranceArrangementRetirement where incomeExpenseId = @incomeexpenseId)
+
+			print 'InsuranceArrangementRetirement table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+		if exists (select incomeExpenseId from [zurichdata].dbo.insuranceArrangementEducation where incomeExpenseId = @incomeexpenseId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.insuranceArrangementEducation where incomeExpenseId = @incomeexpenseId
+		
+			insert into [FNA].dbo.insuranceArrangementEducation (incomeExpenseId, company, contribution, maturityDate, policyOwnerName, projectedIncomeMaturity, 
+projectedLumpSumMaturity, frequency)
+			(select @newincomeexpenseId, company, contribution, maturityDate, policyOwnerName, projectedIncomeMaturity, projectedLumpSumMaturity, frequency from 
+[zurichdata].dbo.insuranceArrangementEducation where incomeExpenseId = @incomeexpenseId)
+
+			print 'InsuranceArrangementEducation table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+	
+	/* clone asset liability and asset liability others */
+	if exists (select caseid from [zurichdata].dbo.assetAndLiability where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.assetAndLiability where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.assetAndLiability (caseId, bankAcctCash, cashLoan, cpfMediSaveBalance, cpfoaBal, cpfsaBal, creditCard, homeMortgage, ilpCash, ilpCpf, 
+invPropCash, invPropCpf, lumpSumCash, lumpSumCpf, netWorth, regularSumCash, regularSumCpf, resPropCash, resPropCpf, srsBal, srsInvCash, stocksSharesCash, 
+stocksSharesCpf, unitTrustsCash, unitTrustsCpf, vehicleLoan, assetAndLiabilityNeeded, assetAndLiabilityNotNeededReason, premiumRecomendedNeeded, assetIncomePercent)
+		(select caseId, bankAcctCash, cashLoan, cpfMediSaveBalance, cpfoaBal, cpfsaBal, creditCard, homeMortgage, ilpCash, ilpCpf, invPropCash, invPropCpf, 
+lumpSumCash, lumpSumCpf, netWorth, regularSumCash, regularSumCpf, resPropCash, resPropCpf, srsBal, srsInvCash, stocksSharesCash, stocksSharesCpf, unitTrustsCash, 
+unitTrustsCpf, vehicleLoan, assetAndLiabilityNeeded, assetAndLiabilityNotNeededReason, premiumRecomendedNeeded, assetIncomePercent from [zurichdata].dbo.assetAndLiability where caseId = @CloneFromID)
+
+		print 'AssetAndLiability table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @assetliabilityId int
+		select @assetliabilityId = id from [zurichdata].dbo.assetAndLiability where caseId = @CloneFromID
+		
+		declare @newassetliabilityId int
+		select @newassetliabilityId = id from [FNA].dbo.assetAndLiability where caseId = @CloneFromID
+		
+		if exists (select assetLiabilityId from [zurichdata].dbo.investedAssetOthers where assetLiabilityId = @assetliabilityId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.investedAssetOthers where assetLiabilityId = @assetliabilityId
+			
+			insert into [FNA].dbo.investedAssetOthers (assetDesc, assetLiabilityId, cash, cpf)
+			(select assetDesc, @newassetliabilityId, cash, cpf from [zurichdata].dbo.investedAssetOthers where assetLiabilityId = @assetliabilityId)
+			
+			print 'InvestedAssetOthers table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+		if exists (select assetLiabilityId from [zurichdata].dbo.personalUseAssetsOthers where assetLiabilityId = @assetliabilityId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.personalUseAssetsOthers where assetLiabilityId = @assetliabilityId
+		
+			insert into [FNA].dbo.personalUseAssetsOthers (assetDesc, assetLiabilityId, cash, cpf)
+			(select assetDesc, @newassetliabilityId, cash, cpf from [zurichdata].dbo.personalUseAssetsOthers where assetLiabilityId = @assetliabilityId)
+			
+			print 'PersonalUseAssetsOthers table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+		if exists (select assetLiabilityId from [zurichdata].dbo.liabilityOthers where assetLiabilityId = @assetliabilityId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.liabilityOthers where assetLiabilityId = @assetliabilityId
+		
+			insert into [FNA].dbo.liabilityOthers (liabilityDesc, assetLiabilityId, cash)
+			(select liabilityDesc, @newassetliabilityId, cash from [zurichdata].dbo.liabilityOthers where assetLiabilityId = @assetliabilityId)
+			
+			print 'LiabilityOthers table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+	
+	/* clone protection goals - family needs and existing assets */
+	if exists (select caseid from [zurichdata].dbo.familyNeeds where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.familyNeeds where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.familyNeeds (caseId, emergencyFundsNeeded, existingAssetsFamilyneeds, existingLifeInsurance, existingSumRequiredChart, finalExpenses, 
+inflationAdjustedReturns, inflationAdjustedReturnsGraph, lumpSumRequired, lumpSumRequiredChart, mortgageInsurance, mortgageLoan, mortgageProtectionInsurances, 
+mortgageProtectionOutstanding, mortgageProtectionTotal, mortgageShortfall, otherComments, otherFundingNeeds, otherLiabilities, replacementIncomeChart, 
+replacementIncomePercentage, replacementIncomeRequired, shortfallSumRequiredChart, totalRequired, totalShortfallSurplus, yearsOfSupportRequired, 
+yearsOfSupportRequiredGraph, familyIncPrNeeded, mortgageNeeded)
+		(select caseId, emergencyFundsNeeded, existingAssetsFamilyneeds, existingLifeInsurance, existingSumRequiredChart, finalExpenses, 
+inflationAdjustedReturns, inflationAdjustedReturnsGraph, lumpSumRequired, lumpSumRequiredChart, mortgageInsurance, mortgageLoan, mortgageProtectionInsurances, 
+mortgageProtectionOutstanding, mortgageProtectionTotal, mortgageShortfall, otherComments, otherFundingNeeds, otherLiabilities, replacementIncomeChart, 
+replacementIncomePercentage, replacementIncomeRequired, shortfallSumRequiredChart, totalRequired, totalShortfallSurplus, yearsOfSupportRequired, 
+yearsOfSupportRequiredGraph, familyIncPrNeeded, mortgageNeeded from [zurichdata].dbo.familyNeeds where caseId = @CloneFromID)
+
+		print 'FamilyNeeds table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @familyneedsId int
+		select @familyneedsId = id from [zurichdata].dbo.familyNeeds where caseId = @CloneFromID
+		
+		declare @newfamilyneedsId int
+		select @newfamilyneedsId = id from [FNA].dbo.familyNeeds where caseId = @CloneFromID
+		
+		if exists (select familyNeedId from [zurichdata].dbo.familyNeedsAssets where familyNeedId = @familyneedsId)
+		begin
+			
+			select @Cnt = count(*) from [zurichdata].dbo.familyNeedsAssets where familyNeedId = @familyneedsId
+			
+			insert into [FNA].dbo.familyNeedsAssets (familyNeedId, asset, presentValue)
+			(select @newfamilyneedsId, asset, presentValue from [zurichdata].dbo.familyNeedsAssets where familyNeedId = @familyneedsId)
+			
+			print 'FamilyNeedsAssets table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+	
+	/* clone protection goals - my needs and existing assets */
+	if exists (select caseid from [zurichdata].dbo.myNeeds where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.myNeeds where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.myNeeds (caseId, anyExistingPlans, coverageDentalYesNo, coverageIncomeYesNo, coverageOldageYesNo, coverageOutpatientYesNo, 
+coveragePersonalYesNo, criticalIllnessInsurance, detailsOfExistingPlans, disabilityInsurance, disabilityInsuranceMyNeeds, disabilityProtectionReplacementIncomeRequired, 
+disabilityProtectionReplacementIncomeRequiredPercentage, disabilityReplacementAmountRequired, disabilityYearsOfSupport, epDentalYesNo, epIncomeYesNo, epOldageYesNo, 
+epOutpatientYesNo, epPersonalYesNo, existingAssetsMyneeds, existingAssetsMyneedsDisability, existingMyNeeds, existingPlansDetail, existingSumMyNeeds, 
+inflatedAdjustedReturns, inflationAdjustedReturns, lumpSumMyNeeds, lumpSumRequiredForTreatment, monthlyAmountMyNeeds, monthlyCoverageRequired, 
+monthlyIncomeDisabilityIncome, percentOfIncomeCoverageRequired, replacementAmountRequired, replacementIncomePercentage, replacementIncomeRequired, shortfallMyNeeds, 
+shortfallSumMyNeeds, shortfallSurplusMyNeeds, totalRequired, totalShortfallSurplusMyNeeds, txtExistingAssetsFamilyneeds, typeOfHospitalCoverage, typeOfRoomCoverage, 
+yearsOfSupportRequired, criticalIllnessPrNeeded, disabilityPrNeeded, hospitalmedCoverNeeded, accidentalhealthCoverNeeded)
+		(select caseId, anyExistingPlans, coverageDentalYesNo, coverageIncomeYesNo, coverageOldageYesNo, coverageOutpatientYesNo, coveragePersonalYesNo, 
+criticalIllnessInsurance, detailsOfExistingPlans, disabilityInsurance, disabilityInsuranceMyNeeds, disabilityProtectionReplacementIncomeRequired, 
+disabilityProtectionReplacementIncomeRequiredPercentage, disabilityReplacementAmountRequired, disabilityYearsOfSupport, epDentalYesNo, epIncomeYesNo, epOldageYesNo, 
+epOutpatientYesNo, epPersonalYesNo, existingAssetsMyneeds, existingAssetsMyneedsDisability, existingMyNeeds, existingPlansDetail, existingSumMyNeeds, 
+inflatedAdjustedReturns, inflationAdjustedReturns, lumpSumMyNeeds, lumpSumRequiredForTreatment, monthlyAmountMyNeeds, monthlyCoverageRequired, 
+monthlyIncomeDisabilityIncome, percentOfIncomeCoverageRequired, replacementAmountRequired, replacementIncomePercentage, replacementIncomeRequired, shortfallMyNeeds, 
+shortfallSumMyNeeds, shortfallSurplusMyNeeds, totalRequired, totalShortfallSurplusMyNeeds, txtExistingAssetsFamilyneeds, typeOfHospitalCoverage, typeOfRoomCoverage, 
+yearsOfSupportRequired, criticalIllnessPrNeeded, disabilityPrNeeded, hospitalmedCoverNeeded, accidentalhealthCoverNeeded from [zurichdata].dbo.myNeeds where caseId = @CloneFromID)
+
+		print 'MyNeeds table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @myneedsId int
+		select @myneedsId = id from [zurichdata].dbo.myNeeds where caseId = @CloneFromID
+		
+		declare @newmyneedsId int
+		select @newmyneedsId = id from [FNA].dbo.myNeeds where caseId = @CloneFromID
+		
+		if exists (select myNeedId from [zurichdata].dbo.myNeedsCriticalAssets where myNeedId = @myneedsId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.myNeedsCriticalAssets where myNeedId = @myneedsId
+		
+			insert into [FNA].dbo.myNeedsCriticalAssets (myNeedId, asset, presentValue)
+			(select @newmyneedsId, asset, presentValue from [zurichdata].dbo.myNeedsCriticalAssets where myNeedId = @myneedsId)
+			
+			print 'MyNeedsCriticalAssets table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+		if exists (select myNeedId from [zurichdata].dbo.myNeedsDisabilityAssets where myNeedId = @myneedsId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.myNeedsDisabilityAssets where myNeedId = @myneedsId
+		
+			insert into [FNA].dbo.myNeedsDisabilityAssets (myNeedId, asset, presentValue)
+			(select @newmyneedsId, asset, presentValue from [zurichdata].dbo.myNeedsDisabilityAssets where myNeedId = @myneedsId)
+			
+			print 'MyNeedsDisabilityAssets table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+	
+	/* clone education goals and existing assets */
+	if exists (select caseid from [zurichdata].dbo.educationgoals where caseId = @CloneFromID)
+	begin
+	
+		select @Cnt = count(*) from [zurichdata].dbo.educationgoals where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.educationgoals (caseid, agefundsneeded, countryofstudyid, currentage, deleted, existingassetstotal, futurecost, inflationrate, 
+maturityvalue, nameofchild, noofyrstosave, presentcost, total, educationGoalNeeded)
+		(select caseid, agefundsneeded, countryofstudyid, currentage, deleted, existingassetstotal, futurecost, inflationrate, maturityvalue, nameofchild, 
+noofyrstosave, presentcost, total, educationGoalNeeded from [zurichdata].dbo.educationgoals where caseId = @CloneFromID)
+
+		print 'Educationgoals table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @educationgoalId int
+		declare @neweducationgoalId int
+		
+		declare @existingrowcount int = 0
+		declare @newcount int = 0  
+
+		open cursor_educationgoalids   
+		fetch next from cursor_educationgoalids into @educationgoalId 
+		
+		while @@FETCH_STATUS = 0   
+		begin   
+			   set @existingrowcount = @existingrowcount + 1   
+			   set @newcount = 0
+			   
+			   if exists (select educationgoalsid from [zurichdata].dbo.existingasseteg where educationgoalsid = @educationgoalId)
+			   begin
+					
+					select @Cnt = count(*) from [zurichdata].dbo.existingasseteg where educationgoalsid = @educationgoalId
+					
+					open cursor_neweducationgoalids   
+					while @newcount!=@existingrowcount
+					begin
+						set @newcount = @newcount + 1
+						fetch next from cursor_neweducationgoalids into @neweducationgoalId
+					end
+					close cursor_neweducationgoalids
+					
+					insert into [FNA].dbo.existingasseteg (asset, educationgoalsid, percentpa, presentvalue)
+					(select asset, @neweducationgoalId, percentpa, presentvalue from [zurichdata].dbo.existingasseteg where educationgoalsid = @educationgoalId)
+					
+					print 'Existingasseteg table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+			   end
+
+			   fetch next from cursor_educationgoalids into @educationgoalId   
+		end   
+
+		close cursor_educationgoalids
+		
+	end
+	
+	/* clone saving goals and existing assets */
+	if exists (select caseid from [zurichdata].dbo.savinggoals where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.savinggoals where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.savinggoals (caseid, amtneededfv, deleted, existingassetstotal, goal, inflationrate, maturityvalue, regularannualcontrib, total, 
+yrstoaccumulate, savingGoalNeeded)
+		(select caseid, amtneededfv, deleted, existingassetstotal, goal, inflationrate, maturityvalue, regularannualcontrib, total, yrstoaccumulate, savingGoalNeeded from 
+[zurichdata].dbo.savinggoals where caseId = @CloneFromID)
+
+		print 'Savinggoals table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @savinggoalId int
+		declare @newsavinggoalId int
+		
+		declare @existingrowcountsg int = 0
+		declare @newcountsg int = 0  
+
+		open cursor_savinggoalids   
+		fetch next from cursor_savinggoalids into @savinggoalId 
+		
+		while @@FETCH_STATUS = 0   
+		begin   
+			   set @existingrowcountsg = @existingrowcountsg + 1   
+			   set @newcountsg = 0
+			   
+			   if exists (select savinggoalsid from [zurichdata].dbo.existingassetsg where savinggoalsid = @savinggoalId)
+			   begin
+					select @Cnt = count(*) from [zurichdata].dbo.existingassetsg where savinggoalsid = @savinggoalId
+			   
+					open cursor_newsavinggoalids   
+					while @newcountsg!=@existingrowcountsg
+					begin
+						set @newcountsg = @newcountsg + 1
+						fetch next from cursor_newsavinggoalids into @newsavinggoalId
+					end
+					close cursor_newsavinggoalids
+					
+					insert into [FNA].dbo.existingassetsg (asset, savinggoalsid, percentpa, presentvalue)
+					(select asset, @newsavinggoalId, percentpa, presentvalue from [zurichdata].dbo.existingassetsg where savinggoalsid = @savinggoalId)
+					
+					print 'Existingassetsg table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+			   end
+
+			   fetch next from cursor_savinggoalids into @savinggoalId   
+		end   
+
+		close cursor_savinggoalids
+		
+	end
+	
+	/* clone retirement goal and existing assets */
+	if exists (select caseid from [zurichdata].dbo.retirementgoals where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.retirementgoals where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.retirementgoals (caseId, durationretirement, existingassetstotal, futureincome, incomerequired, inflationrate, inflationreturnrate, 
+intendedretirementage, lumpsumrequired, maturityvalue, selforspouse, sourcesofincome, total, totalfirstyrincome, yrstoretirement, retirementGoalNeeded)
+		(select caseid, durationretirement, existingassetstotal, futureincome, incomerequired, inflationrate, inflationreturnrate, intendedretirementage, 
+lumpsumrequired, maturityvalue, selforspouse, sourcesofincome, total, totalfirstyrincome, yrstoretirement, retirementGoalNeeded from [zurichdata].dbo.retirementgoals where caseId = @CloneFromID)
+
+		print 'Retirementgoals table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @retirementgoalId int
+		select @retirementgoalId = id from [zurichdata].dbo.retirementgoals where caseId = @CloneFromID
+		
+		declare @newretirementgoalId int
+		select @newretirementgoalId = id from [FNA].dbo.retirementgoals where caseId = @CloneFromID
+		
+		if exists (select retirementgoalsid from [zurichdata].dbo.existingassetrg where retirementgoalsid = @retirementgoalId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.existingassetrg where retirementgoalsid = @retirementgoalId
+			
+			insert into [FNA].dbo.existingassetrg (asset, percentpa, presentvalue, retirementgoalsid)
+			(select asset, percentpa, presentvalue, @newretirementgoalId from [zurichdata].dbo.existingassetrg where retirementgoalsid = @retirementgoalId)
+			
+			print 'Existingassetrg table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+	
+	/* clone risk profile */
+	if exists (select caseid from [zurichdata].dbo.RiskProfileAnalysis where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.RiskProfileAnalysis where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.RiskProfileAnalysis (caseId, agreeWithRiskProfileoption1, agreeWithRiskProfileoption2, measuringRiskTakingAbilityQuestion1option1, 
+measuringRiskTakingAbilityQuestion1option2, measuringRiskTakingAbilityQuestion1option3, measuringRiskTakingAbilityQuestion1option4, 
+measuringRiskTakingAbilityQuestion2option1, measuringRiskTakingAbilityQuestion2option2, measuringRiskTakingAbilityQuestion2option3, 
+measuringRiskTakingAbilityQuestion3option1, measuringRiskTakingAbilityQuestion3option2, measuringRiskTakingAbilityQuestion3option3, 
+measuringRiskTakingAbilityQuestion3option4, measuringRiskTakingAbilityQuestion4option1, measuringRiskTakingAbilityQuestion4option2, 
+measuringRiskTakingAbilityQuestion4option3, measuringRiskTakingAbilityQuestion4option4, riskApetiteQuestion1option1, riskApetiteQuestion1option2, 
+riskApetiteQuestion1option3, riskApetiteQuestion1option4, riskApetiteQuestion1option5, riskApetiteQuestion1option6, riskApetiteQuestion2option1, 
+riskApetiteQuestion2option2, riskApetiteQuestion2option3, riskApetiteQuestion2option4, riskApetiteQuestion3option1, riskApetiteQuestion3option2, 
+riskApetiteQuestion3option3, riskApetiteQuestion3option4, riskApetiteQuestion3option5, riskApetiteQuestion4option1, riskApetiteQuestion4option2, 
+riskApetiteQuestion4option3, riskProfileName, riskProfileValue)
+		(select caseId, agreeWithRiskProfileoption1, agreeWithRiskProfileoption2, measuringRiskTakingAbilityQuestion1option1, 
+measuringRiskTakingAbilityQuestion1option2, measuringRiskTakingAbilityQuestion1option3, measuringRiskTakingAbilityQuestion1option4, 
+measuringRiskTakingAbilityQuestion2option1, measuringRiskTakingAbilityQuestion2option2, measuringRiskTakingAbilityQuestion2option3, 
+measuringRiskTakingAbilityQuestion3option1, measuringRiskTakingAbilityQuestion3option2, measuringRiskTakingAbilityQuestion3option3, 
+measuringRiskTakingAbilityQuestion3option4, measuringRiskTakingAbilityQuestion4option1, measuringRiskTakingAbilityQuestion4option2, 
+measuringRiskTakingAbilityQuestion4option3, measuringRiskTakingAbilityQuestion4option4, riskApetiteQuestion1option1, riskApetiteQuestion1option2, 
+riskApetiteQuestion1option3, riskApetiteQuestion1option4, riskApetiteQuestion1option5, riskApetiteQuestion1option6, riskApetiteQuestion2option1, 
+riskApetiteQuestion2option2, riskApetiteQuestion2option3, riskApetiteQuestion2option4, riskApetiteQuestion3option1, riskApetiteQuestion3option2, 
+riskApetiteQuestion3option3, riskApetiteQuestion3option4, riskApetiteQuestion3option5, riskApetiteQuestion4option1, riskApetiteQuestion4option2, 
+riskApetiteQuestion4option3, riskProfileName, riskProfileValue from [zurichdata].dbo.RiskProfileAnalysis where caseId = @CloneFromID)
+
+		print 'RiskProfileAnalysis table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+	end
+	
+	/* clone cka assessment */
+	if exists (select caseid from [zurichdata].dbo.CkaAssessment where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.CkaAssessment where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.CkaAssessment (caseId, agreeCKA, csaOutcomeOption1, csaOutcomeOption2, disagreeCKA, educationalExperienceOption1, 
+educationalExperienceOption2, financeRelatedKnowledgeOption1, financeRelatedKnowledgeOption2, investmentExperienceOption1, investmentExperienceOption2, 
+workingExperienceOption1, workingExperienceOption2, investmentExperienceList, workingExperienceList, educationalExperienceList)
+		(select caseId, agreeCKA, csaOutcomeOption1, csaOutcomeOption2, disagreeCKA, educationalExperienceOption1, educationalExperienceOption2, 
+financeRelatedKnowledgeOption1, financeRelatedKnowledgeOption2, investmentExperienceOption1, investmentExperienceOption2, workingExperienceOption1, 
+workingExperienceOption2, investmentExperienceList, workingExperienceList, educationalExperienceList from [zurichdata].dbo.CkaAssessment where caseId = @CloneFromID)
+		
+		print 'CkaAssessment table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+	end
+	
+	/* clone portfolio builder */
+	if exists (select caseid from [zurichdata].dbo.portFolioBuilderMaster where caseId = @CloneFromID)
+	begin
+		
+		select @Cnt = count(*) from [zurichdata].dbo.portFolioBuilderMaster where caseId = @CloneFromID
+		
+		insert into [FNA].dbo.portFolioBuilderMaster (caseId, agreeWithRiskProfile, assetAllocationOnRiskProfileYesNo, followAssetAllocationOnRiskProfileYesNo, 
+includeNonCoreFundsYesNo, paymentMode, preferredRiskProfile, premiumAmount, premiumPercent, premiumSelect, premiumTotalAmount, riskProfileId)
+		(select caseId, agreeWithRiskProfile, assetAllocationOnRiskProfileYesNo, followAssetAllocationOnRiskProfileYesNo, includeNonCoreFundsYesNo, 
+paymentMode, preferredRiskProfile, premiumAmount, premiumPercent, premiumSelect, premiumTotalAmount, riskProfileId from [zurichdata].dbo.portFolioBuilderMaster where caseId = 
+@CloneFromID)
+
+		print 'PortFolioBuilderMaster table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		
+		declare @portfoliobuilderId int
+		select @portfoliobuilderId = id from [zurichdata].dbo.portFolioBuilderMaster where caseId = @CloneFromID
+		
+		declare @newportfoliobuilderId int
+		select @newportfoliobuilderId = id from [FNA].dbo.portFolioBuilderMaster where caseId = @CloneFromID
+		
+		if exists (select portFolioBuilderId from [zurichdata].dbo.portFolioBuilderDetail where portFolioBuilderId = @portfoliobuilderId)
+		begin
+			select @Cnt = count(*) from [zurichdata].dbo.portFolioBuilderDetail where portFolioBuilderId = @portfoliobuilderId
+		
+			insert into [FNA].dbo.portFolioBuilderDetail (portFolioBuilderId, allocationPercentage, amount, assetClassId, fundId)
+			(select @newportfoliobuilderId, allocationPercentage, amount, assetClassId, fundId from [zurichdata].dbo.portFolioBuilderDetail where portFolioBuilderId = 
+@portfoliobuilderId)
+
+			print 'PortFolioBuilderDetail table inserted with ' + convert(varchar(5), @Cnt) + ' records'
+		end
+		
+	end
+			   
+
+		fetch next from cursor_activityids into @CloneFromID   
+	end   
+
+close cursor_activityids
+
+drop table temp1

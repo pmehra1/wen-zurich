@@ -1,0 +1,70 @@
+create table temp2(
+activityid nvarchar(50)
+)
+
+insert into temp2 values 
+('2040'),
+('2041'),
+('2045')
+
+delete from activitystatus where caseid in (select activityid from temp2)
+
+delete from clonemappingids where clonedfrom in (select activityid from temp2)
+
+delete from salesportalinfo where activityid in (select activityid from temp2)
+ 
+delete from myzurichadviser where caseId in (select activityid from temp2)                 
+
+delete from familyMemberDetails where personalDetailId in (select id from personaldetails where caseId in (select activityid from temp2))  
+
+delete from personaldetails where caseId in (select activityid from temp2)
+
+delete from priorityDetails where caseId in (select activityid from temp2)
+
+delete from insuranceArrangementEducation where incomeExpenseId in (select id from incomeExpense where caseId in (select activityid from temp2))
+
+delete from insuranceArrangementSaving where incomeExpenseId in (select id from incomeExpense where caseId in (select activityid from temp2))
+
+delete from insuranceArrangementRetirement where incomeExpenseId in (select id from incomeExpense where caseId in (select activityid from temp2))
+
+delete from incomeExpense where caseId in (select activityid from temp2)
+
+delete from investedAssetOthers where assetLiabilityId in(select id from assetAndLiability where caseId in (select activityid from temp2))
+
+delete from personalUseAssetsOthers where assetLiabilityId in(select id from assetAndLiability where caseId in (select activityid from temp2))
+
+delete from liabilityOthers where assetLiabilityId in(select id from assetAndLiability where caseId in (select activityid from temp2))
+
+delete from assetAndLiability where caseId in (select activityid from temp2) 
+
+delete from familyNeedsAssets where familyNeedId in (select id from familyNeeds where caseId in (select activityid from temp2))
+
+delete from familyNeeds where caseId in (select activityid from temp2)
+
+delete from myNeedsCriticalAssets where myNeedId in (select id from myNeeds where caseId in (select activityid from temp2))
+
+delete from myNeedsDisabilityAssets where myNeedId in (select id from myNeeds where caseId in (select activityid from temp2))
+
+delete from myNeeds where caseId in (select activityid from temp2)
+
+delete from existingasseteg where educationgoalsid in (select id from educationgoals where caseid in (select activityid from temp2))
+
+delete from educationgoals where caseId in (select activityid from temp2)
+
+delete from existingassetsg where savinggoalsid in (select id from savinggoals where caseId in (select activityid from temp2))
+
+delete from savinggoals where caseId in (select activityid from temp2)
+
+delete from existingassetrg where retirementgoalsid in (select id from retirementgoals where caseId in (select activityid from temp2))
+
+delete from retirementgoals where caseId in (select activityid from temp2)
+
+delete from RiskProfileAnalysis where caseId in (select activityid from temp2)
+
+delete from CkaAssessment where caseId in (select activityid from temp2)
+
+delete from portFolioBuilderDetail where portFolioBuilderId in (select id from portFolioBuilderMaster where caseId in (select activityid from temp2))
+
+delete from portFolioBuilderMaster where caseId in (select activityid from temp2)
+
+drop table temp2
