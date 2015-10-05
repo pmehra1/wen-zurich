@@ -375,7 +375,15 @@ namespace ActivityStatusCheck
                     if ((myneed.coverageOldageYesNo == null) &&
                         (myneed.epOldageYesNo == null) &&
                         (myneed.coveragePersonalYesNo == null) &&
-                        (myneed.epPersonalYesNo == null))
+                        (myneed.epPersonalYesNo == null) && 
+                        (myneed.coverageOutpatientMedExp == null) && 
+                        (myneed.epOutpatientMedExp == null) && 
+                        (myneed.coverageLossOfIncome == null) && 
+                        (myneed.epLossOfIncome == null) && 
+                        (myneed.coverageOldageDisabilities == null) && 
+                        (myneed.epOldageDisabilities == null) && 
+                        (myneed.coverageDentalExp == null) && 
+                        (myneed.epDentalExp == null))
                     {
                         accidentalCoverSectionStatus = "incomplete";
                     }
