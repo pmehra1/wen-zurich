@@ -2808,6 +2808,73 @@ namespace PDFGeneration
                         contents = contents.Replace("[accidentHealthAnyExistingPlansRow5]", myNeedObj.epPersonalYesNo == true ? "Yes" : "No");
                     }
 
+
+                    if (myNeedObj.coverageOutpatientMedExp == null)
+                    {
+                        contents = contents.Replace("[coverageOutpatientMedExp]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[coverageOutpatientMedExp]", myNeedObj.coverageOutpatientMedExp == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.epOutpatientMedExp == null)
+                    {
+                        contents = contents.Replace("[epOutpatientMedExp]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[epOutpatientMedExp]", myNeedObj.epOutpatientMedExp == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.coverageLossOfIncome == null)
+                    {
+                        contents = contents.Replace("[coverageLossOfIncome]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[coverageLossOfIncome]", myNeedObj.coverageLossOfIncome == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.epLossOfIncome == null)
+                    {
+                        contents = contents.Replace("[epLossOfIncome]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[epLossOfIncome]", myNeedObj.epLossOfIncome == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.coverageOldageDisabilities == null)
+                    {
+                        contents = contents.Replace("[coverageOldageDisabilities]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[coverageOldageDisabilities]", myNeedObj.coverageOldageDisabilities == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.epOldageDisabilities == null)
+                    {
+                        contents = contents.Replace("[epOldageDisabilities]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[epOldageDisabilities]", myNeedObj.epOldageDisabilities == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.coverageDentalExp == null)
+                    {
+                        contents = contents.Replace("[coverageDentalExp]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[coverageDentalExp]", myNeedObj.coverageDentalExp == true ? "Yes" : "No");
+                    }
+                    if (myNeedObj.epDentalExp == null)
+                    {
+                        contents = contents.Replace("[epDentalExp]", "");
+                    }
+                    else
+                    {
+                        contents = contents.Replace("[epDentalExp]", myNeedObj.epDentalExp == true ? "Yes" : "No");
+                    }
+
+
                     contents = contents.Replace("[detailsOfExistingPlans]", myNeedObj.existingPlansDetail != null ? removeLineBreak(myNeedObj.existingPlansDetail) : string.Empty);
                 }
                 else
@@ -2854,6 +2921,15 @@ namespace PDFGeneration
                     contents = contents.Replace("[accidentHealthCoverageRow5]", "");
 
                     contents = contents.Replace("[accidentHealthAnyExistingPlansRow5]", "");
+
+                    contents = contents.Replace("[coverageOutpatientMedExp]", "");
+                    contents = contents.Replace("[epOutpatientMedExp]", "");
+                    contents = contents.Replace("[coverageLossOfIncome]", "");
+                    contents = contents.Replace("[epLossOfIncome]", "");
+                    contents = contents.Replace("[coverageOldageDisabilities]", "");
+                    contents = contents.Replace("[epOldageDisabilities]", "");
+                    contents = contents.Replace("[coverageDentalExp]", "");
+                    contents = contents.Replace("[epDentalExp]", "");
 
                     contents = contents.Replace("[detailsOfExistingPlans]", string.Empty);
 
