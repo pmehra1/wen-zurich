@@ -74,6 +74,27 @@
         {
             personalExPl = ViewState["personalExPl"].ToString();
         }
+
+        string epOutpatientMedExpvs = "0";
+        if (ViewState["epOutpatientMedExp"] != null && ViewState["epOutpatientMedExp"].ToString() != "")
+        {
+            epOutpatientMedExpvs = ViewState["epOutpatientMedExp"].ToString();
+        }
+        string epLossOfIncomevs = "0";
+        if (ViewState["epLossOfIncome"] != null && ViewState["epLossOfIncome"].ToString() != "")
+        {
+            epLossOfIncomevs = ViewState["epLossOfIncome"].ToString();
+        }
+        string epOldageDisabilitiesvs = "0";
+        if (ViewState["epOldageDisabilities"] != null && ViewState["epOldageDisabilities"].ToString() != "")
+        {
+            epOldageDisabilitiesvs = ViewState["epOldageDisabilities"].ToString();
+        }
+        string epDentalExpvs = "0";
+        if (ViewState["epDentalExp"] != null && ViewState["epDentalExp"].ToString() != "")
+        {
+            epDentalExpvs = ViewState["epDentalExp"].ToString();
+        }
         
     %>
 
@@ -95,6 +116,10 @@
         var ddlExistingPlanList = "<%=anyExPl%>";
         var ddlEpOldageYesNo = "<%=oldageExPl%>";
         var ddlEpPersonalYesNo = "<%=personalExPl%>";
+        var epOutpatientMedExp = "<%=epOutpatientMedExpvs %>";
+        var epLossOfIncome = "<%=epLossOfIncomevs %>";
+        var epOldageDisabilities = "<%=epOldageDisabilitiesvs %>";
+        var epDentalExp = "<%=epDentalExpvs %>";
 
         $(document).ready(function () {
                 
@@ -103,7 +128,7 @@
 
             $('#tabvanilla > ul').tabs({ fx: { height: 'toggle', opacity: 'toggle'} });
             
-             if ((ddlExistingPlanList == "1")||(ddlEpOldageYesNo == "1")||(ddlEpPersonalYesNo == "1"))
+             if ((ddlExistingPlanList == "1")||(ddlEpOldageYesNo == "1")||(ddlEpPersonalYesNo == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
                 {
                     $('#detail_existing_plans').show();
                 }
@@ -118,8 +143,12 @@
                     var ddlEpOldageYesNo1 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
                     var ddlEpPersonalYesNo1 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
 
+                    var epOutpatientMedExp1 = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome1 = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities1 = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp1 = $("#<%=epDentalExp.ClientID %> option:selected").val();
 
-                     if ((ddlExistingPlanList1 == "1")||(ddlEpOldageYesNo1 == "1")||(ddlEpPersonalYesNo1 == "1"))
+                     if ((ddlExistingPlanList1 == "1")||(ddlEpOldageYesNo1 == "1")||(ddlEpPersonalYesNo1 == "1")||(epOutpatientMedExp1 == "1")||(epLossOfIncome1 == "1")||(epOldageDisabilities1 == "1")||(epDentalExp1 == "1"))
                         {
                             $('#detail_existing_plans').show();
                         }
@@ -135,8 +164,12 @@
                     var ddlEpOldageYesNo2 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
                     var ddlEpPersonalYesNo2 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
 
+                    var epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
 
-                     if ((ddlExistingPlanList2 == "1")||(ddlEpOldageYesNo2 == "1")||(ddlEpPersonalYesNo2 == "1"))
+                     if ((ddlExistingPlanList2 == "1")||(ddlEpOldageYesNo2 == "1")||(ddlEpPersonalYesNo2 == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
                         {
                             $('#detail_existing_plans').show();
                         }
@@ -152,8 +185,12 @@
                     var ddlEpOldageYesNo3 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
                     var ddlEpPersonalYesNo3 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
 
+                    var epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
 
-                     if ((ddlExistingPlanList3 == "1")||(ddlEpOldageYesNo3 == "1")||(ddlEpPersonalYesNo3 == "1"))
+                     if ((ddlExistingPlanList3 == "1")||(ddlEpOldageYesNo3 == "1")||(ddlEpPersonalYesNo3 == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
                         {
                             $('#detail_existing_plans').show();
                         }
@@ -163,7 +200,85 @@
                          }
                  });
 
+                 $('#<%=epOutpatientMedExp.ClientID %>').change(function(){
+                    var ddlExistingPlanList3 = $("#<%=ddlExistingPlanList.ClientID %> option:selected").val();
+                    var ddlEpOldageYesNo3 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
+                    var ddlEpPersonalYesNo3 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
 
+                    var epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
+
+                     if ((ddlExistingPlanList3 == "1")||(ddlEpOldageYesNo3 == "1")||(ddlEpPersonalYesNo3 == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
+                        {
+                            $('#detail_existing_plans').show();
+                        }
+                        else
+                        {
+                            $('#detail_existing_plans').hide();
+                         }
+                 });
+
+                 $('#<%=epLossOfIncome.ClientID %>').change(function(){
+                    var ddlExistingPlanList3 = $("#<%=ddlExistingPlanList.ClientID %> option:selected").val();
+                    var ddlEpOldageYesNo3 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
+                    var ddlEpPersonalYesNo3 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
+
+                    var epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
+
+                     if ((ddlExistingPlanList3 == "1")||(ddlEpOldageYesNo3 == "1")||(ddlEpPersonalYesNo3 == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
+                        {
+                            $('#detail_existing_plans').show();
+                        }
+                        else
+                        {
+                            $('#detail_existing_plans').hide();
+                         }
+                 });
+
+                 $('#<%=epOldageDisabilities.ClientID %>').change(function(){
+                    var ddlExistingPlanList3 = $("#<%=ddlExistingPlanList.ClientID %> option:selected").val();
+                    var ddlEpOldageYesNo3 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
+                    var ddlEpPersonalYesNo3 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
+
+                    var epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
+
+                     if ((ddlExistingPlanList3 == "1")||(ddlEpOldageYesNo3 == "1")||(ddlEpPersonalYesNo3 == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
+                        {
+                            $('#detail_existing_plans').show();
+                        }
+                        else
+                        {
+                            $('#detail_existing_plans').hide();
+                         }
+                 });
+
+                 $('#<%=epDentalExp.ClientID %>').change(function(){
+                    var ddlExistingPlanList3 = $("#<%=ddlExistingPlanList.ClientID %> option:selected").val();
+                    var ddlEpOldageYesNo3 = $("#<%=ddlEpOldageYesNo.ClientID %> option:selected").val();
+                    var ddlEpPersonalYesNo3 = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
+
+                    var epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+                    var epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+                    var epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+                    var epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
+
+                     if ((ddlExistingPlanList3 == "1")||(ddlEpOldageYesNo3 == "1")||(ddlEpPersonalYesNo3 == "1")||(epOutpatientMedExp == "1")||(epLossOfIncome == "1")||(epOldageDisabilities == "1")||(epDentalExp == "1"))
+                        {
+                            $('#detail_existing_plans').show();
+                        }
+                        else
+                        {
+                            $('#detail_existing_plans').hide();
+                         }
+                 });
 
             $('#myNeedsCriticalplus').click(function () {
                 countFamilyNeeds +=1;
@@ -606,7 +721,20 @@
                 ddlEpPersonalYesNo = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
             }
 
-            if (ddlExistingPlanList == "1" || ddlEpOldageYesNo == "1" || ddlEpPersonalYesNo == "1")
+            if(epOutpatientMedExp == ""){
+                epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+            }
+            if(epLossOfIncome == ""){
+                epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+            }
+            if(epOldageDisabilities == ""){
+                epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+            }
+            if(epDentalExp == ""){
+                epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
+            }
+
+            if ((ddlExistingPlanList == "1") || (ddlEpOldageYesNo == "1") || (ddlEpPersonalYesNo == "1") || (epOutpatientMedExp == "1") || (epLossOfIncome == "1") || (epOldageDisabilities == "1") || (epDentalExp == "1"))
             {
                 $('#detail_existing_plans').show();
             }
@@ -637,7 +765,20 @@
                 ddlEpPersonalYesNo = $("#<%=ddlEpPersonalYesNo.ClientID %> option:selected").val();
             }
 
-            if (ddlExistingPlanList == "1" || ddlEpOldageYesNo == "1" || ddlEpPersonalYesNo == "1")
+            if(epOutpatientMedExp == ""){
+                epOutpatientMedExp = $("#<%=epOutpatientMedExp.ClientID %> option:selected").val();
+            }
+            if(epLossOfIncome == ""){
+                epLossOfIncome = $("#<%=epLossOfIncome.ClientID %> option:selected").val();
+            }
+            if(epOldageDisabilities == ""){
+                epOldageDisabilities = $("#<%=epOldageDisabilities.ClientID %> option:selected").val();
+            }
+            if(epDentalExp == ""){
+                epDentalExp = $("#<%=epDentalExp.ClientID %> option:selected").val();
+            }
+
+            if ((ddlExistingPlanList == "1") || (ddlEpOldageYesNo == "1") || (ddlEpPersonalYesNo == "1") || (epOutpatientMedExp == "1") || (epLossOfIncome == "1") || (epOldageDisabilities == "1") || (epDentalExp == "1"))
             {
                 $('#detail_existing_plans').show();
             }
@@ -1153,7 +1294,85 @@
                     <asp:ListItem Value="0">No</asp:ListItem>
                 </asp:DropDownList>
             </td>
-        </tr>    
+        </tr>
+        
+            <tr>
+                <td class="chassis_label_column">
+                    To be covered for net outpatient medical expenses
+                </td>
+                <td>
+                    <asp:DropDownList ID="coverageOutpatientMedExp" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="epOutpatientMedExp" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="chassis_label_column">
+                    To be covered for net loss of income due to illness or sickness
+                </td>
+                <td>
+                    <asp:DropDownList ID="coverageLossOfIncome" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="epLossOfIncome" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="chassis_label_column">
+                    To be covered for old age disabilities
+                </td>
+                <td>
+                    <asp:DropDownList ID="coverageOldageDisabilities" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="epOldageDisabilities" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="chassis_label_column">
+                    To be covered for net dental expenses
+                </td>
+                <td>
+                    <asp:DropDownList ID="coverageDentalExp" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="epDentalExp" runat="server" CssClass="chassis_application_medium_select_list">
+                        <asp:ListItem Value="">-Select-</asp:ListItem>
+                        <asp:ListItem Value="1">Yes</asp:ListItem>
+                        <asp:ListItem Value="0">No</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            
     </tbody>
     </table>
   </td>

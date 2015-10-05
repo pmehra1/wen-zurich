@@ -517,6 +517,78 @@ namespace Zurich.Layouts.Zurich.ProtectionGoals {
         protected global::System.Web.UI.WebControls.DropDownList ddlEpPersonalYesNo;
         
         /// <summary>
+        /// coverageOutpatientMedExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList coverageOutpatientMedExp;
+        
+        /// <summary>
+        /// epOutpatientMedExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList epOutpatientMedExp;
+        
+        /// <summary>
+        /// coverageLossOfIncome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList coverageLossOfIncome;
+        
+        /// <summary>
+        /// epLossOfIncome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList epLossOfIncome;
+        
+        /// <summary>
+        /// coverageOldageDisabilities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList coverageOldageDisabilities;
+        
+        /// <summary>
+        /// epOldageDisabilities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList epOldageDisabilities;
+        
+        /// <summary>
+        /// coverageDentalExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList coverageDentalExp;
+        
+        /// <summary>
+        /// epDentalExp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList epDentalExp;
+        
+        /// <summary>
         /// DetailsOfExistingPlans control.
         /// </summary>
         /// <remarks>

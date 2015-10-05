@@ -466,7 +466,42 @@ namespace Zurich.Layouts.Zurich.ProtectionGoals
             else
                 ddlCoverageOldageYesNo.SelectedValue = "";
 
-            
+
+            if (mNeed.coverageOutpatientMedExp != null)
+            {
+                coverageOutpatientMedExp.SelectedValue = mNeed.coverageOutpatientMedExp == true ? "1" : "0";
+            }
+            else
+            {
+                coverageOutpatientMedExp.SelectedValue = "";
+            }
+
+            if (mNeed.coverageLossOfIncome != null)
+            {
+                coverageLossOfIncome.SelectedValue = mNeed.coverageLossOfIncome == true ? "1" : "0";
+            }
+            else
+            {
+                coverageLossOfIncome.SelectedValue = "";
+            }
+
+            if (mNeed.coverageOldageDisabilities != null)
+            {
+                coverageOldageDisabilities.SelectedValue = mNeed.coverageOldageDisabilities == true ? "1" : "0";
+            }
+            else
+            {
+                coverageOldageDisabilities.SelectedValue = "";
+            }
+
+            if (mNeed.coverageDentalExp != null)
+            {
+                coverageDentalExp.SelectedValue = mNeed.coverageDentalExp == true ? "1" : "0";
+            }
+            else
+            {
+                coverageDentalExp.SelectedValue = "";
+            }
             
             //ddlEpOldageYesNo.SelectedValue = mNeed.epOldageYesNo == true ? "1" : "0";
 
@@ -504,6 +539,48 @@ namespace Zurich.Layouts.Zurich.ProtectionGoals
                 ddlEpPersonalYesNo.SelectedValue = "";
             }
             ViewState["personalExPl"] = ddlEpPersonalYesNo.SelectedValue;
+
+
+            if (mNeed.epOutpatientMedExp != null)
+            {
+                epOutpatientMedExp.SelectedValue = mNeed.epOutpatientMedExp == true ? "1" : "0";
+            }
+            else
+            {
+                epOutpatientMedExp.SelectedValue = "";
+            }
+            ViewState["epOutpatientMedExp"] = epOutpatientMedExp.SelectedValue;
+
+            if (mNeed.epLossOfIncome != null)
+            {
+                epLossOfIncome.SelectedValue = mNeed.epLossOfIncome == true ? "1" : "0";
+            }
+            else
+            {
+                epLossOfIncome.SelectedValue = "";
+            }
+            ViewState["epLossOfIncome"] = epLossOfIncome.SelectedValue;
+
+            if (mNeed.epOldageDisabilities != null)
+            {
+                epOldageDisabilities.SelectedValue = mNeed.epOldageDisabilities == true ? "1" : "0";
+            }
+            else
+            {
+                epOldageDisabilities.SelectedValue = "";
+            }
+            ViewState["epOldageDisabilities"] = epOldageDisabilities.SelectedValue;
+
+            if (mNeed.epDentalExp != null)
+            {
+                epDentalExp.SelectedValue = mNeed.epDentalExp == true ? "1" : "0";
+            }
+            else
+            {
+                epDentalExp.SelectedValue = "";
+            }
+            ViewState["epDentalExp"] = epDentalExp.SelectedValue;
+
 
             if (mNeed.existingPlansDetail != null)
             {
@@ -635,13 +712,80 @@ namespace Zurich.Layouts.Zurich.ProtectionGoals
                myNeeds.epPersonalYesNo = ddlEpPersonalYesNo.SelectedValue == "1" ? true : false;            
            }
 
-           if (ddlExistingPlanList.SelectedValue == "" && ddlEpOldageYesNo.SelectedValue == "" && ddlEpPersonalYesNo.SelectedValue == "")
+
+           if (coverageOutpatientMedExp.SelectedValue == "")
+           {
+               myNeeds.coverageOutpatientMedExp = null;
+           }
+           else
+           {
+               myNeeds.coverageOutpatientMedExp = coverageOutpatientMedExp.SelectedValue == "1" ? true : false;
+           }
+           if (epOutpatientMedExp.SelectedValue == "")
+           {
+               myNeeds.epOutpatientMedExp = null;
+           }
+           else
+           {
+               myNeeds.epOutpatientMedExp = epOutpatientMedExp.SelectedValue == "1" ? true : false;
+           }
+           if (coverageLossOfIncome.SelectedValue == "")
+           {
+               myNeeds.coverageLossOfIncome = null;
+           }
+           else
+           {
+               myNeeds.coverageLossOfIncome = coverageLossOfIncome.SelectedValue == "1" ? true : false;
+           }
+           if (epLossOfIncome.SelectedValue == "")
+           {
+               myNeeds.epLossOfIncome = null;
+           }
+           else
+           {
+               myNeeds.epLossOfIncome = epLossOfIncome.SelectedValue == "1" ? true : false;
+           }
+           if (coverageOldageDisabilities.SelectedValue == "")
+           {
+               myNeeds.coverageOldageDisabilities = null;
+           }
+           else
+           {
+               myNeeds.coverageOldageDisabilities = coverageOldageDisabilities.SelectedValue == "1" ? true : false;
+           }
+           if (epOldageDisabilities.SelectedValue == "")
+           {
+               myNeeds.epOldageDisabilities = null;
+           }
+           else
+           {
+               myNeeds.epOldageDisabilities = epOldageDisabilities.SelectedValue == "1" ? true : false;
+           }
+           if (coverageDentalExp.SelectedValue == "")
+           {
+               myNeeds.coverageDentalExp = null;
+           }
+           else
+           {
+               myNeeds.coverageDentalExp = coverageDentalExp.SelectedValue == "1" ? true : false;
+           }
+           if (epDentalExp.SelectedValue == "")
+           {
+               myNeeds.epDentalExp = null;
+           }
+           else
+           {
+               myNeeds.epDentalExp = epDentalExp.SelectedValue == "1" ? true : false;
+           }
+
+
+           if (ddlExistingPlanList.SelectedValue == "" && ddlEpOldageYesNo.SelectedValue == "" && ddlEpPersonalYesNo.SelectedValue == "" && epOutpatientMedExp.SelectedValue == "" && epLossOfIncome.SelectedValue == "" && epOldageDisabilities.SelectedValue == "" && epDentalExp.SelectedValue == "")
            {
                myNeeds.existingPlansDetail = "";
            }
            else
            {
-               if (ddlExistingPlanList.SelectedValue != "" || ddlEpOldageYesNo.SelectedValue != "" || ddlEpPersonalYesNo.SelectedValue != "")
+               if (ddlExistingPlanList.SelectedValue != "" || ddlEpOldageYesNo.SelectedValue != "" || ddlEpPersonalYesNo.SelectedValue != "" || epOutpatientMedExp.SelectedValue != "" || epLossOfIncome.SelectedValue != "" || epOldageDisabilities.SelectedValue != "" || epDentalExp.SelectedValue != "")
                {
                    myNeeds.existingPlansDetail = DetailsOfExistingPlans.Text;
                }
