@@ -86,8 +86,16 @@ namespace DAO
                 retrievedNeed.disabilityPrNeeded = needs.disabilityPrNeeded;
                 retrievedNeed.hospitalmedCoverNeeded = needs.hospitalmedCoverNeeded;
                 retrievedNeed.accidentalhealthCoverNeeded = needs.accidentalhealthCoverNeeded;
-                
-                if ((needs.anyExistingPlans == true) || (needs.epOldageYesNo == true) || (needs.epPersonalYesNo == true))
+                retrievedNeed.coverageOutpatientMedExp = needs.coverageOutpatientMedExp;
+                retrievedNeed.epOutpatientMedExp = needs.epOutpatientMedExp;
+                retrievedNeed.coverageLossOfIncome = needs.coverageLossOfIncome;
+                retrievedNeed.epLossOfIncome = needs.epLossOfIncome;
+                retrievedNeed.coverageOldageDisabilities = needs.coverageOldageDisabilities;
+                retrievedNeed.epOldageDisabilities = needs.epOldageDisabilities;
+                retrievedNeed.coverageDentalExp = needs.coverageDentalExp;
+                retrievedNeed.epDentalExp = needs.epDentalExp;
+
+                if ((needs.anyExistingPlans == true) || (needs.epOldageYesNo == true) || (needs.epPersonalYesNo == true) || (needs.epOutpatientMedExp == true) || (needs.epLossOfIncome == true) || (needs.epOldageDisabilities == true) || (needs.epDentalExp == true))
                 {
                     retrievedNeed.existingPlansDetail = needs.existingPlansDetail;
                 }

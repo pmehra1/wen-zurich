@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="zurichdata" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-NROO1OAGM8T;Initial Catalog=zurichdata;Persist Security Info=True;User ID=zurich" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="zurichdataConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.personalUseAssetsOthers" Member="personalUseAssetsOthers">
     <Type Name="personalUseAssetsOther">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -278,62 +279,6 @@
       <Association Name="incomeExpense_insuranceArrangementEducation" Member="incomeExpense" ThisKey="incomeExpenseId" OtherKey="id" Type="incomeExpense" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.myNeeds" Member="myNeeds">
-    <Type Name="myNeed">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="caseId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="lumpSumRequiredForTreatment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="criticalIllnessInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="existingAssetsMyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="totalShortfallSurplusMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="lumpSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="existingSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="shortfallSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="monthlyIncomeDisabilityIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="percentOfIncomeCoverageRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="monthlyCoverageRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="disabilityInsuranceMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="existingAssetsMyneedsDisability" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="shortfallSurplusMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="monthlyAmountMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="existingMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="shortfallMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="typeOfHospitalCoverage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="anyExistingPlans" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="typeOfRoomCoverage" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="coverageOldageYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="epOldageYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="coverageIncomeYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="epIncomeYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="coverageOutpatientYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="epOutpatientYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="coverageDentalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="epDentalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="coveragePersonalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="epPersonalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="detailsOfExistingPlans" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
-      <Column Name="replacementIncomePercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="replacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="yearsOfSupportRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="inflatedAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="replacementAmountRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="totalRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="txtExistingAssetsFamilyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="disabilityProtectionReplacementIncomeRequiredPercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="disabilityProtectionReplacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="disabilityYearsOfSupport" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="inflationAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="disabilityReplacementAmountRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="disabilityInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="existingPlansDetail" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
-      <Column Name="criticalIllnessPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="disabilityPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hospitalmedCoverNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="accidentalhealthCoverNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="myNeed_myNeedsCriticalAsset" Member="myNeedsCriticalAssets" ThisKey="id" OtherKey="myNeedId" Type="myNeedsCriticalAsset" />
-      <Association Name="myNeed_myNeedsDisabilityAsset" Member="myNeedsDisabilityAssets" ThisKey="id" OtherKey="myNeedId" Type="myNeedsDisabilityAsset" />
-    </Type>
-  </Table>
   <Table Name="dbo.savinggoals" Member="savinggoals">
     <Type Name="savinggoal">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -606,6 +551,70 @@
       <Column Name="investmentExperienceList" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="workingExperienceList" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="educationalExperienceList" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.myNeeds" Member="myNeeds">
+    <Type Name="myNeed">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="caseId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lumpSumRequiredForTreatment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="criticalIllnessInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingAssetsMyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalShortfallSurplusMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lumpSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallSumMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlyIncomeDisabilityIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="percentOfIncomeCoverageRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlyCoverageRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityInsuranceMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingAssetsMyneedsDisability" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallSurplusMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="monthlyAmountMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="shortfallMyNeeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="typeOfHospitalCoverage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="anyExistingPlans" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="typeOfRoomCoverage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="coverageOldageYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epOldageYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageIncomeYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epIncomeYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageOutpatientYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epOutpatientYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageDentalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epDentalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coveragePersonalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epPersonalYesNo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="detailsOfExistingPlans" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="replacementIncomePercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yearsOfSupportRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflatedAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="replacementAmountRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="totalRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="txtExistingAssetsFamilyneeds" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityProtectionReplacementIncomeRequiredPercentage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityProtectionReplacementIncomeRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityYearsOfSupport" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="inflationAdjustedReturns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityReplacementAmountRequired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="disabilityInsurance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="existingPlansDetail" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="criticalIllnessPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="disabilityPrNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hospitalmedCoverNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="accidentalhealthCoverNeeded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="coverageOutpatientMedExp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epOutpatientMedExp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageLossOfIncome" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epLossOfIncome" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageOldageDisabilities" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epOldageDisabilities" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="coverageDentalExp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="epDentalExp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="myNeed_myNeedsCriticalAsset" Member="myNeedsCriticalAssets" ThisKey="id" OtherKey="myNeedId" Type="myNeedsCriticalAsset" />
+      <Association Name="myNeed_myNeedsDisabilityAsset" Member="myNeedsDisabilityAssets" ThisKey="id" OtherKey="myNeedId" Type="myNeedsDisabilityAsset" />
     </Type>
   </Table>
 </Database>

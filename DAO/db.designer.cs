@@ -100,9 +100,6 @@ namespace DAO
     partial void InsertinsuranceArrangementEducation(insuranceArrangementEducation instance);
     partial void UpdateinsuranceArrangementEducation(insuranceArrangementEducation instance);
     partial void DeleteinsuranceArrangementEducation(insuranceArrangementEducation instance);
-    partial void InsertmyNeed(myNeed instance);
-    partial void UpdatemyNeed(myNeed instance);
-    partial void DeletemyNeed(myNeed instance);
     partial void Insertsavinggoal(savinggoal instance);
     partial void Updatesavinggoal(savinggoal instance);
     partial void Deletesavinggoal(savinggoal instance);
@@ -130,6 +127,9 @@ namespace DAO
     partial void InsertCkaAssessment(CkaAssessment instance);
     partial void UpdateCkaAssessment(CkaAssessment instance);
     partial void DeleteCkaAssessment(CkaAssessment instance);
+    partial void InsertmyNeed(myNeed instance);
+    partial void UpdatemyNeed(myNeed instance);
+    partial void DeletemyNeed(myNeed instance);
     #endregion
 
     public static class DbConnectionStringClass
@@ -188,6 +188,12 @@ namespace DAO
     {
         OnCreated();
     }
+		
+		public dbDataContext(string connection) : 
+				base(connection, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public dbDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
@@ -391,14 +397,6 @@ namespace DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<myNeed> myNeeds
-		{
-			get
-			{
-				return this.GetTable<myNeed>();
-			}
-		}
-		
 		public System.Data.Linq.Table<savinggoal> savinggoals
 		{
 			get
@@ -468,6 +466,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<CkaAssessment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<myNeed> myNeeds
+		{
+			get
+			{
+				return this.GetTable<myNeed>();
 			}
 		}
 	}
@@ -6073,1300 +6079,6 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.myNeeds")]
-	public partial class myNeed : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _caseId;
-		
-		private string _lumpSumRequiredForTreatment;
-		
-		private string _criticalIllnessInsurance;
-		
-		private string _existingAssetsMyneeds;
-		
-		private string _totalShortfallSurplusMyNeeds;
-		
-		private string _lumpSumMyNeeds;
-		
-		private string _existingSumMyNeeds;
-		
-		private string _shortfallSumMyNeeds;
-		
-		private string _monthlyIncomeDisabilityIncome;
-		
-		private string _percentOfIncomeCoverageRequired;
-		
-		private string _monthlyCoverageRequired;
-		
-		private string _disabilityInsuranceMyNeeds;
-		
-		private string _existingAssetsMyneedsDisability;
-		
-		private string _shortfallSurplusMyNeeds;
-		
-		private string _monthlyAmountMyNeeds;
-		
-		private string _existingMyNeeds;
-		
-		private string _shortfallMyNeeds;
-		
-		private string _typeOfHospitalCoverage;
-		
-		private System.Nullable<bool> _anyExistingPlans;
-		
-		private System.Nullable<int> _typeOfRoomCoverage;
-		
-		private System.Nullable<bool> _coverageOldageYesNo;
-		
-		private System.Nullable<bool> _epOldageYesNo;
-		
-		private System.Nullable<bool> _coverageIncomeYesNo;
-		
-		private System.Nullable<bool> _epIncomeYesNo;
-		
-		private System.Nullable<bool> _coverageOutpatientYesNo;
-		
-		private System.Nullable<bool> _epOutpatientYesNo;
-		
-		private System.Nullable<bool> _coverageDentalYesNo;
-		
-		private System.Nullable<bool> _epDentalYesNo;
-		
-		private System.Nullable<bool> _coveragePersonalYesNo;
-		
-		private System.Nullable<bool> _epPersonalYesNo;
-		
-		private string _detailsOfExistingPlans;
-		
-		private string _replacementIncomePercentage;
-		
-		private string _replacementIncomeRequired;
-		
-		private string _yearsOfSupportRequired;
-		
-		private string _inflatedAdjustedReturns;
-		
-		private string _replacementAmountRequired;
-		
-		private string _totalRequired;
-		
-		private string _txtExistingAssetsFamilyneeds;
-		
-		private string _disabilityProtectionReplacementIncomeRequiredPercentage;
-		
-		private string _disabilityProtectionReplacementIncomeRequired;
-		
-		private string _disabilityYearsOfSupport;
-		
-		private string _inflationAdjustedReturns;
-		
-		private string _disabilityReplacementAmountRequired;
-		
-		private string _disabilityInsurance;
-		
-		private string _existingPlansDetail;
-		
-		private System.Nullable<int> _criticalIllnessPrNeeded;
-		
-		private System.Nullable<int> _disabilityPrNeeded;
-		
-		private System.Nullable<int> _hospitalmedCoverNeeded;
-		
-		private System.Nullable<int> _accidentalhealthCoverNeeded;
-		
-		private EntitySet<myNeedsCriticalAsset> _myNeedsCriticalAssets;
-		
-		private EntitySet<myNeedsDisabilityAsset> _myNeedsDisabilityAssets;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OncaseIdChanging(string value);
-    partial void OncaseIdChanged();
-    partial void OnlumpSumRequiredForTreatmentChanging(string value);
-    partial void OnlumpSumRequiredForTreatmentChanged();
-    partial void OncriticalIllnessInsuranceChanging(string value);
-    partial void OncriticalIllnessInsuranceChanged();
-    partial void OnexistingAssetsMyneedsChanging(string value);
-    partial void OnexistingAssetsMyneedsChanged();
-    partial void OntotalShortfallSurplusMyNeedsChanging(string value);
-    partial void OntotalShortfallSurplusMyNeedsChanged();
-    partial void OnlumpSumMyNeedsChanging(string value);
-    partial void OnlumpSumMyNeedsChanged();
-    partial void OnexistingSumMyNeedsChanging(string value);
-    partial void OnexistingSumMyNeedsChanged();
-    partial void OnshortfallSumMyNeedsChanging(string value);
-    partial void OnshortfallSumMyNeedsChanged();
-    partial void OnmonthlyIncomeDisabilityIncomeChanging(string value);
-    partial void OnmonthlyIncomeDisabilityIncomeChanged();
-    partial void OnpercentOfIncomeCoverageRequiredChanging(string value);
-    partial void OnpercentOfIncomeCoverageRequiredChanged();
-    partial void OnmonthlyCoverageRequiredChanging(string value);
-    partial void OnmonthlyCoverageRequiredChanged();
-    partial void OndisabilityInsuranceMyNeedsChanging(string value);
-    partial void OndisabilityInsuranceMyNeedsChanged();
-    partial void OnexistingAssetsMyneedsDisabilityChanging(string value);
-    partial void OnexistingAssetsMyneedsDisabilityChanged();
-    partial void OnshortfallSurplusMyNeedsChanging(string value);
-    partial void OnshortfallSurplusMyNeedsChanged();
-    partial void OnmonthlyAmountMyNeedsChanging(string value);
-    partial void OnmonthlyAmountMyNeedsChanged();
-    partial void OnexistingMyNeedsChanging(string value);
-    partial void OnexistingMyNeedsChanged();
-    partial void OnshortfallMyNeedsChanging(string value);
-    partial void OnshortfallMyNeedsChanged();
-    partial void OntypeOfHospitalCoverageChanging(string value);
-    partial void OntypeOfHospitalCoverageChanged();
-    partial void OnanyExistingPlansChanging(System.Nullable<bool> value);
-    partial void OnanyExistingPlansChanged();
-    partial void OntypeOfRoomCoverageChanging(System.Nullable<int> value);
-    partial void OntypeOfRoomCoverageChanged();
-    partial void OncoverageOldageYesNoChanging(System.Nullable<bool> value);
-    partial void OncoverageOldageYesNoChanged();
-    partial void OnepOldageYesNoChanging(System.Nullable<bool> value);
-    partial void OnepOldageYesNoChanged();
-    partial void OncoverageIncomeYesNoChanging(System.Nullable<bool> value);
-    partial void OncoverageIncomeYesNoChanged();
-    partial void OnepIncomeYesNoChanging(System.Nullable<bool> value);
-    partial void OnepIncomeYesNoChanged();
-    partial void OncoverageOutpatientYesNoChanging(System.Nullable<bool> value);
-    partial void OncoverageOutpatientYesNoChanged();
-    partial void OnepOutpatientYesNoChanging(System.Nullable<bool> value);
-    partial void OnepOutpatientYesNoChanged();
-    partial void OncoverageDentalYesNoChanging(System.Nullable<bool> value);
-    partial void OncoverageDentalYesNoChanged();
-    partial void OnepDentalYesNoChanging(System.Nullable<bool> value);
-    partial void OnepDentalYesNoChanged();
-    partial void OncoveragePersonalYesNoChanging(System.Nullable<bool> value);
-    partial void OncoveragePersonalYesNoChanged();
-    partial void OnepPersonalYesNoChanging(System.Nullable<bool> value);
-    partial void OnepPersonalYesNoChanged();
-    partial void OndetailsOfExistingPlansChanging(string value);
-    partial void OndetailsOfExistingPlansChanged();
-    partial void OnreplacementIncomePercentageChanging(string value);
-    partial void OnreplacementIncomePercentageChanged();
-    partial void OnreplacementIncomeRequiredChanging(string value);
-    partial void OnreplacementIncomeRequiredChanged();
-    partial void OnyearsOfSupportRequiredChanging(string value);
-    partial void OnyearsOfSupportRequiredChanged();
-    partial void OninflatedAdjustedReturnsChanging(string value);
-    partial void OninflatedAdjustedReturnsChanged();
-    partial void OnreplacementAmountRequiredChanging(string value);
-    partial void OnreplacementAmountRequiredChanged();
-    partial void OntotalRequiredChanging(string value);
-    partial void OntotalRequiredChanged();
-    partial void OntxtExistingAssetsFamilyneedsChanging(string value);
-    partial void OntxtExistingAssetsFamilyneedsChanged();
-    partial void OndisabilityProtectionReplacementIncomeRequiredPercentageChanging(string value);
-    partial void OndisabilityProtectionReplacementIncomeRequiredPercentageChanged();
-    partial void OndisabilityProtectionReplacementIncomeRequiredChanging(string value);
-    partial void OndisabilityProtectionReplacementIncomeRequiredChanged();
-    partial void OndisabilityYearsOfSupportChanging(string value);
-    partial void OndisabilityYearsOfSupportChanged();
-    partial void OninflationAdjustedReturnsChanging(string value);
-    partial void OninflationAdjustedReturnsChanged();
-    partial void OndisabilityReplacementAmountRequiredChanging(string value);
-    partial void OndisabilityReplacementAmountRequiredChanged();
-    partial void OndisabilityInsuranceChanging(string value);
-    partial void OndisabilityInsuranceChanged();
-    partial void OnexistingPlansDetailChanging(string value);
-    partial void OnexistingPlansDetailChanged();
-    partial void OncriticalIllnessPrNeededChanging(System.Nullable<int> value);
-    partial void OncriticalIllnessPrNeededChanged();
-    partial void OndisabilityPrNeededChanging(System.Nullable<int> value);
-    partial void OndisabilityPrNeededChanged();
-    partial void OnhospitalmedCoverNeededChanging(System.Nullable<int> value);
-    partial void OnhospitalmedCoverNeededChanged();
-    partial void OnaccidentalhealthCoverNeededChanging(System.Nullable<int> value);
-    partial void OnaccidentalhealthCoverNeededChanged();
-    #endregion
-		
-		public myNeed()
-		{
-			this._myNeedsCriticalAssets = new EntitySet<myNeedsCriticalAsset>(new Action<myNeedsCriticalAsset>(this.attach_myNeedsCriticalAssets), new Action<myNeedsCriticalAsset>(this.detach_myNeedsCriticalAssets));
-			this._myNeedsDisabilityAssets = new EntitySet<myNeedsDisabilityAsset>(new Action<myNeedsDisabilityAsset>(this.attach_myNeedsDisabilityAssets), new Action<myNeedsDisabilityAsset>(this.detach_myNeedsDisabilityAssets));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_caseId", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string caseId
-		{
-			get
-			{
-				return this._caseId;
-			}
-			set
-			{
-				if ((this._caseId != value))
-				{
-					this.OncaseIdChanging(value);
-					this.SendPropertyChanging();
-					this._caseId = value;
-					this.SendPropertyChanged("caseId");
-					this.OncaseIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lumpSumRequiredForTreatment", DbType="NVarChar(50)")]
-		public string lumpSumRequiredForTreatment
-		{
-			get
-			{
-				return this._lumpSumRequiredForTreatment;
-			}
-			set
-			{
-				if ((this._lumpSumRequiredForTreatment != value))
-				{
-					this.OnlumpSumRequiredForTreatmentChanging(value);
-					this.SendPropertyChanging();
-					this._lumpSumRequiredForTreatment = value;
-					this.SendPropertyChanged("lumpSumRequiredForTreatment");
-					this.OnlumpSumRequiredForTreatmentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_criticalIllnessInsurance", DbType="NVarChar(50)")]
-		public string criticalIllnessInsurance
-		{
-			get
-			{
-				return this._criticalIllnessInsurance;
-			}
-			set
-			{
-				if ((this._criticalIllnessInsurance != value))
-				{
-					this.OncriticalIllnessInsuranceChanging(value);
-					this.SendPropertyChanging();
-					this._criticalIllnessInsurance = value;
-					this.SendPropertyChanged("criticalIllnessInsurance");
-					this.OncriticalIllnessInsuranceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingAssetsMyneeds", DbType="NVarChar(50)")]
-		public string existingAssetsMyneeds
-		{
-			get
-			{
-				return this._existingAssetsMyneeds;
-			}
-			set
-			{
-				if ((this._existingAssetsMyneeds != value))
-				{
-					this.OnexistingAssetsMyneedsChanging(value);
-					this.SendPropertyChanging();
-					this._existingAssetsMyneeds = value;
-					this.SendPropertyChanged("existingAssetsMyneeds");
-					this.OnexistingAssetsMyneedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalShortfallSurplusMyNeeds", DbType="NVarChar(50)")]
-		public string totalShortfallSurplusMyNeeds
-		{
-			get
-			{
-				return this._totalShortfallSurplusMyNeeds;
-			}
-			set
-			{
-				if ((this._totalShortfallSurplusMyNeeds != value))
-				{
-					this.OntotalShortfallSurplusMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._totalShortfallSurplusMyNeeds = value;
-					this.SendPropertyChanged("totalShortfallSurplusMyNeeds");
-					this.OntotalShortfallSurplusMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lumpSumMyNeeds", DbType="NVarChar(50)")]
-		public string lumpSumMyNeeds
-		{
-			get
-			{
-				return this._lumpSumMyNeeds;
-			}
-			set
-			{
-				if ((this._lumpSumMyNeeds != value))
-				{
-					this.OnlumpSumMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._lumpSumMyNeeds = value;
-					this.SendPropertyChanged("lumpSumMyNeeds");
-					this.OnlumpSumMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingSumMyNeeds", DbType="NVarChar(50)")]
-		public string existingSumMyNeeds
-		{
-			get
-			{
-				return this._existingSumMyNeeds;
-			}
-			set
-			{
-				if ((this._existingSumMyNeeds != value))
-				{
-					this.OnexistingSumMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._existingSumMyNeeds = value;
-					this.SendPropertyChanged("existingSumMyNeeds");
-					this.OnexistingSumMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shortfallSumMyNeeds", DbType="NVarChar(50)")]
-		public string shortfallSumMyNeeds
-		{
-			get
-			{
-				return this._shortfallSumMyNeeds;
-			}
-			set
-			{
-				if ((this._shortfallSumMyNeeds != value))
-				{
-					this.OnshortfallSumMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._shortfallSumMyNeeds = value;
-					this.SendPropertyChanged("shortfallSumMyNeeds");
-					this.OnshortfallSumMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monthlyIncomeDisabilityIncome", DbType="NVarChar(50)")]
-		public string monthlyIncomeDisabilityIncome
-		{
-			get
-			{
-				return this._monthlyIncomeDisabilityIncome;
-			}
-			set
-			{
-				if ((this._monthlyIncomeDisabilityIncome != value))
-				{
-					this.OnmonthlyIncomeDisabilityIncomeChanging(value);
-					this.SendPropertyChanging();
-					this._monthlyIncomeDisabilityIncome = value;
-					this.SendPropertyChanged("monthlyIncomeDisabilityIncome");
-					this.OnmonthlyIncomeDisabilityIncomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_percentOfIncomeCoverageRequired", DbType="NVarChar(50)")]
-		public string percentOfIncomeCoverageRequired
-		{
-			get
-			{
-				return this._percentOfIncomeCoverageRequired;
-			}
-			set
-			{
-				if ((this._percentOfIncomeCoverageRequired != value))
-				{
-					this.OnpercentOfIncomeCoverageRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._percentOfIncomeCoverageRequired = value;
-					this.SendPropertyChanged("percentOfIncomeCoverageRequired");
-					this.OnpercentOfIncomeCoverageRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monthlyCoverageRequired", DbType="NVarChar(50)")]
-		public string monthlyCoverageRequired
-		{
-			get
-			{
-				return this._monthlyCoverageRequired;
-			}
-			set
-			{
-				if ((this._monthlyCoverageRequired != value))
-				{
-					this.OnmonthlyCoverageRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._monthlyCoverageRequired = value;
-					this.SendPropertyChanged("monthlyCoverageRequired");
-					this.OnmonthlyCoverageRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityInsuranceMyNeeds", DbType="NVarChar(50)")]
-		public string disabilityInsuranceMyNeeds
-		{
-			get
-			{
-				return this._disabilityInsuranceMyNeeds;
-			}
-			set
-			{
-				if ((this._disabilityInsuranceMyNeeds != value))
-				{
-					this.OndisabilityInsuranceMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityInsuranceMyNeeds = value;
-					this.SendPropertyChanged("disabilityInsuranceMyNeeds");
-					this.OndisabilityInsuranceMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingAssetsMyneedsDisability", DbType="NVarChar(50)")]
-		public string existingAssetsMyneedsDisability
-		{
-			get
-			{
-				return this._existingAssetsMyneedsDisability;
-			}
-			set
-			{
-				if ((this._existingAssetsMyneedsDisability != value))
-				{
-					this.OnexistingAssetsMyneedsDisabilityChanging(value);
-					this.SendPropertyChanging();
-					this._existingAssetsMyneedsDisability = value;
-					this.SendPropertyChanged("existingAssetsMyneedsDisability");
-					this.OnexistingAssetsMyneedsDisabilityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shortfallSurplusMyNeeds", DbType="NVarChar(50)")]
-		public string shortfallSurplusMyNeeds
-		{
-			get
-			{
-				return this._shortfallSurplusMyNeeds;
-			}
-			set
-			{
-				if ((this._shortfallSurplusMyNeeds != value))
-				{
-					this.OnshortfallSurplusMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._shortfallSurplusMyNeeds = value;
-					this.SendPropertyChanged("shortfallSurplusMyNeeds");
-					this.OnshortfallSurplusMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monthlyAmountMyNeeds", DbType="NVarChar(50)")]
-		public string monthlyAmountMyNeeds
-		{
-			get
-			{
-				return this._monthlyAmountMyNeeds;
-			}
-			set
-			{
-				if ((this._monthlyAmountMyNeeds != value))
-				{
-					this.OnmonthlyAmountMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._monthlyAmountMyNeeds = value;
-					this.SendPropertyChanged("monthlyAmountMyNeeds");
-					this.OnmonthlyAmountMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingMyNeeds", DbType="NVarChar(50)")]
-		public string existingMyNeeds
-		{
-			get
-			{
-				return this._existingMyNeeds;
-			}
-			set
-			{
-				if ((this._existingMyNeeds != value))
-				{
-					this.OnexistingMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._existingMyNeeds = value;
-					this.SendPropertyChanged("existingMyNeeds");
-					this.OnexistingMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shortfallMyNeeds", DbType="NVarChar(50)")]
-		public string shortfallMyNeeds
-		{
-			get
-			{
-				return this._shortfallMyNeeds;
-			}
-			set
-			{
-				if ((this._shortfallMyNeeds != value))
-				{
-					this.OnshortfallMyNeedsChanging(value);
-					this.SendPropertyChanging();
-					this._shortfallMyNeeds = value;
-					this.SendPropertyChanged("shortfallMyNeeds");
-					this.OnshortfallMyNeedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typeOfHospitalCoverage", DbType="NVarChar(50)")]
-		public string typeOfHospitalCoverage
-		{
-			get
-			{
-				return this._typeOfHospitalCoverage;
-			}
-			set
-			{
-				if ((this._typeOfHospitalCoverage != value))
-				{
-					this.OntypeOfHospitalCoverageChanging(value);
-					this.SendPropertyChanging();
-					this._typeOfHospitalCoverage = value;
-					this.SendPropertyChanged("typeOfHospitalCoverage");
-					this.OntypeOfHospitalCoverageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anyExistingPlans", DbType="Bit")]
-		public System.Nullable<bool> anyExistingPlans
-		{
-			get
-			{
-				return this._anyExistingPlans;
-			}
-			set
-			{
-				if ((this._anyExistingPlans != value))
-				{
-					this.OnanyExistingPlansChanging(value);
-					this.SendPropertyChanging();
-					this._anyExistingPlans = value;
-					this.SendPropertyChanged("anyExistingPlans");
-					this.OnanyExistingPlansChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typeOfRoomCoverage", DbType="Int")]
-		public System.Nullable<int> typeOfRoomCoverage
-		{
-			get
-			{
-				return this._typeOfRoomCoverage;
-			}
-			set
-			{
-				if ((this._typeOfRoomCoverage != value))
-				{
-					this.OntypeOfRoomCoverageChanging(value);
-					this.SendPropertyChanging();
-					this._typeOfRoomCoverage = value;
-					this.SendPropertyChanged("typeOfRoomCoverage");
-					this.OntypeOfRoomCoverageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageOldageYesNo", DbType="Bit")]
-		public System.Nullable<bool> coverageOldageYesNo
-		{
-			get
-			{
-				return this._coverageOldageYesNo;
-			}
-			set
-			{
-				if ((this._coverageOldageYesNo != value))
-				{
-					this.OncoverageOldageYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._coverageOldageYesNo = value;
-					this.SendPropertyChanged("coverageOldageYesNo");
-					this.OncoverageOldageYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epOldageYesNo", DbType="Bit")]
-		public System.Nullable<bool> epOldageYesNo
-		{
-			get
-			{
-				return this._epOldageYesNo;
-			}
-			set
-			{
-				if ((this._epOldageYesNo != value))
-				{
-					this.OnepOldageYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._epOldageYesNo = value;
-					this.SendPropertyChanged("epOldageYesNo");
-					this.OnepOldageYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageIncomeYesNo", DbType="Bit")]
-		public System.Nullable<bool> coverageIncomeYesNo
-		{
-			get
-			{
-				return this._coverageIncomeYesNo;
-			}
-			set
-			{
-				if ((this._coverageIncomeYesNo != value))
-				{
-					this.OncoverageIncomeYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._coverageIncomeYesNo = value;
-					this.SendPropertyChanged("coverageIncomeYesNo");
-					this.OncoverageIncomeYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epIncomeYesNo", DbType="Bit")]
-		public System.Nullable<bool> epIncomeYesNo
-		{
-			get
-			{
-				return this._epIncomeYesNo;
-			}
-			set
-			{
-				if ((this._epIncomeYesNo != value))
-				{
-					this.OnepIncomeYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._epIncomeYesNo = value;
-					this.SendPropertyChanged("epIncomeYesNo");
-					this.OnepIncomeYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageOutpatientYesNo", DbType="Bit")]
-		public System.Nullable<bool> coverageOutpatientYesNo
-		{
-			get
-			{
-				return this._coverageOutpatientYesNo;
-			}
-			set
-			{
-				if ((this._coverageOutpatientYesNo != value))
-				{
-					this.OncoverageOutpatientYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._coverageOutpatientYesNo = value;
-					this.SendPropertyChanged("coverageOutpatientYesNo");
-					this.OncoverageOutpatientYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epOutpatientYesNo", DbType="Bit")]
-		public System.Nullable<bool> epOutpatientYesNo
-		{
-			get
-			{
-				return this._epOutpatientYesNo;
-			}
-			set
-			{
-				if ((this._epOutpatientYesNo != value))
-				{
-					this.OnepOutpatientYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._epOutpatientYesNo = value;
-					this.SendPropertyChanged("epOutpatientYesNo");
-					this.OnepOutpatientYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageDentalYesNo", DbType="Bit")]
-		public System.Nullable<bool> coverageDentalYesNo
-		{
-			get
-			{
-				return this._coverageDentalYesNo;
-			}
-			set
-			{
-				if ((this._coverageDentalYesNo != value))
-				{
-					this.OncoverageDentalYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._coverageDentalYesNo = value;
-					this.SendPropertyChanged("coverageDentalYesNo");
-					this.OncoverageDentalYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epDentalYesNo", DbType="Bit")]
-		public System.Nullable<bool> epDentalYesNo
-		{
-			get
-			{
-				return this._epDentalYesNo;
-			}
-			set
-			{
-				if ((this._epDentalYesNo != value))
-				{
-					this.OnepDentalYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._epDentalYesNo = value;
-					this.SendPropertyChanged("epDentalYesNo");
-					this.OnepDentalYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coveragePersonalYesNo", DbType="Bit")]
-		public System.Nullable<bool> coveragePersonalYesNo
-		{
-			get
-			{
-				return this._coveragePersonalYesNo;
-			}
-			set
-			{
-				if ((this._coveragePersonalYesNo != value))
-				{
-					this.OncoveragePersonalYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._coveragePersonalYesNo = value;
-					this.SendPropertyChanged("coveragePersonalYesNo");
-					this.OncoveragePersonalYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epPersonalYesNo", DbType="Bit")]
-		public System.Nullable<bool> epPersonalYesNo
-		{
-			get
-			{
-				return this._epPersonalYesNo;
-			}
-			set
-			{
-				if ((this._epPersonalYesNo != value))
-				{
-					this.OnepPersonalYesNoChanging(value);
-					this.SendPropertyChanging();
-					this._epPersonalYesNo = value;
-					this.SendPropertyChanged("epPersonalYesNo");
-					this.OnepPersonalYesNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detailsOfExistingPlans", DbType="NVarChar(4000)")]
-		public string detailsOfExistingPlans
-		{
-			get
-			{
-				return this._detailsOfExistingPlans;
-			}
-			set
-			{
-				if ((this._detailsOfExistingPlans != value))
-				{
-					this.OndetailsOfExistingPlansChanging(value);
-					this.SendPropertyChanging();
-					this._detailsOfExistingPlans = value;
-					this.SendPropertyChanged("detailsOfExistingPlans");
-					this.OndetailsOfExistingPlansChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_replacementIncomePercentage", DbType="NVarChar(50)")]
-		public string replacementIncomePercentage
-		{
-			get
-			{
-				return this._replacementIncomePercentage;
-			}
-			set
-			{
-				if ((this._replacementIncomePercentage != value))
-				{
-					this.OnreplacementIncomePercentageChanging(value);
-					this.SendPropertyChanging();
-					this._replacementIncomePercentage = value;
-					this.SendPropertyChanged("replacementIncomePercentage");
-					this.OnreplacementIncomePercentageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_replacementIncomeRequired", DbType="NVarChar(50)")]
-		public string replacementIncomeRequired
-		{
-			get
-			{
-				return this._replacementIncomeRequired;
-			}
-			set
-			{
-				if ((this._replacementIncomeRequired != value))
-				{
-					this.OnreplacementIncomeRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._replacementIncomeRequired = value;
-					this.SendPropertyChanged("replacementIncomeRequired");
-					this.OnreplacementIncomeRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_yearsOfSupportRequired", DbType="NVarChar(50)")]
-		public string yearsOfSupportRequired
-		{
-			get
-			{
-				return this._yearsOfSupportRequired;
-			}
-			set
-			{
-				if ((this._yearsOfSupportRequired != value))
-				{
-					this.OnyearsOfSupportRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._yearsOfSupportRequired = value;
-					this.SendPropertyChanged("yearsOfSupportRequired");
-					this.OnyearsOfSupportRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inflatedAdjustedReturns", DbType="NVarChar(50)")]
-		public string inflatedAdjustedReturns
-		{
-			get
-			{
-				return this._inflatedAdjustedReturns;
-			}
-			set
-			{
-				if ((this._inflatedAdjustedReturns != value))
-				{
-					this.OninflatedAdjustedReturnsChanging(value);
-					this.SendPropertyChanging();
-					this._inflatedAdjustedReturns = value;
-					this.SendPropertyChanged("inflatedAdjustedReturns");
-					this.OninflatedAdjustedReturnsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_replacementAmountRequired", DbType="NVarChar(50)")]
-		public string replacementAmountRequired
-		{
-			get
-			{
-				return this._replacementAmountRequired;
-			}
-			set
-			{
-				if ((this._replacementAmountRequired != value))
-				{
-					this.OnreplacementAmountRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._replacementAmountRequired = value;
-					this.SendPropertyChanged("replacementAmountRequired");
-					this.OnreplacementAmountRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalRequired", DbType="NVarChar(50)")]
-		public string totalRequired
-		{
-			get
-			{
-				return this._totalRequired;
-			}
-			set
-			{
-				if ((this._totalRequired != value))
-				{
-					this.OntotalRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._totalRequired = value;
-					this.SendPropertyChanged("totalRequired");
-					this.OntotalRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_txtExistingAssetsFamilyneeds", DbType="NVarChar(50)")]
-		public string txtExistingAssetsFamilyneeds
-		{
-			get
-			{
-				return this._txtExistingAssetsFamilyneeds;
-			}
-			set
-			{
-				if ((this._txtExistingAssetsFamilyneeds != value))
-				{
-					this.OntxtExistingAssetsFamilyneedsChanging(value);
-					this.SendPropertyChanging();
-					this._txtExistingAssetsFamilyneeds = value;
-					this.SendPropertyChanged("txtExistingAssetsFamilyneeds");
-					this.OntxtExistingAssetsFamilyneedsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityProtectionReplacementIncomeRequiredPercentage", DbType="NVarChar(50)")]
-		public string disabilityProtectionReplacementIncomeRequiredPercentage
-		{
-			get
-			{
-				return this._disabilityProtectionReplacementIncomeRequiredPercentage;
-			}
-			set
-			{
-				if ((this._disabilityProtectionReplacementIncomeRequiredPercentage != value))
-				{
-					this.OndisabilityProtectionReplacementIncomeRequiredPercentageChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityProtectionReplacementIncomeRequiredPercentage = value;
-					this.SendPropertyChanged("disabilityProtectionReplacementIncomeRequiredPercentage");
-					this.OndisabilityProtectionReplacementIncomeRequiredPercentageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityProtectionReplacementIncomeRequired", DbType="NVarChar(50)")]
-		public string disabilityProtectionReplacementIncomeRequired
-		{
-			get
-			{
-				return this._disabilityProtectionReplacementIncomeRequired;
-			}
-			set
-			{
-				if ((this._disabilityProtectionReplacementIncomeRequired != value))
-				{
-					this.OndisabilityProtectionReplacementIncomeRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityProtectionReplacementIncomeRequired = value;
-					this.SendPropertyChanged("disabilityProtectionReplacementIncomeRequired");
-					this.OndisabilityProtectionReplacementIncomeRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityYearsOfSupport", DbType="NVarChar(50)")]
-		public string disabilityYearsOfSupport
-		{
-			get
-			{
-				return this._disabilityYearsOfSupport;
-			}
-			set
-			{
-				if ((this._disabilityYearsOfSupport != value))
-				{
-					this.OndisabilityYearsOfSupportChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityYearsOfSupport = value;
-					this.SendPropertyChanged("disabilityYearsOfSupport");
-					this.OndisabilityYearsOfSupportChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inflationAdjustedReturns", DbType="NVarChar(50)")]
-		public string inflationAdjustedReturns
-		{
-			get
-			{
-				return this._inflationAdjustedReturns;
-			}
-			set
-			{
-				if ((this._inflationAdjustedReturns != value))
-				{
-					this.OninflationAdjustedReturnsChanging(value);
-					this.SendPropertyChanging();
-					this._inflationAdjustedReturns = value;
-					this.SendPropertyChanged("inflationAdjustedReturns");
-					this.OninflationAdjustedReturnsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityReplacementAmountRequired", DbType="NVarChar(50)")]
-		public string disabilityReplacementAmountRequired
-		{
-			get
-			{
-				return this._disabilityReplacementAmountRequired;
-			}
-			set
-			{
-				if ((this._disabilityReplacementAmountRequired != value))
-				{
-					this.OndisabilityReplacementAmountRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityReplacementAmountRequired = value;
-					this.SendPropertyChanged("disabilityReplacementAmountRequired");
-					this.OndisabilityReplacementAmountRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityInsurance", DbType="NVarChar(50)")]
-		public string disabilityInsurance
-		{
-			get
-			{
-				return this._disabilityInsurance;
-			}
-			set
-			{
-				if ((this._disabilityInsurance != value))
-				{
-					this.OndisabilityInsuranceChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityInsurance = value;
-					this.SendPropertyChanged("disabilityInsurance");
-					this.OndisabilityInsuranceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingPlansDetail", DbType="NVarChar(2000)")]
-		public string existingPlansDetail
-		{
-			get
-			{
-				return this._existingPlansDetail;
-			}
-			set
-			{
-				if ((this._existingPlansDetail != value))
-				{
-					this.OnexistingPlansDetailChanging(value);
-					this.SendPropertyChanging();
-					this._existingPlansDetail = value;
-					this.SendPropertyChanged("existingPlansDetail");
-					this.OnexistingPlansDetailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_criticalIllnessPrNeeded", DbType="Int")]
-		public System.Nullable<int> criticalIllnessPrNeeded
-		{
-			get
-			{
-				return this._criticalIllnessPrNeeded;
-			}
-			set
-			{
-				if ((this._criticalIllnessPrNeeded != value))
-				{
-					this.OncriticalIllnessPrNeededChanging(value);
-					this.SendPropertyChanging();
-					this._criticalIllnessPrNeeded = value;
-					this.SendPropertyChanged("criticalIllnessPrNeeded");
-					this.OncriticalIllnessPrNeededChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityPrNeeded", DbType="Int")]
-		public System.Nullable<int> disabilityPrNeeded
-		{
-			get
-			{
-				return this._disabilityPrNeeded;
-			}
-			set
-			{
-				if ((this._disabilityPrNeeded != value))
-				{
-					this.OndisabilityPrNeededChanging(value);
-					this.SendPropertyChanging();
-					this._disabilityPrNeeded = value;
-					this.SendPropertyChanged("disabilityPrNeeded");
-					this.OndisabilityPrNeededChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hospitalmedCoverNeeded", DbType="Int")]
-		public System.Nullable<int> hospitalmedCoverNeeded
-		{
-			get
-			{
-				return this._hospitalmedCoverNeeded;
-			}
-			set
-			{
-				if ((this._hospitalmedCoverNeeded != value))
-				{
-					this.OnhospitalmedCoverNeededChanging(value);
-					this.SendPropertyChanging();
-					this._hospitalmedCoverNeeded = value;
-					this.SendPropertyChanged("hospitalmedCoverNeeded");
-					this.OnhospitalmedCoverNeededChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_accidentalhealthCoverNeeded", DbType="Int")]
-		public System.Nullable<int> accidentalhealthCoverNeeded
-		{
-			get
-			{
-				return this._accidentalhealthCoverNeeded;
-			}
-			set
-			{
-				if ((this._accidentalhealthCoverNeeded != value))
-				{
-					this.OnaccidentalhealthCoverNeededChanging(value);
-					this.SendPropertyChanging();
-					this._accidentalhealthCoverNeeded = value;
-					this.SendPropertyChanged("accidentalhealthCoverNeeded");
-					this.OnaccidentalhealthCoverNeededChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="myNeed_myNeedsCriticalAsset", Storage="_myNeedsCriticalAssets", ThisKey="id", OtherKey="myNeedId")]
-		public EntitySet<myNeedsCriticalAsset> myNeedsCriticalAssets
-		{
-			get
-			{
-				return this._myNeedsCriticalAssets;
-			}
-			set
-			{
-				this._myNeedsCriticalAssets.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="myNeed_myNeedsDisabilityAsset", Storage="_myNeedsDisabilityAssets", ThisKey="id", OtherKey="myNeedId")]
-		public EntitySet<myNeedsDisabilityAsset> myNeedsDisabilityAssets
-		{
-			get
-			{
-				return this._myNeedsDisabilityAssets;
-			}
-			set
-			{
-				this._myNeedsDisabilityAssets.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_myNeedsCriticalAssets(myNeedsCriticalAsset entity)
-		{
-			this.SendPropertyChanging();
-			entity.myNeed = this;
-		}
-		
-		private void detach_myNeedsCriticalAssets(myNeedsCriticalAsset entity)
-		{
-			this.SendPropertyChanging();
-			entity.myNeed = null;
-		}
-		
-		private void attach_myNeedsDisabilityAssets(myNeedsDisabilityAsset entity)
-		{
-			this.SendPropertyChanging();
-			entity.myNeed = this;
-		}
-		
-		private void detach_myNeedsDisabilityAssets(myNeedsDisabilityAsset entity)
-		{
-			this.SendPropertyChanging();
-			entity.myNeed = null;
 		}
 	}
 	
@@ -13486,6 +12198,1492 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.myNeeds")]
+	public partial class myNeed : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _caseId;
+		
+		private string _lumpSumRequiredForTreatment;
+		
+		private string _criticalIllnessInsurance;
+		
+		private string _existingAssetsMyneeds;
+		
+		private string _totalShortfallSurplusMyNeeds;
+		
+		private string _lumpSumMyNeeds;
+		
+		private string _existingSumMyNeeds;
+		
+		private string _shortfallSumMyNeeds;
+		
+		private string _monthlyIncomeDisabilityIncome;
+		
+		private string _percentOfIncomeCoverageRequired;
+		
+		private string _monthlyCoverageRequired;
+		
+		private string _disabilityInsuranceMyNeeds;
+		
+		private string _existingAssetsMyneedsDisability;
+		
+		private string _shortfallSurplusMyNeeds;
+		
+		private string _monthlyAmountMyNeeds;
+		
+		private string _existingMyNeeds;
+		
+		private string _shortfallMyNeeds;
+		
+		private string _typeOfHospitalCoverage;
+		
+		private System.Nullable<bool> _anyExistingPlans;
+		
+		private System.Nullable<int> _typeOfRoomCoverage;
+		
+		private System.Nullable<bool> _coverageOldageYesNo;
+		
+		private System.Nullable<bool> _epOldageYesNo;
+		
+		private System.Nullable<bool> _coverageIncomeYesNo;
+		
+		private System.Nullable<bool> _epIncomeYesNo;
+		
+		private System.Nullable<bool> _coverageOutpatientYesNo;
+		
+		private System.Nullable<bool> _epOutpatientYesNo;
+		
+		private System.Nullable<bool> _coverageDentalYesNo;
+		
+		private System.Nullable<bool> _epDentalYesNo;
+		
+		private System.Nullable<bool> _coveragePersonalYesNo;
+		
+		private System.Nullable<bool> _epPersonalYesNo;
+		
+		private string _detailsOfExistingPlans;
+		
+		private string _replacementIncomePercentage;
+		
+		private string _replacementIncomeRequired;
+		
+		private string _yearsOfSupportRequired;
+		
+		private string _inflatedAdjustedReturns;
+		
+		private string _replacementAmountRequired;
+		
+		private string _totalRequired;
+		
+		private string _txtExistingAssetsFamilyneeds;
+		
+		private string _disabilityProtectionReplacementIncomeRequiredPercentage;
+		
+		private string _disabilityProtectionReplacementIncomeRequired;
+		
+		private string _disabilityYearsOfSupport;
+		
+		private string _inflationAdjustedReturns;
+		
+		private string _disabilityReplacementAmountRequired;
+		
+		private string _disabilityInsurance;
+		
+		private string _existingPlansDetail;
+		
+		private System.Nullable<int> _criticalIllnessPrNeeded;
+		
+		private System.Nullable<int> _disabilityPrNeeded;
+		
+		private System.Nullable<int> _hospitalmedCoverNeeded;
+		
+		private System.Nullable<int> _accidentalhealthCoverNeeded;
+		
+		private System.Nullable<bool> _coverageOutpatientMedExp;
+		
+		private System.Nullable<bool> _epOutpatientMedExp;
+		
+		private System.Nullable<bool> _coverageLossOfIncome;
+		
+		private System.Nullable<bool> _epLossOfIncome;
+		
+		private System.Nullable<bool> _coverageOldageDisabilities;
+		
+		private System.Nullable<bool> _epOldageDisabilities;
+		
+		private System.Nullable<bool> _coverageDentalExp;
+		
+		private System.Nullable<bool> _epDentalExp;
+		
+		private EntitySet<myNeedsCriticalAsset> _myNeedsCriticalAssets;
+		
+		private EntitySet<myNeedsDisabilityAsset> _myNeedsDisabilityAssets;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OncaseIdChanging(string value);
+    partial void OncaseIdChanged();
+    partial void OnlumpSumRequiredForTreatmentChanging(string value);
+    partial void OnlumpSumRequiredForTreatmentChanged();
+    partial void OncriticalIllnessInsuranceChanging(string value);
+    partial void OncriticalIllnessInsuranceChanged();
+    partial void OnexistingAssetsMyneedsChanging(string value);
+    partial void OnexistingAssetsMyneedsChanged();
+    partial void OntotalShortfallSurplusMyNeedsChanging(string value);
+    partial void OntotalShortfallSurplusMyNeedsChanged();
+    partial void OnlumpSumMyNeedsChanging(string value);
+    partial void OnlumpSumMyNeedsChanged();
+    partial void OnexistingSumMyNeedsChanging(string value);
+    partial void OnexistingSumMyNeedsChanged();
+    partial void OnshortfallSumMyNeedsChanging(string value);
+    partial void OnshortfallSumMyNeedsChanged();
+    partial void OnmonthlyIncomeDisabilityIncomeChanging(string value);
+    partial void OnmonthlyIncomeDisabilityIncomeChanged();
+    partial void OnpercentOfIncomeCoverageRequiredChanging(string value);
+    partial void OnpercentOfIncomeCoverageRequiredChanged();
+    partial void OnmonthlyCoverageRequiredChanging(string value);
+    partial void OnmonthlyCoverageRequiredChanged();
+    partial void OndisabilityInsuranceMyNeedsChanging(string value);
+    partial void OndisabilityInsuranceMyNeedsChanged();
+    partial void OnexistingAssetsMyneedsDisabilityChanging(string value);
+    partial void OnexistingAssetsMyneedsDisabilityChanged();
+    partial void OnshortfallSurplusMyNeedsChanging(string value);
+    partial void OnshortfallSurplusMyNeedsChanged();
+    partial void OnmonthlyAmountMyNeedsChanging(string value);
+    partial void OnmonthlyAmountMyNeedsChanged();
+    partial void OnexistingMyNeedsChanging(string value);
+    partial void OnexistingMyNeedsChanged();
+    partial void OnshortfallMyNeedsChanging(string value);
+    partial void OnshortfallMyNeedsChanged();
+    partial void OntypeOfHospitalCoverageChanging(string value);
+    partial void OntypeOfHospitalCoverageChanged();
+    partial void OnanyExistingPlansChanging(System.Nullable<bool> value);
+    partial void OnanyExistingPlansChanged();
+    partial void OntypeOfRoomCoverageChanging(System.Nullable<int> value);
+    partial void OntypeOfRoomCoverageChanged();
+    partial void OncoverageOldageYesNoChanging(System.Nullable<bool> value);
+    partial void OncoverageOldageYesNoChanged();
+    partial void OnepOldageYesNoChanging(System.Nullable<bool> value);
+    partial void OnepOldageYesNoChanged();
+    partial void OncoverageIncomeYesNoChanging(System.Nullable<bool> value);
+    partial void OncoverageIncomeYesNoChanged();
+    partial void OnepIncomeYesNoChanging(System.Nullable<bool> value);
+    partial void OnepIncomeYesNoChanged();
+    partial void OncoverageOutpatientYesNoChanging(System.Nullable<bool> value);
+    partial void OncoverageOutpatientYesNoChanged();
+    partial void OnepOutpatientYesNoChanging(System.Nullable<bool> value);
+    partial void OnepOutpatientYesNoChanged();
+    partial void OncoverageDentalYesNoChanging(System.Nullable<bool> value);
+    partial void OncoverageDentalYesNoChanged();
+    partial void OnepDentalYesNoChanging(System.Nullable<bool> value);
+    partial void OnepDentalYesNoChanged();
+    partial void OncoveragePersonalYesNoChanging(System.Nullable<bool> value);
+    partial void OncoveragePersonalYesNoChanged();
+    partial void OnepPersonalYesNoChanging(System.Nullable<bool> value);
+    partial void OnepPersonalYesNoChanged();
+    partial void OndetailsOfExistingPlansChanging(string value);
+    partial void OndetailsOfExistingPlansChanged();
+    partial void OnreplacementIncomePercentageChanging(string value);
+    partial void OnreplacementIncomePercentageChanged();
+    partial void OnreplacementIncomeRequiredChanging(string value);
+    partial void OnreplacementIncomeRequiredChanged();
+    partial void OnyearsOfSupportRequiredChanging(string value);
+    partial void OnyearsOfSupportRequiredChanged();
+    partial void OninflatedAdjustedReturnsChanging(string value);
+    partial void OninflatedAdjustedReturnsChanged();
+    partial void OnreplacementAmountRequiredChanging(string value);
+    partial void OnreplacementAmountRequiredChanged();
+    partial void OntotalRequiredChanging(string value);
+    partial void OntotalRequiredChanged();
+    partial void OntxtExistingAssetsFamilyneedsChanging(string value);
+    partial void OntxtExistingAssetsFamilyneedsChanged();
+    partial void OndisabilityProtectionReplacementIncomeRequiredPercentageChanging(string value);
+    partial void OndisabilityProtectionReplacementIncomeRequiredPercentageChanged();
+    partial void OndisabilityProtectionReplacementIncomeRequiredChanging(string value);
+    partial void OndisabilityProtectionReplacementIncomeRequiredChanged();
+    partial void OndisabilityYearsOfSupportChanging(string value);
+    partial void OndisabilityYearsOfSupportChanged();
+    partial void OninflationAdjustedReturnsChanging(string value);
+    partial void OninflationAdjustedReturnsChanged();
+    partial void OndisabilityReplacementAmountRequiredChanging(string value);
+    partial void OndisabilityReplacementAmountRequiredChanged();
+    partial void OndisabilityInsuranceChanging(string value);
+    partial void OndisabilityInsuranceChanged();
+    partial void OnexistingPlansDetailChanging(string value);
+    partial void OnexistingPlansDetailChanged();
+    partial void OncriticalIllnessPrNeededChanging(System.Nullable<int> value);
+    partial void OncriticalIllnessPrNeededChanged();
+    partial void OndisabilityPrNeededChanging(System.Nullable<int> value);
+    partial void OndisabilityPrNeededChanged();
+    partial void OnhospitalmedCoverNeededChanging(System.Nullable<int> value);
+    partial void OnhospitalmedCoverNeededChanged();
+    partial void OnaccidentalhealthCoverNeededChanging(System.Nullable<int> value);
+    partial void OnaccidentalhealthCoverNeededChanged();
+    partial void OncoverageOutpatientMedExpChanging(System.Nullable<bool> value);
+    partial void OncoverageOutpatientMedExpChanged();
+    partial void OnepOutpatientMedExpChanging(System.Nullable<bool> value);
+    partial void OnepOutpatientMedExpChanged();
+    partial void OncoverageLossOfIncomeChanging(System.Nullable<bool> value);
+    partial void OncoverageLossOfIncomeChanged();
+    partial void OnepLossOfIncomeChanging(System.Nullable<bool> value);
+    partial void OnepLossOfIncomeChanged();
+    partial void OncoverageOldageDisabilitiesChanging(System.Nullable<bool> value);
+    partial void OncoverageOldageDisabilitiesChanged();
+    partial void OnepOldageDisabilitiesChanging(System.Nullable<bool> value);
+    partial void OnepOldageDisabilitiesChanged();
+    partial void OncoverageDentalExpChanging(System.Nullable<bool> value);
+    partial void OncoverageDentalExpChanged();
+    partial void OnepDentalExpChanging(System.Nullable<bool> value);
+    partial void OnepDentalExpChanged();
+    #endregion
+		
+		public myNeed()
+		{
+			this._myNeedsCriticalAssets = new EntitySet<myNeedsCriticalAsset>(new Action<myNeedsCriticalAsset>(this.attach_myNeedsCriticalAssets), new Action<myNeedsCriticalAsset>(this.detach_myNeedsCriticalAssets));
+			this._myNeedsDisabilityAssets = new EntitySet<myNeedsDisabilityAsset>(new Action<myNeedsDisabilityAsset>(this.attach_myNeedsDisabilityAssets), new Action<myNeedsDisabilityAsset>(this.detach_myNeedsDisabilityAssets));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_caseId", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string caseId
+		{
+			get
+			{
+				return this._caseId;
+			}
+			set
+			{
+				if ((this._caseId != value))
+				{
+					this.OncaseIdChanging(value);
+					this.SendPropertyChanging();
+					this._caseId = value;
+					this.SendPropertyChanged("caseId");
+					this.OncaseIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lumpSumRequiredForTreatment", DbType="NVarChar(50)")]
+		public string lumpSumRequiredForTreatment
+		{
+			get
+			{
+				return this._lumpSumRequiredForTreatment;
+			}
+			set
+			{
+				if ((this._lumpSumRequiredForTreatment != value))
+				{
+					this.OnlumpSumRequiredForTreatmentChanging(value);
+					this.SendPropertyChanging();
+					this._lumpSumRequiredForTreatment = value;
+					this.SendPropertyChanged("lumpSumRequiredForTreatment");
+					this.OnlumpSumRequiredForTreatmentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_criticalIllnessInsurance", DbType="NVarChar(50)")]
+		public string criticalIllnessInsurance
+		{
+			get
+			{
+				return this._criticalIllnessInsurance;
+			}
+			set
+			{
+				if ((this._criticalIllnessInsurance != value))
+				{
+					this.OncriticalIllnessInsuranceChanging(value);
+					this.SendPropertyChanging();
+					this._criticalIllnessInsurance = value;
+					this.SendPropertyChanged("criticalIllnessInsurance");
+					this.OncriticalIllnessInsuranceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingAssetsMyneeds", DbType="NVarChar(50)")]
+		public string existingAssetsMyneeds
+		{
+			get
+			{
+				return this._existingAssetsMyneeds;
+			}
+			set
+			{
+				if ((this._existingAssetsMyneeds != value))
+				{
+					this.OnexistingAssetsMyneedsChanging(value);
+					this.SendPropertyChanging();
+					this._existingAssetsMyneeds = value;
+					this.SendPropertyChanged("existingAssetsMyneeds");
+					this.OnexistingAssetsMyneedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalShortfallSurplusMyNeeds", DbType="NVarChar(50)")]
+		public string totalShortfallSurplusMyNeeds
+		{
+			get
+			{
+				return this._totalShortfallSurplusMyNeeds;
+			}
+			set
+			{
+				if ((this._totalShortfallSurplusMyNeeds != value))
+				{
+					this.OntotalShortfallSurplusMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._totalShortfallSurplusMyNeeds = value;
+					this.SendPropertyChanged("totalShortfallSurplusMyNeeds");
+					this.OntotalShortfallSurplusMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lumpSumMyNeeds", DbType="NVarChar(50)")]
+		public string lumpSumMyNeeds
+		{
+			get
+			{
+				return this._lumpSumMyNeeds;
+			}
+			set
+			{
+				if ((this._lumpSumMyNeeds != value))
+				{
+					this.OnlumpSumMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._lumpSumMyNeeds = value;
+					this.SendPropertyChanged("lumpSumMyNeeds");
+					this.OnlumpSumMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingSumMyNeeds", DbType="NVarChar(50)")]
+		public string existingSumMyNeeds
+		{
+			get
+			{
+				return this._existingSumMyNeeds;
+			}
+			set
+			{
+				if ((this._existingSumMyNeeds != value))
+				{
+					this.OnexistingSumMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._existingSumMyNeeds = value;
+					this.SendPropertyChanged("existingSumMyNeeds");
+					this.OnexistingSumMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shortfallSumMyNeeds", DbType="NVarChar(50)")]
+		public string shortfallSumMyNeeds
+		{
+			get
+			{
+				return this._shortfallSumMyNeeds;
+			}
+			set
+			{
+				if ((this._shortfallSumMyNeeds != value))
+				{
+					this.OnshortfallSumMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._shortfallSumMyNeeds = value;
+					this.SendPropertyChanged("shortfallSumMyNeeds");
+					this.OnshortfallSumMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monthlyIncomeDisabilityIncome", DbType="NVarChar(50)")]
+		public string monthlyIncomeDisabilityIncome
+		{
+			get
+			{
+				return this._monthlyIncomeDisabilityIncome;
+			}
+			set
+			{
+				if ((this._monthlyIncomeDisabilityIncome != value))
+				{
+					this.OnmonthlyIncomeDisabilityIncomeChanging(value);
+					this.SendPropertyChanging();
+					this._monthlyIncomeDisabilityIncome = value;
+					this.SendPropertyChanged("monthlyIncomeDisabilityIncome");
+					this.OnmonthlyIncomeDisabilityIncomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_percentOfIncomeCoverageRequired", DbType="NVarChar(50)")]
+		public string percentOfIncomeCoverageRequired
+		{
+			get
+			{
+				return this._percentOfIncomeCoverageRequired;
+			}
+			set
+			{
+				if ((this._percentOfIncomeCoverageRequired != value))
+				{
+					this.OnpercentOfIncomeCoverageRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._percentOfIncomeCoverageRequired = value;
+					this.SendPropertyChanged("percentOfIncomeCoverageRequired");
+					this.OnpercentOfIncomeCoverageRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monthlyCoverageRequired", DbType="NVarChar(50)")]
+		public string monthlyCoverageRequired
+		{
+			get
+			{
+				return this._monthlyCoverageRequired;
+			}
+			set
+			{
+				if ((this._monthlyCoverageRequired != value))
+				{
+					this.OnmonthlyCoverageRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._monthlyCoverageRequired = value;
+					this.SendPropertyChanged("monthlyCoverageRequired");
+					this.OnmonthlyCoverageRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityInsuranceMyNeeds", DbType="NVarChar(50)")]
+		public string disabilityInsuranceMyNeeds
+		{
+			get
+			{
+				return this._disabilityInsuranceMyNeeds;
+			}
+			set
+			{
+				if ((this._disabilityInsuranceMyNeeds != value))
+				{
+					this.OndisabilityInsuranceMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityInsuranceMyNeeds = value;
+					this.SendPropertyChanged("disabilityInsuranceMyNeeds");
+					this.OndisabilityInsuranceMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingAssetsMyneedsDisability", DbType="NVarChar(50)")]
+		public string existingAssetsMyneedsDisability
+		{
+			get
+			{
+				return this._existingAssetsMyneedsDisability;
+			}
+			set
+			{
+				if ((this._existingAssetsMyneedsDisability != value))
+				{
+					this.OnexistingAssetsMyneedsDisabilityChanging(value);
+					this.SendPropertyChanging();
+					this._existingAssetsMyneedsDisability = value;
+					this.SendPropertyChanged("existingAssetsMyneedsDisability");
+					this.OnexistingAssetsMyneedsDisabilityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shortfallSurplusMyNeeds", DbType="NVarChar(50)")]
+		public string shortfallSurplusMyNeeds
+		{
+			get
+			{
+				return this._shortfallSurplusMyNeeds;
+			}
+			set
+			{
+				if ((this._shortfallSurplusMyNeeds != value))
+				{
+					this.OnshortfallSurplusMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._shortfallSurplusMyNeeds = value;
+					this.SendPropertyChanged("shortfallSurplusMyNeeds");
+					this.OnshortfallSurplusMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monthlyAmountMyNeeds", DbType="NVarChar(50)")]
+		public string monthlyAmountMyNeeds
+		{
+			get
+			{
+				return this._monthlyAmountMyNeeds;
+			}
+			set
+			{
+				if ((this._monthlyAmountMyNeeds != value))
+				{
+					this.OnmonthlyAmountMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._monthlyAmountMyNeeds = value;
+					this.SendPropertyChanged("monthlyAmountMyNeeds");
+					this.OnmonthlyAmountMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingMyNeeds", DbType="NVarChar(50)")]
+		public string existingMyNeeds
+		{
+			get
+			{
+				return this._existingMyNeeds;
+			}
+			set
+			{
+				if ((this._existingMyNeeds != value))
+				{
+					this.OnexistingMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._existingMyNeeds = value;
+					this.SendPropertyChanged("existingMyNeeds");
+					this.OnexistingMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_shortfallMyNeeds", DbType="NVarChar(50)")]
+		public string shortfallMyNeeds
+		{
+			get
+			{
+				return this._shortfallMyNeeds;
+			}
+			set
+			{
+				if ((this._shortfallMyNeeds != value))
+				{
+					this.OnshortfallMyNeedsChanging(value);
+					this.SendPropertyChanging();
+					this._shortfallMyNeeds = value;
+					this.SendPropertyChanged("shortfallMyNeeds");
+					this.OnshortfallMyNeedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typeOfHospitalCoverage", DbType="NVarChar(50)")]
+		public string typeOfHospitalCoverage
+		{
+			get
+			{
+				return this._typeOfHospitalCoverage;
+			}
+			set
+			{
+				if ((this._typeOfHospitalCoverage != value))
+				{
+					this.OntypeOfHospitalCoverageChanging(value);
+					this.SendPropertyChanging();
+					this._typeOfHospitalCoverage = value;
+					this.SendPropertyChanged("typeOfHospitalCoverage");
+					this.OntypeOfHospitalCoverageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anyExistingPlans", DbType="Bit")]
+		public System.Nullable<bool> anyExistingPlans
+		{
+			get
+			{
+				return this._anyExistingPlans;
+			}
+			set
+			{
+				if ((this._anyExistingPlans != value))
+				{
+					this.OnanyExistingPlansChanging(value);
+					this.SendPropertyChanging();
+					this._anyExistingPlans = value;
+					this.SendPropertyChanged("anyExistingPlans");
+					this.OnanyExistingPlansChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typeOfRoomCoverage", DbType="Int")]
+		public System.Nullable<int> typeOfRoomCoverage
+		{
+			get
+			{
+				return this._typeOfRoomCoverage;
+			}
+			set
+			{
+				if ((this._typeOfRoomCoverage != value))
+				{
+					this.OntypeOfRoomCoverageChanging(value);
+					this.SendPropertyChanging();
+					this._typeOfRoomCoverage = value;
+					this.SendPropertyChanged("typeOfRoomCoverage");
+					this.OntypeOfRoomCoverageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageOldageYesNo", DbType="Bit")]
+		public System.Nullable<bool> coverageOldageYesNo
+		{
+			get
+			{
+				return this._coverageOldageYesNo;
+			}
+			set
+			{
+				if ((this._coverageOldageYesNo != value))
+				{
+					this.OncoverageOldageYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._coverageOldageYesNo = value;
+					this.SendPropertyChanged("coverageOldageYesNo");
+					this.OncoverageOldageYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epOldageYesNo", DbType="Bit")]
+		public System.Nullable<bool> epOldageYesNo
+		{
+			get
+			{
+				return this._epOldageYesNo;
+			}
+			set
+			{
+				if ((this._epOldageYesNo != value))
+				{
+					this.OnepOldageYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._epOldageYesNo = value;
+					this.SendPropertyChanged("epOldageYesNo");
+					this.OnepOldageYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageIncomeYesNo", DbType="Bit")]
+		public System.Nullable<bool> coverageIncomeYesNo
+		{
+			get
+			{
+				return this._coverageIncomeYesNo;
+			}
+			set
+			{
+				if ((this._coverageIncomeYesNo != value))
+				{
+					this.OncoverageIncomeYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._coverageIncomeYesNo = value;
+					this.SendPropertyChanged("coverageIncomeYesNo");
+					this.OncoverageIncomeYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epIncomeYesNo", DbType="Bit")]
+		public System.Nullable<bool> epIncomeYesNo
+		{
+			get
+			{
+				return this._epIncomeYesNo;
+			}
+			set
+			{
+				if ((this._epIncomeYesNo != value))
+				{
+					this.OnepIncomeYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._epIncomeYesNo = value;
+					this.SendPropertyChanged("epIncomeYesNo");
+					this.OnepIncomeYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageOutpatientYesNo", DbType="Bit")]
+		public System.Nullable<bool> coverageOutpatientYesNo
+		{
+			get
+			{
+				return this._coverageOutpatientYesNo;
+			}
+			set
+			{
+				if ((this._coverageOutpatientYesNo != value))
+				{
+					this.OncoverageOutpatientYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._coverageOutpatientYesNo = value;
+					this.SendPropertyChanged("coverageOutpatientYesNo");
+					this.OncoverageOutpatientYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epOutpatientYesNo", DbType="Bit")]
+		public System.Nullable<bool> epOutpatientYesNo
+		{
+			get
+			{
+				return this._epOutpatientYesNo;
+			}
+			set
+			{
+				if ((this._epOutpatientYesNo != value))
+				{
+					this.OnepOutpatientYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._epOutpatientYesNo = value;
+					this.SendPropertyChanged("epOutpatientYesNo");
+					this.OnepOutpatientYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageDentalYesNo", DbType="Bit")]
+		public System.Nullable<bool> coverageDentalYesNo
+		{
+			get
+			{
+				return this._coverageDentalYesNo;
+			}
+			set
+			{
+				if ((this._coverageDentalYesNo != value))
+				{
+					this.OncoverageDentalYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._coverageDentalYesNo = value;
+					this.SendPropertyChanged("coverageDentalYesNo");
+					this.OncoverageDentalYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epDentalYesNo", DbType="Bit")]
+		public System.Nullable<bool> epDentalYesNo
+		{
+			get
+			{
+				return this._epDentalYesNo;
+			}
+			set
+			{
+				if ((this._epDentalYesNo != value))
+				{
+					this.OnepDentalYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._epDentalYesNo = value;
+					this.SendPropertyChanged("epDentalYesNo");
+					this.OnepDentalYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coveragePersonalYesNo", DbType="Bit")]
+		public System.Nullable<bool> coveragePersonalYesNo
+		{
+			get
+			{
+				return this._coveragePersonalYesNo;
+			}
+			set
+			{
+				if ((this._coveragePersonalYesNo != value))
+				{
+					this.OncoveragePersonalYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._coveragePersonalYesNo = value;
+					this.SendPropertyChanged("coveragePersonalYesNo");
+					this.OncoveragePersonalYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epPersonalYesNo", DbType="Bit")]
+		public System.Nullable<bool> epPersonalYesNo
+		{
+			get
+			{
+				return this._epPersonalYesNo;
+			}
+			set
+			{
+				if ((this._epPersonalYesNo != value))
+				{
+					this.OnepPersonalYesNoChanging(value);
+					this.SendPropertyChanging();
+					this._epPersonalYesNo = value;
+					this.SendPropertyChanged("epPersonalYesNo");
+					this.OnepPersonalYesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detailsOfExistingPlans", DbType="NVarChar(4000)")]
+		public string detailsOfExistingPlans
+		{
+			get
+			{
+				return this._detailsOfExistingPlans;
+			}
+			set
+			{
+				if ((this._detailsOfExistingPlans != value))
+				{
+					this.OndetailsOfExistingPlansChanging(value);
+					this.SendPropertyChanging();
+					this._detailsOfExistingPlans = value;
+					this.SendPropertyChanged("detailsOfExistingPlans");
+					this.OndetailsOfExistingPlansChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_replacementIncomePercentage", DbType="NVarChar(50)")]
+		public string replacementIncomePercentage
+		{
+			get
+			{
+				return this._replacementIncomePercentage;
+			}
+			set
+			{
+				if ((this._replacementIncomePercentage != value))
+				{
+					this.OnreplacementIncomePercentageChanging(value);
+					this.SendPropertyChanging();
+					this._replacementIncomePercentage = value;
+					this.SendPropertyChanged("replacementIncomePercentage");
+					this.OnreplacementIncomePercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_replacementIncomeRequired", DbType="NVarChar(50)")]
+		public string replacementIncomeRequired
+		{
+			get
+			{
+				return this._replacementIncomeRequired;
+			}
+			set
+			{
+				if ((this._replacementIncomeRequired != value))
+				{
+					this.OnreplacementIncomeRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._replacementIncomeRequired = value;
+					this.SendPropertyChanged("replacementIncomeRequired");
+					this.OnreplacementIncomeRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_yearsOfSupportRequired", DbType="NVarChar(50)")]
+		public string yearsOfSupportRequired
+		{
+			get
+			{
+				return this._yearsOfSupportRequired;
+			}
+			set
+			{
+				if ((this._yearsOfSupportRequired != value))
+				{
+					this.OnyearsOfSupportRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._yearsOfSupportRequired = value;
+					this.SendPropertyChanged("yearsOfSupportRequired");
+					this.OnyearsOfSupportRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inflatedAdjustedReturns", DbType="NVarChar(50)")]
+		public string inflatedAdjustedReturns
+		{
+			get
+			{
+				return this._inflatedAdjustedReturns;
+			}
+			set
+			{
+				if ((this._inflatedAdjustedReturns != value))
+				{
+					this.OninflatedAdjustedReturnsChanging(value);
+					this.SendPropertyChanging();
+					this._inflatedAdjustedReturns = value;
+					this.SendPropertyChanged("inflatedAdjustedReturns");
+					this.OninflatedAdjustedReturnsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_replacementAmountRequired", DbType="NVarChar(50)")]
+		public string replacementAmountRequired
+		{
+			get
+			{
+				return this._replacementAmountRequired;
+			}
+			set
+			{
+				if ((this._replacementAmountRequired != value))
+				{
+					this.OnreplacementAmountRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._replacementAmountRequired = value;
+					this.SendPropertyChanged("replacementAmountRequired");
+					this.OnreplacementAmountRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalRequired", DbType="NVarChar(50)")]
+		public string totalRequired
+		{
+			get
+			{
+				return this._totalRequired;
+			}
+			set
+			{
+				if ((this._totalRequired != value))
+				{
+					this.OntotalRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._totalRequired = value;
+					this.SendPropertyChanged("totalRequired");
+					this.OntotalRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_txtExistingAssetsFamilyneeds", DbType="NVarChar(50)")]
+		public string txtExistingAssetsFamilyneeds
+		{
+			get
+			{
+				return this._txtExistingAssetsFamilyneeds;
+			}
+			set
+			{
+				if ((this._txtExistingAssetsFamilyneeds != value))
+				{
+					this.OntxtExistingAssetsFamilyneedsChanging(value);
+					this.SendPropertyChanging();
+					this._txtExistingAssetsFamilyneeds = value;
+					this.SendPropertyChanged("txtExistingAssetsFamilyneeds");
+					this.OntxtExistingAssetsFamilyneedsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityProtectionReplacementIncomeRequiredPercentage", DbType="NVarChar(50)")]
+		public string disabilityProtectionReplacementIncomeRequiredPercentage
+		{
+			get
+			{
+				return this._disabilityProtectionReplacementIncomeRequiredPercentage;
+			}
+			set
+			{
+				if ((this._disabilityProtectionReplacementIncomeRequiredPercentage != value))
+				{
+					this.OndisabilityProtectionReplacementIncomeRequiredPercentageChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityProtectionReplacementIncomeRequiredPercentage = value;
+					this.SendPropertyChanged("disabilityProtectionReplacementIncomeRequiredPercentage");
+					this.OndisabilityProtectionReplacementIncomeRequiredPercentageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityProtectionReplacementIncomeRequired", DbType="NVarChar(50)")]
+		public string disabilityProtectionReplacementIncomeRequired
+		{
+			get
+			{
+				return this._disabilityProtectionReplacementIncomeRequired;
+			}
+			set
+			{
+				if ((this._disabilityProtectionReplacementIncomeRequired != value))
+				{
+					this.OndisabilityProtectionReplacementIncomeRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityProtectionReplacementIncomeRequired = value;
+					this.SendPropertyChanged("disabilityProtectionReplacementIncomeRequired");
+					this.OndisabilityProtectionReplacementIncomeRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityYearsOfSupport", DbType="NVarChar(50)")]
+		public string disabilityYearsOfSupport
+		{
+			get
+			{
+				return this._disabilityYearsOfSupport;
+			}
+			set
+			{
+				if ((this._disabilityYearsOfSupport != value))
+				{
+					this.OndisabilityYearsOfSupportChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityYearsOfSupport = value;
+					this.SendPropertyChanged("disabilityYearsOfSupport");
+					this.OndisabilityYearsOfSupportChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inflationAdjustedReturns", DbType="NVarChar(50)")]
+		public string inflationAdjustedReturns
+		{
+			get
+			{
+				return this._inflationAdjustedReturns;
+			}
+			set
+			{
+				if ((this._inflationAdjustedReturns != value))
+				{
+					this.OninflationAdjustedReturnsChanging(value);
+					this.SendPropertyChanging();
+					this._inflationAdjustedReturns = value;
+					this.SendPropertyChanged("inflationAdjustedReturns");
+					this.OninflationAdjustedReturnsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityReplacementAmountRequired", DbType="NVarChar(50)")]
+		public string disabilityReplacementAmountRequired
+		{
+			get
+			{
+				return this._disabilityReplacementAmountRequired;
+			}
+			set
+			{
+				if ((this._disabilityReplacementAmountRequired != value))
+				{
+					this.OndisabilityReplacementAmountRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityReplacementAmountRequired = value;
+					this.SendPropertyChanged("disabilityReplacementAmountRequired");
+					this.OndisabilityReplacementAmountRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityInsurance", DbType="NVarChar(50)")]
+		public string disabilityInsurance
+		{
+			get
+			{
+				return this._disabilityInsurance;
+			}
+			set
+			{
+				if ((this._disabilityInsurance != value))
+				{
+					this.OndisabilityInsuranceChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityInsurance = value;
+					this.SendPropertyChanged("disabilityInsurance");
+					this.OndisabilityInsuranceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_existingPlansDetail", DbType="NVarChar(2000)")]
+		public string existingPlansDetail
+		{
+			get
+			{
+				return this._existingPlansDetail;
+			}
+			set
+			{
+				if ((this._existingPlansDetail != value))
+				{
+					this.OnexistingPlansDetailChanging(value);
+					this.SendPropertyChanging();
+					this._existingPlansDetail = value;
+					this.SendPropertyChanged("existingPlansDetail");
+					this.OnexistingPlansDetailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_criticalIllnessPrNeeded", DbType="Int")]
+		public System.Nullable<int> criticalIllnessPrNeeded
+		{
+			get
+			{
+				return this._criticalIllnessPrNeeded;
+			}
+			set
+			{
+				if ((this._criticalIllnessPrNeeded != value))
+				{
+					this.OncriticalIllnessPrNeededChanging(value);
+					this.SendPropertyChanging();
+					this._criticalIllnessPrNeeded = value;
+					this.SendPropertyChanged("criticalIllnessPrNeeded");
+					this.OncriticalIllnessPrNeededChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_disabilityPrNeeded", DbType="Int")]
+		public System.Nullable<int> disabilityPrNeeded
+		{
+			get
+			{
+				return this._disabilityPrNeeded;
+			}
+			set
+			{
+				if ((this._disabilityPrNeeded != value))
+				{
+					this.OndisabilityPrNeededChanging(value);
+					this.SendPropertyChanging();
+					this._disabilityPrNeeded = value;
+					this.SendPropertyChanged("disabilityPrNeeded");
+					this.OndisabilityPrNeededChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hospitalmedCoverNeeded", DbType="Int")]
+		public System.Nullable<int> hospitalmedCoverNeeded
+		{
+			get
+			{
+				return this._hospitalmedCoverNeeded;
+			}
+			set
+			{
+				if ((this._hospitalmedCoverNeeded != value))
+				{
+					this.OnhospitalmedCoverNeededChanging(value);
+					this.SendPropertyChanging();
+					this._hospitalmedCoverNeeded = value;
+					this.SendPropertyChanged("hospitalmedCoverNeeded");
+					this.OnhospitalmedCoverNeededChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_accidentalhealthCoverNeeded", DbType="Int")]
+		public System.Nullable<int> accidentalhealthCoverNeeded
+		{
+			get
+			{
+				return this._accidentalhealthCoverNeeded;
+			}
+			set
+			{
+				if ((this._accidentalhealthCoverNeeded != value))
+				{
+					this.OnaccidentalhealthCoverNeededChanging(value);
+					this.SendPropertyChanging();
+					this._accidentalhealthCoverNeeded = value;
+					this.SendPropertyChanged("accidentalhealthCoverNeeded");
+					this.OnaccidentalhealthCoverNeededChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageOutpatientMedExp", DbType="Bit")]
+		public System.Nullable<bool> coverageOutpatientMedExp
+		{
+			get
+			{
+				return this._coverageOutpatientMedExp;
+			}
+			set
+			{
+				if ((this._coverageOutpatientMedExp != value))
+				{
+					this.OncoverageOutpatientMedExpChanging(value);
+					this.SendPropertyChanging();
+					this._coverageOutpatientMedExp = value;
+					this.SendPropertyChanged("coverageOutpatientMedExp");
+					this.OncoverageOutpatientMedExpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epOutpatientMedExp", DbType="Bit")]
+		public System.Nullable<bool> epOutpatientMedExp
+		{
+			get
+			{
+				return this._epOutpatientMedExp;
+			}
+			set
+			{
+				if ((this._epOutpatientMedExp != value))
+				{
+					this.OnepOutpatientMedExpChanging(value);
+					this.SendPropertyChanging();
+					this._epOutpatientMedExp = value;
+					this.SendPropertyChanged("epOutpatientMedExp");
+					this.OnepOutpatientMedExpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageLossOfIncome", DbType="Bit")]
+		public System.Nullable<bool> coverageLossOfIncome
+		{
+			get
+			{
+				return this._coverageLossOfIncome;
+			}
+			set
+			{
+				if ((this._coverageLossOfIncome != value))
+				{
+					this.OncoverageLossOfIncomeChanging(value);
+					this.SendPropertyChanging();
+					this._coverageLossOfIncome = value;
+					this.SendPropertyChanged("coverageLossOfIncome");
+					this.OncoverageLossOfIncomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epLossOfIncome", DbType="Bit")]
+		public System.Nullable<bool> epLossOfIncome
+		{
+			get
+			{
+				return this._epLossOfIncome;
+			}
+			set
+			{
+				if ((this._epLossOfIncome != value))
+				{
+					this.OnepLossOfIncomeChanging(value);
+					this.SendPropertyChanging();
+					this._epLossOfIncome = value;
+					this.SendPropertyChanged("epLossOfIncome");
+					this.OnepLossOfIncomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageOldageDisabilities", DbType="Bit")]
+		public System.Nullable<bool> coverageOldageDisabilities
+		{
+			get
+			{
+				return this._coverageOldageDisabilities;
+			}
+			set
+			{
+				if ((this._coverageOldageDisabilities != value))
+				{
+					this.OncoverageOldageDisabilitiesChanging(value);
+					this.SendPropertyChanging();
+					this._coverageOldageDisabilities = value;
+					this.SendPropertyChanged("coverageOldageDisabilities");
+					this.OncoverageOldageDisabilitiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epOldageDisabilities", DbType="Bit")]
+		public System.Nullable<bool> epOldageDisabilities
+		{
+			get
+			{
+				return this._epOldageDisabilities;
+			}
+			set
+			{
+				if ((this._epOldageDisabilities != value))
+				{
+					this.OnepOldageDisabilitiesChanging(value);
+					this.SendPropertyChanging();
+					this._epOldageDisabilities = value;
+					this.SendPropertyChanged("epOldageDisabilities");
+					this.OnepOldageDisabilitiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coverageDentalExp", DbType="Bit")]
+		public System.Nullable<bool> coverageDentalExp
+		{
+			get
+			{
+				return this._coverageDentalExp;
+			}
+			set
+			{
+				if ((this._coverageDentalExp != value))
+				{
+					this.OncoverageDentalExpChanging(value);
+					this.SendPropertyChanging();
+					this._coverageDentalExp = value;
+					this.SendPropertyChanged("coverageDentalExp");
+					this.OncoverageDentalExpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_epDentalExp", DbType="Bit")]
+		public System.Nullable<bool> epDentalExp
+		{
+			get
+			{
+				return this._epDentalExp;
+			}
+			set
+			{
+				if ((this._epDentalExp != value))
+				{
+					this.OnepDentalExpChanging(value);
+					this.SendPropertyChanging();
+					this._epDentalExp = value;
+					this.SendPropertyChanged("epDentalExp");
+					this.OnepDentalExpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="myNeed_myNeedsCriticalAsset", Storage="_myNeedsCriticalAssets", ThisKey="id", OtherKey="myNeedId")]
+		public EntitySet<myNeedsCriticalAsset> myNeedsCriticalAssets
+		{
+			get
+			{
+				return this._myNeedsCriticalAssets;
+			}
+			set
+			{
+				this._myNeedsCriticalAssets.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="myNeed_myNeedsDisabilityAsset", Storage="_myNeedsDisabilityAssets", ThisKey="id", OtherKey="myNeedId")]
+		public EntitySet<myNeedsDisabilityAsset> myNeedsDisabilityAssets
+		{
+			get
+			{
+				return this._myNeedsDisabilityAssets;
+			}
+			set
+			{
+				this._myNeedsDisabilityAssets.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_myNeedsCriticalAssets(myNeedsCriticalAsset entity)
+		{
+			this.SendPropertyChanging();
+			entity.myNeed = this;
+		}
+		
+		private void detach_myNeedsCriticalAssets(myNeedsCriticalAsset entity)
+		{
+			this.SendPropertyChanging();
+			entity.myNeed = null;
+		}
+		
+		private void attach_myNeedsDisabilityAssets(myNeedsDisabilityAsset entity)
+		{
+			this.SendPropertyChanging();
+			entity.myNeed = this;
+		}
+		
+		private void detach_myNeedsDisabilityAssets(myNeedsDisabilityAsset entity)
+		{
+			this.SendPropertyChanging();
+			entity.myNeed = null;
 		}
 	}
 }
