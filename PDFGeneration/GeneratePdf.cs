@@ -1641,7 +1641,7 @@ namespace PDFGeneration
                                 contents = contents.Replace("[premiumRecomended]", "Yes");
                                 if (assetAndLiability.assetIncomePercent != null && assetAndLiability.assetIncomePercent != "")
                                 {
-                                    contents = contents.Replace("[assetIncomePercent]", assetAndLiability.assetIncomePercent);
+                                    contents = contents.Replace("[assetIncomePercent]", "$ " + double.Parse(assetAndLiability.assetIncomePercent).ToString("#,##0.00"));
 
                                 }
                                 else

@@ -34,7 +34,7 @@ namespace PDFGeneration
             m_Cb.EndText();
             m_Cb.AddTemplate(m_Template, 302.3f, 20);
 
-            text = "Zurich Life Insurance (Singapore) Pte. Ltd.";
+            text = "Nexus Financial Services Pte Ltd.";
             m_Cb.BeginText();
             m_Cb.SetFontAndSize(m_BaseFont, 7);
             m_Cb.ShowTextAligned(PdfContentByte.ALIGN_RIGHT, text, 490, 20, 0);
