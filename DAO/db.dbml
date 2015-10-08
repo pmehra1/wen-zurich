@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="zurichdata" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-NROO1OAGM8T;Initial Catalog=zurichdata;Persist Security Info=True;User ID=zurich" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="zurichdataConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.personalUseAssetsOthers" Member="personalUseAssetsOthers">
     <Type Name="personalUseAssetsOther">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

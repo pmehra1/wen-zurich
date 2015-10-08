@@ -189,12 +189,6 @@ namespace DAO
         OnCreated();
     }
 		
-		public dbDataContext(string connection) : 
-				base(connection, mappingSource)
-		{
-			OnCreated();
-		}
-		
 		public dbDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
