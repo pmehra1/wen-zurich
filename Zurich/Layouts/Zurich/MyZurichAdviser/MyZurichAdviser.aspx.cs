@@ -340,7 +340,7 @@ namespace Zurich.Layouts.Zurich.MyZurichAdvisor
             GeneratePdf genPdf = new GeneratePdf();
             MemoryStream output = genPdf.createPdf(caseId, url);
             pdfData = output.ToArray();
-            
+
             if (pdfData != null && pdfData.Length > 0)
             {
                 Response.ContentType = "application/pdf";

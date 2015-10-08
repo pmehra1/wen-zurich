@@ -98,7 +98,7 @@
                   <div class="chassis_application_navigation_outer chassis_application_nav_first_entry">
                     <div class="chassis_application_navigation_inner">
                       <span id="mzatab" runat="server">
-                        <asp:LinkButton ID="LinkZurichAdvisor" Text="My Zurich Advisor" OnClick="menuClick" CommandArgument="zurichAdvisor" runat="server" />
+                        <asp:LinkButton ID="LinkZurichAdvisor" Text="My Nexus Advisor" OnClick="menuClick" CommandArgument="zurichAdvisor" runat="server" />
                       </span>
                     </div>
                   </div>
