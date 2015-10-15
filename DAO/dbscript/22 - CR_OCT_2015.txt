@@ -1,0 +1,13 @@
+update fund_lkp
+set fullName = 'JPMorgan Funds - Global Dynamic Fund',
+middleName = 'JPMorgan Funds - Global Dynamic Fund'
+where id = 9
+
+alter table myneeds add coverageOutpatientMedExp bit
+alter table myneeds add epOutpatientMedExp bit
+alter table myneeds add coverageLossOfIncome bit
+alter table myneeds add epLossOfIncome bit
+alter table myneeds add coverageOldageDisabilities bit
+alter table myneeds add epOldageDisabilities bit
+alter table myneeds add coverageDentalExp bit
+alter table myneeds add epDentalExp bit
